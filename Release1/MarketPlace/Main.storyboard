@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VOk-DE-24e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="VOk-DE-24e">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -5654,7 +5654,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8od-pU-fNY"/>
                     </layoutGuides>
                     <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="6vL-RY-dZ1">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="1100"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="1070"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar hidden="YES" contentMode="redraw" searchBarStyle="minimal" placeholder="Search for Products and Brands" translatesAutoresizingMaskIntoConstraints="NO" id="qbe-Yr-waY">
@@ -5720,8 +5720,12 @@
                                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ws-Gm-JD0">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="IX4-dq-z0v"/>
-                                            <constraint firstAttribute="height" constant="150" id="J2T-ut-gPe"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="IX4-dq-z0v">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="150" id="J2T-ut-gPe">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                                            </constraint>
                                             <constraint firstAttribute="width" constant="400" id="fhq-Af-gqt"/>
                                         </constraints>
                                         <variation key="default">
@@ -6935,10 +6939,14 @@
                                     <constraint firstItem="9ws-Gm-JD0" firstAttribute="top" secondItem="CVk-SJ-amw" secondAttribute="top" id="DVi-Yb-7BB"/>
                                     <constraint firstItem="j4p-iV-mnP" firstAttribute="top" secondItem="lle-FR-65T" secondAttribute="bottom" id="Dqa-vV-vf5"/>
                                     <constraint firstItem="9ws-Gm-JD0" firstAttribute="trailing" secondItem="usn-MW-tud" secondAttribute="trailing" id="GS2-He-1sS"/>
-                                    <constraint firstItem="usn-MW-tud" firstAttribute="top" secondItem="9ws-Gm-JD0" secondAttribute="bottom" constant="2" id="Hon-qx-EvZ"/>
+                                    <constraint firstItem="usn-MW-tud" firstAttribute="top" secondItem="9ws-Gm-JD0" secondAttribute="bottom" constant="2" id="Hon-qx-EvZ">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                    </constraint>
                                     <constraint firstItem="9ws-Gm-JD0" firstAttribute="top" secondItem="CVk-SJ-amw" secondAttribute="top" id="JPt-Ae-aZ9"/>
                                     <constraint firstItem="9ws-Gm-JD0" firstAttribute="leading" secondItem="usn-MW-tud" secondAttribute="leading" id="Kga-AG-jcw"/>
-                                    <constraint firstAttribute="bottom" secondItem="QSg-dx-2K7" secondAttribute="bottom" constant="1" id="KyS-AX-ltG"/>
+                                    <constraint firstAttribute="bottom" secondItem="QSg-dx-2K7" secondAttribute="bottom" constant="1" id="KyS-AX-ltG">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                    </constraint>
                                     <constraint firstItem="9ws-Gm-JD0" firstAttribute="leading" secondItem="CVk-SJ-amw" secondAttribute="leading" id="Osq-nU-yZM"/>
                                     <constraint firstAttribute="trailing" secondItem="QSg-dx-2K7" secondAttribute="trailing" id="PGS-c0-Qea"/>
                                     <constraint firstItem="QSg-dx-2K7" firstAttribute="top" secondItem="j4p-iV-mnP" secondAttribute="bottom" constant="1" id="Qrj-CI-D0s"/>
@@ -6946,10 +6954,14 @@
                                     <constraint firstItem="j4p-iV-mnP" firstAttribute="leading" secondItem="CVk-SJ-amw" secondAttribute="leading" id="UTJ-9O-jbj"/>
                                     <constraint firstAttribute="trailing" secondItem="usn-MW-tud" secondAttribute="trailing" id="Z7x-dV-fO4"/>
                                     <constraint firstItem="9ws-Gm-JD0" firstAttribute="centerX" secondItem="CVk-SJ-amw" secondAttribute="centerX" id="dA6-oY-Jdj"/>
-                                    <constraint firstItem="usn-MW-tud" firstAttribute="top" secondItem="9ws-Gm-JD0" secondAttribute="bottom" constant="2" id="ltl-h3-OV4"/>
+                                    <constraint firstItem="usn-MW-tud" firstAttribute="top" secondItem="9ws-Gm-JD0" secondAttribute="bottom" constant="2" id="ltl-h3-OV4">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                    </constraint>
                                     <constraint firstItem="QSg-dx-2K7" firstAttribute="leading" secondItem="CVk-SJ-amw" secondAttribute="leading" id="lyL-F5-znm"/>
                                     <constraint firstAttribute="trailing" secondItem="9ws-Gm-JD0" secondAttribute="trailing" id="myg-Tf-ONf"/>
-                                    <constraint firstItem="usn-MW-tud" firstAttribute="top" secondItem="9ws-Gm-JD0" secondAttribute="bottom" constant="2" id="q3I-ES-gVA"/>
+                                    <constraint firstItem="usn-MW-tud" firstAttribute="top" secondItem="9ws-Gm-JD0" secondAttribute="bottom" constant="2" id="q3I-ES-gVA">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                    </constraint>
                                     <constraint firstAttribute="trailing" secondItem="lle-FR-65T" secondAttribute="trailing" id="qnW-sA-eTi"/>
                                     <constraint firstItem="lle-FR-65T" firstAttribute="leading" secondItem="CVk-SJ-amw" secondAttribute="leading" id="vhX-Gr-3es"/>
                                 </constraints>
@@ -7223,7 +7235,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dal-Uu-xRy"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="400" height="1100"/>
+                    <size key="freeformSize" width="400" height="1070"/>
                     <connections>
                         <outlet property="FeaturedProductVLBtn" destination="nwU-S9-Gyg" id="WVe-SG-LsL"/>
                         <outlet property="NewArrivalVLbtn" destination="YLW-mr-TKk" id="KdL-aV-ejF"/>
@@ -18608,7 +18620,8 @@
                                                             <exclude reference="hgG-Lt-Z71"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                                        <rect key="frame" x="0.0" y="61" width="600" height="1"/>
                                                         <mask key="constraints">
                                                             <include reference="hgG-Lt-Z71"/>
                                                         </mask>
@@ -27980,8 +27993,7 @@
                                                 <exclude reference="ip0-r2-X0X"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                            <rect key="frame" x="58" y="370" width="205" height="21"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
                                             <mask key="constraints">
                                                 <include reference="ip0-r2-X0X"/>
                                             </mask>

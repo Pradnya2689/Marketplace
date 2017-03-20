@@ -91,7 +91,7 @@ class lstBasket: Mappable {
     var grossAmountDisplayString:String?
     var totalShippingAmountDisplayString:String?
     var totalDisplayString:String?
-    
+   
    
     required init?(_ map: Map){
         
@@ -484,6 +484,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
     print("in cart via reachable")
     self.noInternetClk()
     }
+    var totalNetVal:String!
     func basketdetailSucce(notification:NSNotification){
          let string : AnyObject = notification.userInfo!
          self.bottomVc.hidden = false
@@ -502,6 +503,9 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
             if let shipping = string.valueForKey("totalDisplayString") as? String{
                 self.totalLbl.text = "₹ \(shipping)"
             }
+        if let shipping = string.valueForKey("total") as? String{
+            self.totalNetVal = shipping
+        }
          LoadingOverlay.shared.hideOverlayView()
             if let bastetcartarry = string.valueForKey("lstBasket") as? NSArray{
                 for forecast in bastetcartarry
@@ -897,8 +901,12 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
             
             }
         }
+            
+           
+            
         let chkVC = self.storyboard?.instantiateViewControllerWithIdentifier("checkoutVc") as! CheckoutViewController
         chkVC.TotalPrice = self.totalLbl.text
+            chkVC.netAmount = totalNetVal!
         chkVC.isCalled = "cart"
         chkVC.cartItemArray = basketArray.mutableCopy() as! NSArray
         self.navigationController?.pushViewController(chkVC, animated: true)

@@ -3617,6 +3617,7 @@ func doneClicked(sender: AnyObject) {
             if let totalstring = string.valueForKey("buyNowGrossTotalDisplayString") as? String{
             chkVC.TotalPrice = "₹ \(totalstring)"
             }
+           chkVC.netAmount = self.netPrc
             chkVC.sellerNo = "\(sellerNumber)"
             chkVC.quantity = "\(qnt!)"
             chkVC.skuNo = "\(skuno)"

@@ -33,6 +33,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
     var promoCodeStr:String!=""
     var encryptedToken:String!=""
     var tranxID:String!=""
+     var netAmount:String!
    @IBOutlet var freeBeVc:UIView!
    @IBOutlet var freeBeTable:UITableView!
     @IBAction func addChangeButton(sender: AnyObject) {
@@ -149,7 +150,14 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 LoadingOverlay.shared.hideOverlayView()
 //                url = NSURL(string: "http://immarketapi-stg2.azurewebsites.net/api/ordercreate?promoCode=\(code!)&NetAmount=\(trimmedProductprice)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=&SellerNumber=\(self.sellerNo)&Quantity=0&sku=")
                 
-                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(code!)&NetAmount=\(trimmedProductprice)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=&SellerNumber=\(self.sellerNo)&Quantity=&Sku=")
+//                var arry = self.netAmount.componentsSeparatedByString(".");
+//                if(arry[0].characters.count != 0) {
+//                    self.netAmount = arry[0]
+//                }else{
+//                
+//                }
+                
+                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(code!)&NetAmount=\(self.netAmount)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=&SellerNumber=\(self.sellerNo)&Quantity=0&Sku=")
                 
                 
                             let parameters = [
@@ -256,7 +264,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 
             else{
                  LoadingOverlay.shared.hideOverlayView()
-                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(code!)&NetAmount=\(trimmedProductprice)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=\(self.runsOrder)&SellerNumber=\(self.sellerNo)&Quantity=\(self.quantity!)&Sku=\(self.skuNo)")
+                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(code!)&NetAmount=\(self.netAmount!)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=\(self.runsOrder)&SellerNumber=\(self.sellerNo)&Quantity=\(self.quantity!)&Sku=\(self.skuNo)")
                 
                             let parameters = [
                             "promoCode": code!,
