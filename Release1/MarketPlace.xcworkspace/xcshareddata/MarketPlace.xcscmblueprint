@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "06F595485C830EB177E9037DB584BBD92C516F97",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "2D9FFFA9EBD171E95D64D42D5C44F93EFA77377C" : 0,
+    "06F595485C830EB177E9037DB584BBD92C516F97" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "58F1B088-3ABA-4FA4-B0AD-00A2928A7530",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "2D9FFFA9EBD171E95D64D42D5C44F93EFA77377C" : "",
+    "06F595485C830EB177E9037DB584BBD92C516F97" : "MarketPlace\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MarketPlace",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MarketPlace.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jesukaransachin\/MarketPlace.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "06F595485C830EB177E9037DB584BBD92C516F97"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jesukaransachin\/MarketPlaceNew.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2D9FFFA9EBD171E95D64D42D5C44F93EFA77377C"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="16C67" minimumToolsVersion="Xcode 7.0">
+    <entity name="MyCart" syncable="YES">
+        <attribute name="allData" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="availabilty" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="basketId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="cartPrice" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="extendedPrice" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="imageURLMedium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="limitedStock" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="lineItemId" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="maximumQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mdescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="placedPrice" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="productId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sellerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sellerNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="skuNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vendorCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vendorPartNumber" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RecentlyViewed" syncable="YES">
+        <attribute name="sku" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="RecentSearch" syncable="YES">
+        <attribute name="searchValue" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MyCart" positionX="-63" positionY="27" width="128" height="315"/>
+        <element name="RecentlyViewed" positionX="-63" positionY="-9" width="128" height="60"/>
+        <element name="RecentSearch" positionX="-63" positionY="-18" width="128" height="60"/>
+    </elements>
+</model>

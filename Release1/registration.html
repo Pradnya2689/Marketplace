@@ -1,0 +1,109 @@
+<html>
+<head><title>Ingram macro - Instrumrnt registration</title></head>
+<body>
+<!--<button id="btnSubmitCard">Card Registration</button>
+//<button id="btnSubmitAccount">Account Registration</button>-->
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://www.tecprocesssolution.com/proto/P2PAM/server/lib/checkout.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	function handleResponse(res){
+		if(typeof res != 'undefined' && typeof res.transaction != 'undefined' && typeof res.transaction.txnErrorCode != 'undefined' && res.transaction.txnErrorCode=='0300' && typeof res.transaction.payment.receiver != 'undefined' && typeof res.transaction.payment.receiver.instrument != 'undefined' && res.transaction.payment.receiver.instrument.token!='undefined'){
+			// success code
+			alert('Token Id: ' + res.transaction.payment.receiver.instrument.token);
+                  
+                  
+                  // document.location.href ="http://www.google.com"
+                  var myAppName = 'imol';
+                  var token1 = res.transaction.payment.receiver.instrument.token;
+                  var myActionType = 'myJavascriptActionType';
+                  var myActionParameters = {token1};
+                  
+                  var jsonString = (JSON.stringify(myActionParameters));
+                  var escapedJsonParameters = escape(jsonString);
+                  var url = myAppName + '://' + myActionType + "#" + escapedJsonParameters;
+                  document.location.href = url;
+                  
+            window.webkit.messageHandlers.myAction.postMessage(res.transaction.payment.receiver.instrument.token);
+			//Android.callBackSuccess(res.transaction.payment.receiver.instrument.token);
+//          var myAppName = 'payemntApp';-->
+//              var myActionType = 'myJavascriptActionType';-->
+//                var myActionParameters = {}; // put extra info into a dict if you need it-->-->-->
+//            -->
+//               // (separating the actionType from parameters makes it easier to parse in ObjC.)-->-->-->
+//          var jsonString = (JSON.stringify(myActionParameters));-->
+//            var escapedJsonParameters = escape(jsonString);-->
+          //  var url = myAppName + '://' + myActionType + "#"
+//                  var url = "payemntApp://myJavascriptActionType#rishi";-->
+//              window.location.href = url;-->
+                 
+
+		}else{
+			// error code
+			Android.callBackFailure("Error in registration");
+			Android.callBackSuccess("test");
+		}                                              
+	}; 
+
+	//Event for card registration
+//	$(document).off('click', '#btnSubmitCard').on('click', '#btnSubmitCard', function(e) {
+//		e.preventDefault();
+//		var configJson = {
+//			'tarCall':false,
+//			'features':{
+//				'showPGResponseMsg':true,
+//				//'showDownloadReceipt':false,
+//				'enableInstrumentRegistration':true
+//			},
+//			'consumerData':{
+//				'deviceId':'web',
+//				'authKey':'123abc123',
+//				'token':'abc123abc',
+//				'responseHandler':handleResponse,
+//				'paymentMode': 'cards',
+//				'merchantLogoUrl': 'http://corp.ingrammicro.com/getattachment/6838aceb-aa32-4075-9d75-7eb22f0d6bd5/logo-ingram-micro.png.aspx',
+//				'merchantId': 'T6921',
+//				'pgMerchantRegID': 'T6921',
+//				'pgMerchantTxnID': 'T6921',
+//				'aspMasterID': '1',
+//				'consumerAliasId': '572', //314053
+//				'consumerRegId': '292', //309641
+//				'consumerId': '292' //309641
+//			}
+//		};
+//		new Card(configJson).init();
+//	});
+
+	//Event for Account registration
+//	$(document).off('click', '#btnSubmitAccount').on('click', '#btnSubmitAccount', function(e) {
+//		e.preventDefault();
+		var configJson = { 
+			'tarCall':false,
+			'features':{
+				'showPGResponseMsg':true,
+				//'showDownloadReceipt':false,
+				'enableInstrumentRegistration':true
+			},
+			'consumerData':{
+				'deviceId':'web',
+				'authKey':'123abc123',
+				'token':'abc123abc',
+				'responseHandler':handleResponse,
+				'paymentMode': 'account',  
+				'merchantLogoUrl': 'http://corp.ingrammicro.com/getattachment/6838aceb-aa32-4075-9d75-7eb22f0d6bd5/logo-ingram-micro.png.aspx',
+				'merchantId': 'T6921',
+				'pgMerchantRegID': 'T6921',
+				'pgMerchantTxnID': 'T6921',
+				'aspMasterID': '1',
+				'consumerAliasId': '572',
+				'consumerRegId': '292',
+				'consumerId': '292'
+			}
+		};
+		new Card(configJson).init();
+//	});
+});
+
+</script>
+</body>
+</html>

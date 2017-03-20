@@ -1,0 +1,36 @@
+PODS:
+  - Alamofire (3.5.1)
+  - AlamofireImage (2.5.0):
+    - Alamofire (~> 3.5)
+  - AlamofireObjectMapper (3.0.2):
+    - Alamofire (~> 3.2)
+    - ObjectMapper (~> 1.0)
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
+  - Kingfisher (2.6.1)
+  - ObjectMapper (1.5.0)
+  - ReachabilitySwift (2.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 3.4)
+  - AlamofireImage (~> 2.0)
+  - AlamofireObjectMapper (~> 3.0)
+  - Crashlytics
+  - Fabric
+  - Kingfisher (~> 2.4)
+  - ReachabilitySwift (~> 2.0-beta1)
+
+SPEC CHECKSUMS:
+  Alamofire: 0dfba1184a543e2aa160f4e39cac4e8aba48d223
+  AlamofireImage: 2d34936e5201270bb17a316a786e90e83b4a249d
+  AlamofireObjectMapper: 70f97cbf45c01c48d26aa07a1a7059a60ed7411d
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
+  Kingfisher: 7e5515bf6c4f2acad91f6400955d2257549cab7b
+  ObjectMapper: 386645adca9d9d23b95eda43090b09d66444cf14
+  ReachabilitySwift: dc7452dab85ff881904215e1a113326ad8d07beb
+
+PODFILE CHECKSUM: af439770de5dfb9d3b78c513e7fc3020cf613d5c
+
+COCOAPODS: 1.0.1
