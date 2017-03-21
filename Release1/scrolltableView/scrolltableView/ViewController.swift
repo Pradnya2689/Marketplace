@@ -288,17 +288,17 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
             var escapedAddress = self.skuNumber.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
              let url12 = "\(baseUrl)product?id=\(escapedAddress!)&offers=X"
      
-            print(url12)
+           // print(url12)
      
         Alamofire.request(.GET, url12, headers: headers)
             
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)
                 var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Body: \(strData)")// server data
-                print(response.result)   // result of response serialization
+//                print("Body: \(strData)")// server data
+//                print(response.result)   // result of response serialization
                 if(response.result.isSuccess){
                 if let JSON : NSArray = response.result.value as! NSArray {
                     var  sellerArr : NSMutableArray! = NSMutableArray()
@@ -329,23 +329,23 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                 }
                 }
         }
-        print(self.skuNumber)
+       // print(self.skuNumber)
             var shwdsc:Bool!
             var showBool : Bool!
             var escapedAddress1 = self.skuNumber.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
         var url : NSURL!
         url = NSURL(string:"\(baseUrl)product?id=\(escapedAddress1!)")
-        print(url)
+       // print(url)
         Alamofire.request(.GET, url!, headers: headers)
             .validate(contentType: ["application/json"])
             
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)
                 var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Body: \(strData)")// server data
-                print(response.result)
+//                print("Body: \(strData)")// server data
+//                print(response.result)
                 
                 if(response.result.isSuccess){
                     let defaults = NSUserDefaults.standardUserDefaults()
@@ -357,7 +357,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                     }
                     
                     if let JSON : NSArray = response.result.value as? NSArray {
-                        print(JSON.count)
+                       // print(JSON.count)
                         
                         self.prodStr = ""
                         if(JSON.count > 1){
@@ -377,7 +377,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                         for (index, forecast) in JSON.enumerate()
                         {
                             // self.favBtn.hidden = false
-                            print("testing123\(forecast["skuNumber"] as? String)")
+                           // print("testing123\(forecast["skuNumber"] as? String)")
                             if let offers : Int = forecast["offers"] as? Int where index == 1
                             {
                                 if(offers > 1){
@@ -627,10 +627,10 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                             
                            showBool = forecast["isNewProd"] as! Bool
                             if(showBool!){
-                                print("true")
+                                //print("true")
                                 self.newProductImageView.hidden = false
                             }else{
-                                print("false")
+                               // print("false")
                                 self.newProductImageView.hidden = true
                             }
                             
@@ -643,7 +643,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                 {
                                     self.imagelinkArr.addObject(imagelink)
                                 }
-                                print(self.imagelinkArr)
+                               // print(self.imagelinkArr)
                                 if(self.imagelinkArr.count > 0){
                                     self.bannerView.hidden = false
                                     self.contentImages = NSArray.init(array: self.imagelinkArr)
@@ -672,15 +672,15 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                 self.imageURLMedium =  forecast["imageURLMedium"] as! NSString
                                 let productName : AnyObject  = forecast["description"] as! NSString
                                 self.productName.text = "\(productName)"
-                                 print("\(self.imageurl)")
+                                // print("\(self.imageurl)")
                                 var newDict1 : NSMutableArray = NSMutableArray()
                                 for g1 in teststring
                                 {
                                   
                                     //newDict1  = g1.value as! NSMutableArray
                                   newDict1  =  NSMutableArray(array: g1.value as! [AnyObject])
-                                    print(g1.key)
-                                    print(g1.value)
+//                                    print(g1.key)
+//                                    print(g1.value)
                                     self.sectionheader.addObject(g1.key)
                                     var newDict2 : NSMutableArray = NSMutableArray()
                                     
@@ -689,8 +689,8 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                     {
                                         newDict2 .addObject(v1)
                                         
-                                        print(v1["specificationType"]!)
-                                        print(v1["specificationTypeDetails"]!)
+//                                        print(v1["specificationType"]!)
+//                                        print(v1["specificationTypeDetails"]!)
                                         
                                     }
                                     
@@ -700,13 +700,13 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                 for g2 in self.newDict3
                                 {
                                     let  valueobject  = g2.value as! NSMutableArray
-                                    print(g2.key)
+                                   // print(g2.key)
                                    
                                     var  values  = [String]()
                                     for g3 in valueobject
                                     {
                                         let a = g3.valueForKey("specificationType")!
-                                        print(a)
+                                       // print(a)
                                         let b = g3.valueForKey("specificationTypeDetails")!
                                         
                                         let first = (a as! String) + ":" + (b as! String)
@@ -840,9 +840,9 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                             for g2 in self.newDict3
                             {
                                 let  valueobject  = g2.value as! NSMutableArray
-                                print(g2.key)
+                                //print(g2.key)
                                 if(g2.key as! String == "general Information"){
-                                    print("9999999")
+                                   // print("9999999")
                                     isfound = true
                                                                   
                                 }
@@ -874,11 +874,11 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
 //                                        print(self.gprice)
 //                                        print(self.nprice)
                                         //  print(self.imageurl)
-                                        print(self.skuNumber)
+                                       // print(self.skuNumber)
                                         if self.gprice.characters.count != 0 {
                                             if self.imageurl != nil
                                             {
-                                                print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
+                                               // print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
                                                 
 //                                                self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: self.gprice, imageURLHigh: self.imageurl as String, showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                 self.saveName(self.skuNumber)
@@ -895,7 +895,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                 
                                             if self.imageurl != nil
                                             {
-                                                print("productName \(self.productName.text!), sku\(self.skuNumber) ,netPrice \(self.nprice),  grossPrice \(self.gprice)  ")
+                                               // print("productName \(self.productName.text!), sku\(self.skuNumber) ,netPrice \(self.nprice),  grossPrice \(self.gprice)  ")
                                                 if(self.nprice != nil){
 //                                                    self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: "", imageURLHigh: self.imageurl as String,showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                     self.saveName(self.skuNumber)
@@ -930,7 +930,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                           
                                             if self.gprice.characters.count != 0 {
                                                 if self.imageurl != nil {
-                                                    print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
+                                                    //print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
                                                     
 //                                                    self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: self.gprice, imageURLHigh: self.imageurl as String,showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                     self.saveName(self.skuNumber)
@@ -942,7 +942,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                             }else{
                                                 
                                                 if self.imageurl != nil {
-                                                    print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
+                                                    //print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
                                                     if(self.nprice != nil){
 //                                                       self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: "", imageURLHigh: self.imageurl as String,showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                         self.saveName(self.skuNumber)
@@ -978,7 +978,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                                     for searchstring in people
                                                     {
 //                                                        print(searchstring.valueForKey("desc"))
-                                                        print(searchstring.valueForKey("sku"))
+                                                       // print(searchstring.valueForKey("sku"))
 //                                                        print(searchstring.valueForKey("netPrice"))
 //                                                        print(searchstring.valueForKey("grossPrice"))
 //                                                        print(searchstring.valueForKey("imageURLHigh"))
@@ -993,7 +993,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                                 }
                                                 
                                             } catch let error as NSError {
-                                                print("Could not fetch \(error), \(error.userInfo)")
+                                                //print("Could not fetch \(error), \(error.userInfo)")
                                             }
                                             
                                             
@@ -1009,7 +1009,7 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                 }
                                 
                             } catch let error as NSError {
-                                print("Could not fetch \(error), \(error.userInfo)")
+                               // print("Could not fetch \(error), \(error.userInfo)")
                             }
                             
                             self.PincodechkV1.hidden = false
@@ -1165,7 +1165,7 @@ func doneClicked(sender: AnyObject) {
         "Authorization":authorizationWithoutLogin,
         "Accept": "application/json"
     ]
-        print(self.sno)
+       // print(self.sno)
     let url = NSURL(string:"\(baseUrl)product?txtSearch=\(self.sno)")
     
         
@@ -1178,15 +1178,15 @@ func doneClicked(sender: AnyObject) {
     
     .responseJSON { response in
     //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-    print(response.request)  // original URL request
-    print(response.response) // URL response
-    print(response.data)     // server data
-    print(response.result)
+//    print(response.request)  // original URL request
+//    print(response.response) // URL response
+//    print(response.data)     // server data
+//    print(response.result)
     if let JSON = response.result.value {
-    print(JSON)
+   // print(JSON)
         //self.similarProdArray = JSON as! NSMutableArray
       self.similarProdArray =   NSMutableArray(array: JSON as! [AnyObject])
-        print(self.similarProdArray)
+       // print(self.similarProdArray)
         self.prodCollectionView.reloadData()
         
         
@@ -1340,10 +1340,10 @@ func doneClicked(sender: AnyObject) {
             .validate(contentType: ["application/json"])
             
             .responseJSON { response in
-                print(response.request)
-                print(response.response)
-                print(response.data)
-                print(response.result.value)
+//                print(response.request)
+//                print(response.response)
+//                print(response.data)
+//                print(response.result.value)
                 
 //                if(response.result.isSuccess)
 //                {       let alertView:UIAlertView = UIAlertView()
@@ -1361,7 +1361,7 @@ func doneClicked(sender: AnyObject) {
 //                    alertView.show()
 //                }
                 if let JSON = response.result.value {
-                    print(JSON)
+                   // print(JSON)
                     
                     if let resultDict = JSON["result"] as? NSDictionary{
                         if let lstProdArry = resultDict["lstProducts"] as? NSArray{
@@ -1465,12 +1465,12 @@ func doneClicked(sender: AnyObject) {
         Alamofire.request(.GET, "\(baseUrl)product?id=\(self.skuNumber)&offers=X", headers: headers)
             
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)
                 let strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Body: \(strData)")// server data
-                print(response.result)   // result of response serialization
+//                print("Body: \(strData)")// server data
+//                print(response.result)   // result of response serialization
                 // self.productSellerArray.removeAllObjects()
                 if let JSON : NSArray = response.result.value as? NSArray {
                     let  sellerArr : NSMutableArray! = NSMutableArray()
@@ -1496,22 +1496,22 @@ func doneClicked(sender: AnyObject) {
                     
                 }
         }
-        print(self.skuNumber)
+       // print(self.skuNumber)
             var shwdsc:Bool!
             let escapedAddress1 = self.skuNumber.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
             var url : NSURL!
             url = NSURL(string:"\(baseUrl)product?id=\(escapedAddress1!)")
-            print(url)
+           // print(url)
             Alamofire.request(.GET, url!, headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)
                     let strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                    print("Body: \(strData)")// server data
-                    print(response.result)
+//                    print("Body: \(strData)")// server data
+//                    print(response.result)
                     
                     if(response.result.isSuccess){
                         let defaults = NSUserDefaults.standardUserDefaults()
@@ -1523,7 +1523,7 @@ func doneClicked(sender: AnyObject) {
                         }
                         
                         if let JSON : NSArray = response.result.value as? NSArray {
-                            print(JSON.count)
+                           // print(JSON.count)
                             
                             self.prodStr = ""
                             if(JSON.count > 1){
@@ -1543,7 +1543,7 @@ func doneClicked(sender: AnyObject) {
                             for (index, forecast) in JSON.enumerate()
                             {
                                 // self.favBtn.hidden = false
-                                print("testing123\(forecast["skuNumber"] as? String)")
+                               // print("testing123\(forecast["skuNumber"] as? String)")
                                 if let offers : Int = forecast["offers"] as? Int where index == 1
                                 {
                                     if(offers > 1){
@@ -1723,7 +1723,7 @@ func doneClicked(sender: AnyObject) {
                                 if let pricetag : String = forecast["netPrice"] as? String where index == 1
                                 {
                                     // self.nprice  = pricetag
-                                    print(pricetag)
+                                    //print(pricetag)
                                     self.netPrc = pricetag
                                     
                                 }
@@ -1735,7 +1735,7 @@ func doneClicked(sender: AnyObject) {
                                     {
                                         self.imagelinkArr.addObject(imagelink)
                                     }
-                                    print(self.imagelinkArr)
+                                   // print(self.imagelinkArr)
                                     if(self.imagelinkArr.count > 0){
                                         self.bannerView.hidden = false
                                         self.contentImages = NSArray.init(array: self.imagelinkArr)
@@ -1764,14 +1764,14 @@ func doneClicked(sender: AnyObject) {
                                     self.imageURLMedium =  forecast["imageURLMedium"] as! NSString
                                     let productName : AnyObject  = forecast["description"] as! NSString
                                     self.productName.text = "\(productName)"
-                                    print("\(self.imageurl)")
+                                   // print("\(self.imageurl)")
                                     var newDict1 : NSMutableArray = NSMutableArray()
                                     for g1 in teststring
                                     {
                                         newDict1  = g1.value as! NSMutableArray
                                         
-                                        print(g1.key)
-                                        print(g1.value)
+//                                        print(g1.key)
+//                                        print(g1.value)
                                         self.sectionheader.addObject(g1.key)
                                         var newDict2 : NSMutableArray = NSMutableArray()
                                         
@@ -1780,8 +1780,8 @@ func doneClicked(sender: AnyObject) {
                                         {
                                             newDict2 .addObject(v1)
                                             
-                                            print(v1["specificationType"]!)
-                                            print(v1["specificationTypeDetails"]!)
+//                                            print(v1["specificationType"]!)
+//                                            print(v1["specificationTypeDetails"]!)
                                             
                                         }
                                         
@@ -1791,13 +1791,13 @@ func doneClicked(sender: AnyObject) {
                                     for g2 in self.newDict3
                                     {
                                         let  valueobject  = g2.value as! NSMutableArray
-                                        print(g2.key)
+                                        //print(g2.key)
                                         
                                         var  values  = [String]()
                                         for g3 in valueobject
                                         {
                                             let a = g3.valueForKey("specificationType")!
-                                            print(a)
+                                           // print(a)
                                             let b = g3.valueForKey("specificationTypeDetails")!
                                             
                                             let first = (a as! String) + ":" + (b as! String)
@@ -1931,9 +1931,9 @@ func doneClicked(sender: AnyObject) {
                                 for g2 in self.newDict3
                                 {
                                     let  valueobject  = g2.value as! NSMutableArray
-                                    print(g2.key)
+                                   // print(g2.key)
                                     if(g2.key as! String == "general Information"){
-                                        print("9999999")
+                                       // print("9999999")
                                         isfound = true
                                         
                                     }
@@ -1965,10 +1965,10 @@ func doneClicked(sender: AnyObject) {
                                             //                                        print(self.gprice)
                                             //                                        print(self.nprice)
                                             //  print(self.imageurl)
-                                            print(self.skuNumber)
+                                           // print(self.skuNumber)
                                             if self.gprice.characters.count != 0 {
                                                 if self.imageurl != nil {
-                                                    print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
+                                                    //print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
                                                     
 //                                                    self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: self.gprice, imageURLHigh: self.imageurl as String, showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                     self.saveName(self.skuNumber)
@@ -1980,7 +1980,7 @@ func doneClicked(sender: AnyObject) {
                                             }else{
                                                 
                                                 if self.imageurl != nil {
-                                                    print("productName \(self.productName.text!), sku\(self.skuNumber) ,netPrice \(self.nprice),  grossPrice \(self.gprice)  ")
+                                                   // print("productName \(self.productName.text!), sku\(self.skuNumber) ,netPrice \(self.nprice),  grossPrice \(self.gprice)  ")
                                                     if(self.nprice != nil){
 //                                                        self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: "", imageURLHigh: self.imageurl as String,showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                         self.saveName(self.skuNumber)
@@ -2013,7 +2013,7 @@ func doneClicked(sender: AnyObject) {
                                                 
                                                 if self.gprice.characters.count != 0 {
                                                     if self.imageurl != nil {
-                                                        print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
+                                                        //print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
                                                         
 //                                                        self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: self.gprice, imageURLHigh: self.imageurl as String,showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                         self.saveName(self.skuNumber)
@@ -2025,7 +2025,7 @@ func doneClicked(sender: AnyObject) {
                                                 }else{
                                                     
                                                     if self.imageurl != nil {
-                                                        print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
+                                                       // print("productName \(self.productName.text!) sku\(self.skuNumber) netPrice \(self.nprice)  grossPrice \(self.gprice)  ")
                                                         if(self.nprice != nil){
 //                                                            self.saveName(self.productName.text!, sku: self.skuNumber, netPrice: self.nprice, grossPrice: "", imageURLHigh: self.imageurl as String,showPrc: shwdsc, percnt: self.discountLbl.text!)
                                                             self.saveName(self.skuNumber)
@@ -2061,7 +2061,7 @@ func doneClicked(sender: AnyObject) {
                                                         for searchstring in people
                                                         {
 //                                                            print(searchstring.valueForKey("desc"))
-                                                            print(searchstring.valueForKey("sku"))
+                                                           // print(searchstring.valueForKey("sku"))
 //                                                            print(searchstring.valueForKey("netPrice"))
 //                                                            print(searchstring.valueForKey("grossPrice"))
 //                                                            print(searchstring.valueForKey("imageURLHigh"))
@@ -2076,7 +2076,7 @@ func doneClicked(sender: AnyObject) {
                                                     }
                                                     
                                                 } catch let error as NSError {
-                                                    print("Could not fetch \(error), \(error.userInfo)")
+                                                    //print("Could not fetch \(error), \(error.userInfo)")
                                                 }
                                                 
                                                 
@@ -2090,7 +2090,7 @@ func doneClicked(sender: AnyObject) {
                                     }
                                     
                                 } catch let error as NSError {
-                                    print("Could not fetch \(error), \(error.userInfo)")
+                                   // print("Could not fetch \(error), \(error.userInfo)")
                                 }
                                 
                                 self.PincodechkV1.hidden = false
@@ -2160,7 +2160,7 @@ func doneClicked(sender: AnyObject) {
         wsm.getOthersreviewDetails(self.vendorPartNumber as String, PageIndex: "0", onSearchPage: false, onProductPage: true, onReviewPage: false, onAdminPage: false)
     }
     func getmyReview(notification: NSNotification)  {
-         print(notification)
+        // print(notification)
         var ratingcommentArray:NSMutableArray!=NSMutableArray()
         let dict : AnyObject = notification.userInfo!
         let ratingReviewDict = dict["ratingReview"] as! NSArray
@@ -2199,7 +2199,7 @@ func doneClicked(sender: AnyObject) {
         }
     }
     @IBAction func givMyRatingClk(){
-     print(giveRatingView.rating)
+    // print(giveRatingView.rating)
         
         let defaults = NSUserDefaults.standardUserDefaults()
         if let usernm = defaults.valueForKey("userId"){
@@ -2262,7 +2262,7 @@ func doneClicked(sender: AnyObject) {
             {
                 let authorization = authorizationWithLogin
                 
-                print(authorization)
+               // print(authorization)
                 headers = [
                     
                     "Authorization" : authorization,
@@ -2285,14 +2285,14 @@ func doneClicked(sender: AnyObject) {
         allowedCharacters.removeCharactersInString("+/=")
         
         if let encodedString = unencodedString.stringByAddingPercentEncodingWithAllowedCharacters(allowedCharacters) {
-            print(encodedString)
+           // print(encodedString)
              url = NSURL(string: "\(baseUrl)product?mpn=\(encodedString)&mpnn=\(encodedString)&mp=\(encodedString)")
            //url = NSURL(string: "http://immarketapi-stg1.azurewebsites.net/api/product?mpn=\(self.vendorPartNumber)&mpnn=\(self.vendorPartNumber)&mp=\(self.vendorPartNumber)")
         }
 
        //var url: NSURL!
        
-        print(url)
+       // print(url)
         
 //        let encodedHost = url.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
 //
@@ -2304,10 +2304,10 @@ func doneClicked(sender: AnyObject) {
             
             .responseJSON { response in
                 self.dismissViewControllerAnimated(true, completion: nil)
-                print(response.request)
-                print(response.response)
-                print(response.data)
-                print(response.result.value)
+//                print(response.request)
+//                print(response.response)
+//                print(response.data)
+//                print(response.result.value)
                 
                 if(response.result.isSuccess)
                 { LoadingOverlay.shared.hideOverlayView()
@@ -2349,12 +2349,12 @@ func doneClicked(sender: AnyObject) {
     func getOtherReview(notification: NSNotification)  {
        // print(jsonstr)
         let dict : AnyObject = notification.userInfo!
-        print(dict["ratingCount"])
+       // print(dict["ratingCount"])
         
         let ratingCountDict = dict["ratingCount"] as! NSArray
-        print(ratingCountDict.count)
+       // print(ratingCountDict.count)
          let ratingReviewDict = dict["ratingReview"] as! NSArray
-        print(ratingReviewDict.count)
+      //  print(ratingReviewDict.count)
         if(ratingCountDict.count > 0){
           NoReviewsLbl.hidden = true
         for forecast in ratingCountDict
@@ -2372,17 +2372,17 @@ func doneClicked(sender: AnyObject) {
       //  print(forecast["totalCount"] as! Int)
                
             }else{
-                print(forecast["totalProductCount"]!)
+                //print(forecast["totalProductCount"]!)
                 if  forecast["totalProductCount"]! != nil
                 {
                 //    print(ttlcount)
                 totalReviewCnt = forecast["totalProductCount"] as! Int
-                    print(totalReviewCnt)
+                    //print(totalReviewCnt)
                 userratingview.rating = forecast["overallRating"] as! Float
                 // let rtng = round(forecast["overallRating"] as! Float)
                 totalReviewCntLbl.text =  "\(totalReviewCnt) Review"
              //   totalReviewLable.text =  "\(totalReviewCnt) Review"
-                print(forecast["totalProductCount"] as! Int)
+                //print(forecast["totalProductCount"] as! Int)
                 }
             }
         }
@@ -2690,12 +2690,12 @@ func doneClicked(sender: AnyObject) {
                 }
                 //                data.append(people)
             } catch let error as NSError {
-                print("Could not fetch \(error), \(error.userInfo)")
+               // print("Could not fetch \(error), \(error.userInfo)")
             }
             
         } catch let error as NSError
         {
-            print("Could not save \(error), \(error.userInfo)")
+           // print("Could not save \(error), \(error.userInfo)")
         }
     }
     
@@ -2744,10 +2744,10 @@ func doneClicked(sender: AnyObject) {
             let trimmedProductprice = self.nprice.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
             let  text2 = self.nprice.stringByReplacingOccurrencesOfString("₹", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             var trimmedProductprice1 = text2.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-            print(trimmedProductprice1)
-            
-            print(pincode1)
-            print(trimmedProductprice)
+//            print(trimmedProductprice1)
+//            
+//            print(pincode1)
+//            print(trimmedProductprice)
             
             let headers = [
                 "Authorization": authorizationWithoutLogin,
@@ -2765,8 +2765,8 @@ func doneClicked(sender: AnyObject) {
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.result)
-                     print(response)
+//                    print(response.result)
+//                     print(response)
                     if let JSON = response.result.value
                     {
                         
@@ -2775,13 +2775,13 @@ func doneClicked(sender: AnyObject) {
                             
                             let codstr = "\(COD)"
                             
-                            print("COD:\(codstr)")
+                           // print("COD:\(codstr)")
                             if let isdelievraable: AnyObject  = JSON["isDeliverable"]
                             {
                                 
                                 
                                 let freeDeliverystr = "\(isdelievraable)"
-                                print("DELIVERIABLE:\(freeDeliverystr)")
+                               // print("DELIVERIABLE:\(freeDeliverystr)")
                                 
                                 if (codstr == "1"  && freeDeliverystr == "1")
                                 {
@@ -3200,8 +3200,8 @@ func doneClicked(sender: AnyObject) {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
                    replacementString string: String) -> Bool
     {
-        print(string)
-        print(textField.text?.characters.count)
+       // print(string)
+       // print(textField.text?.characters.count)
         if textField.text!.characters.count == 1 {
             self.pincodestatuslbl.textColor = UIColor (red: 8.0/255.0, green: 100.0/255.0, blue: 3.0/255.0, alpha: 1.0)
             
@@ -3236,14 +3236,14 @@ func doneClicked(sender: AnyObject) {
         self.productDict.setValue(self.skuNumber, forKey: "productId")
         self.productDict.setValue(self.vendorPartNumber, forKey: "vendorPartNumber")
         
-         print("net price \(self.netPrc.stringByReplacingOccurrencesOfString(",", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil))")
-        print("net price \(self.netPrc.stringByReplacingOccurrencesOfString(".00", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil))")
+         //print("net price \(self.netPrc.stringByReplacingOccurrencesOfString(",", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil))")
+        //print("net price \(self.netPrc.stringByReplacingOccurrencesOfString(".00", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil))")
         let str = self.netPrc.stringByReplacingOccurrencesOfString(",", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
          let str2 = str.stringByReplacingOccurrencesOfString(".00", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
        // var a = Int(self.netPrc)
          var a = Int(str2)
         var b = Int(qnt!)
-        print("price \(a) qnt \(b)")
+        //print("price \(a) qnt \(b)")
         let exprsdf = a! * b! as Int
         self.productDict.setValue(exprsdf, forKey: "extendedPrice")
         self.productDict.setValue("hp", forKey: "vendorCode")
@@ -3301,11 +3301,11 @@ func doneClicked(sender: AnyObject) {
         self.productDict.setValue(qnt, forKey: "quantity")
         self.productDict.setValue(self.skuNumber, forKey: "productId")
         self.productDict.setValue(self.vendorPartNumber, forKey: "vendorPartNumber")
-        print("net price \(self.netPrc)")
-             print("price label \(self.pricelabel.text)")
+       // print("net price \(self.netPrc)")
+             //print("price label \(self.pricelabel.text)")
         var a = Int(self.netPrc)
         var b = Int(qnt!)
-        print("price \(a) qnt \(b)")
+        //print("price \(a) qnt \(b)")
         let exprsdf = a! * b! as Int
         self.productDict.setValue(exprsdf, forKey: "extendedPrice")
         //self.productDict.setValue(self.pricelabel.text, forKey: "extendedPrice")
@@ -3330,7 +3330,7 @@ func doneClicked(sender: AnyObject) {
                 wsm.addToBasketOnlineDetails(usernm as! Int, sitecode: "IN", productDet: self.productDict)
         }else{
             LoadingOverlay.shared.hideOverlayView()
-            print("sku no  \(skuno)")
+           // print("sku no  \(skuno)")
             addToLocalcart(Int(self.netPrc)!, quantity: qnt!, productId: self.skuNumber, vendorPartNumber: self.vendorPartNumber as String, extendedPrice: exprsdf, vendorCode: self.vendorCode as String, description: self.productName.text!, imageURLMedium: self.imageURLMedium as String, sellerName: self.sellerName, sellerNumber: self.sellerNumber as String, limitedStock: self.limitedStock, maximumQuantity: self.maximumQuantity, availabilty: self.availabilty, skuNumber: self.skuno,prodDic: self.productDict,basketId: "",lineItemId: "",cartprice : self.priceforcart!)
             
             // addToLocalcart(prc as! Int, quantity: String(qnt), productId: String(productDictin["productId"]!), vendorPartNumber: String(productDictin["vendorPartNumber"]!), extendedPrice: exprsdf, vendorCode: String(productDictin["vendorCode"]!), description: String(productDictin["description"]!), /Users/administrator/Documents/MarketPlaceNew_2phase/Archive/scrolltableView/scrolltableView/ViewController.swiftimageURLMedium: "", sellerName: String(productDictin["sellerName"]!), sellerNumber: String(productDictin["sellerNumber"]!), limitedStock:limitedStock , maximumQuantity: maximumQuantity, availabilty: avaliableQuantity1, skuNumber: String(productDictin["skuNumber"]!),prodDic: productDictin,basketId: "",lineItemId: "")
@@ -3376,14 +3376,14 @@ func doneClicked(sender: AnyObject) {
         self.productDict.setValue(qnt, forKey: "quantity")
         self.productDict.setValue(self.skuNumber, forKey: "productId")
         self.productDict.setValue(self.vendorPartNumber, forKey: "vendorPartNumber")
-        print("net price \(self.netPrc)")
+      //  print("net price \(self.netPrc)")
         var str = self.netPrc.stringByReplacingOccurrencesOfString(",", withString: "")
             str = str.stringByReplacingOccurrencesOfString(".00", withString: "")
         var a = Int(str)
         
             
         var b = Int(qnt!)
-        print("price \(a) qnt \(b)")
+        //print("price \(a) qnt \(b)")
         let exprsdf = a! * b! as Int
         self.productDict.setValue(exprsdf, forKey: "extendedPrice")
         self.productDict.setValue("hp", forKey: "vendorCode")
@@ -3465,7 +3465,7 @@ func doneClicked(sender: AnyObject) {
                                                        insertIntoManagedObjectContext: managedContext)
                     
                     //3
-                    print(self.pricelabel.text)
+                   // print(self.pricelabel.text)
                     recentsearch.setValue(placedPrice, forKey: "placedPrice")
                     recentsearch.setValue(cartprice, forKey: "cartPrice")
                     //recentsearch.setValue(self.pricelabel.text, forKey: "placedPrice")
@@ -3490,7 +3490,7 @@ func doneClicked(sender: AnyObject) {
                         
                         
                     } catch let error as NSError  {
-                        print("Could not save \(error), \(error.userInfo)")
+                       // print("Could not save \(error), \(error.userInfo)")
                     }
                 }  else
                 {
@@ -3506,7 +3506,7 @@ func doneClicked(sender: AnyObject) {
                     var qnty:Int = Int(qnt)!
                     qnty = qnty + 1
                     do {
-                        print(placedPrice)
+                        //print(placedPrice)
                         person.setValue(placedPrice, forKey: "placedPrice")
                         person.setValue(cartprice, forKey: "cartPrice")
                        // person.setValue(self.pricelabel.text, forKey: "placedPrice")
@@ -3531,7 +3531,7 @@ func doneClicked(sender: AnyObject) {
                             
                             
                         } catch let error as NSError  {
-                            print("Could not save \(error), \(error.userInfo)")
+                           // print("Could not save \(error), \(error.userInfo)")
                         }
                         
                     } catch _ {
@@ -3572,11 +3572,11 @@ func doneClicked(sender: AnyObject) {
                  }
                 //                data.append(people)
             } catch let error as NSError {
-                print("Could not fetch \(error), \(error.userInfo)")
+               // print("Could not fetch \(error), \(error.userInfo)")
             }
             
         } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+           // print("Could not fetch \(error), \(error.userInfo)")
         }
     
     
@@ -3608,10 +3608,10 @@ func doneClicked(sender: AnyObject) {
             self.productDict.setValue(qnt, forKey: "quantity")
             self.productDict.setValue(self.skuNumber, forKey: "productId")
             self.productDict.setValue(self.vendorPartNumber, forKey: "vendorPartNumber")
-            print("net price \(self.netPrc)")
+           // print("net price \(self.netPrc)")
             let a = Int(self.netPrc!)
             let b = Int(qnt!)
-            print("price \(a!) qnt \(b!)")
+            //print("price \(a!) qnt \(b!)")
             let exprsdf = a! * b!
              // chkVC.TotalPrice = "₹ \(String(exprsdf))"
             if let totalstring = string.valueForKey("buyNowGrossTotalDisplayString") as? String{
@@ -3645,7 +3645,7 @@ func doneClicked(sender: AnyObject) {
             }
            // }
         }
-        print(string.valueForKey("lineCount"))
+       // print(string.valueForKey("lineCount"))
         
         }
     }
@@ -3854,11 +3854,11 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         //let url = similProdImgArr[indexPath.row] as! String
         let url =   proddetail["imageURLMedium"] as! String
         let imgURL: NSURL = NSURL(string: url)!
-        print(imgURL.absoluteString)
+        //print(imgURL.absoluteString)
         
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+            //print("IN cache")
             cell.ImgViewSimilarProd.image = image
             
         }
@@ -3868,15 +3868,15 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+                   // print(response.request)
+                   // print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                       // print(imgURL.absoluteString)
                         cell.ImgViewSimilarProd.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }

@@ -237,7 +237,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate,web
     }
     
     func badgecountResponse(notification: NSNotification){
-        print(notification.userInfo)
+       // print(notification.userInfo)
         let string : AnyObject = notification.userInfo!
         var cartCnt : NSMutableArray! = NSMutableArray()
         if let bastetcartarry = string.valueForKey("lstBasket") as? NSArray{
@@ -248,7 +248,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate,web
                 cartCnt.addObject(forecast)
                 
             }
-            print(String(bastetcartarry.count))
+           // print(String(bastetcartarry.count))
             let tabArray = self.tabBarController?.tabBar.items as NSArray!
             let tabItem = tabArray.objectAtIndex(2) as! UITabBarItem
             tabItem.badgeValue = String(bastetcartarry.count)
@@ -259,7 +259,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate,web
             
             LoadingOverlay.shared.hideOverlayView()
 
-            print(bastetcartarry.count)
+           // print(bastetcartarry.count)
             
         }
         
@@ -314,7 +314,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate,web
     func loginsuccesfull(notification: NSNotification)
     {
         
-         print("login successfull")
+        // print("login successfull")
         if let usernm = defaults.valueForKey("email") , let pwd = defaults.valueForKey("password"),let fullname = defaults.valueForKey("fullname")
         {
         self.emailLbl.text = usernm as! String
@@ -354,7 +354,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate,web
                // Globalstateid = stid as! NSString
              AccountSettingObj.Location += [add as! String]
             
-            print(AccountSettingObj.Location)
+           // print(AccountSettingObj.Location)
 //             authorizationWithLogin1 = "Mobilestg1456~\(blog!.valueForKey("token")!)~\(blog!.valueForKey("userId")!)~Customer~null~\(receivednumber1["stateId"]!)"
 //             authorizationWithLogin = "Mobilestg2456~\(blog!.valueForKey("token")!)~\(blog!.valueForKey("userId")!)~Customer~null~\(receivednumber1["stateId"]!)"
             

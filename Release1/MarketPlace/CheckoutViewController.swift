@@ -238,6 +238,19 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                                 
                                 
                             }else{
+                                let promoCode = JSON["promoCode"] as? String
+                                if(promotional != 0 && promoCode == "GET500"){
+                                    var textLB = JSON["promotionalDisplayString"] as? String
+                                    var newText = textLB!.stringByTrimmingCharactersInSet(NSCharacterSet.init(charactersInString: "-"))
+                                    var newPrice = "  - ₹ \((newText))"
+                                    self.promoBTn.setTitle(newPrice, forState: .Normal)
+                                   self.promoBTn.titleLabel?.textAlignment = .Right
+                                    self.promoBTn.setTitleColor(UIColor(red: 227.0/255.0, green: 0.0/255.0, blue: 2.0/255.0, alpha: 1.0), forState: .Normal)
+                                    
+                                    
+                                }else{
+                                    
+                                }
                                  self.totalMoneyLabel?.text = "₹ \(String(totl))"
                                     }
                                 }else{
@@ -332,6 +345,17 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                                         
                                         
                                     }else{
+                                        let promoCode = JSON["promoCode"] as? String
+                                        if(promotional != 0 && promoCode == "GET500"){
+                                            var textLB = JSON["promotionalDisplayString"] as? String
+                                            var newText = textLB!.stringByTrimmingCharactersInSet(NSCharacterSet.init(charactersInString: "-"))
+                                            var newPrice = "  - ₹ \((newText))"
+                                            self.promoBTn.setTitle(newPrice, forState: .Normal)
+                                            self.promoBTn.titleLabel?.textAlignment = .Right
+                                            self.promoBTn.setTitleColor(UIColor(red: 227.0/255.0, green: 0.0/255.0, blue: 2.0/255.0, alpha: 1.0), forState: .Normal)
+                                        }else{
+                                           
+                                        }
                                         self.totalMoneyLabel?.text = "₹ \(String(totl))"
                                     }
                                 }else{

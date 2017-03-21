@@ -24,7 +24,7 @@ class AccountRegistrationWebView: UIViewController,UIWebViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(self.orderid)
+        //print(self.orderid)
         self.webv.delegate = self
         let url = NSBundle.mainBundle().URLForResource("registration", withExtension:"html")
         let request = NSURLRequest(URL: url!)
@@ -70,12 +70,12 @@ class AccountRegistrationWebView: UIViewController,UIWebViewDelegate {
     
     func webViewDidStartLoad(webView : UIWebView) {
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = true
-        print("AA")
+       // print("AA")
     }
     
     func webViewDidFinishLoad(webView : UIWebView) {
         //UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-        print("BB")
+        //print("BB")
         if (webView.loading)
         {
         return
@@ -99,19 +99,19 @@ class AccountRegistrationWebView: UIViewController,UIWebViewDelegate {
         //        if (![request.URL.scheme isEqualToString:myAppScheme]) {
         //            return YES;
         //        }
-        print(request.URL?.scheme)
-        print(request.URL?.host)
+      //  print(request.URL?.scheme)
+      //  print(request.URL?.host)
         
         if (request.URL?.scheme != myAppScheme)
         {
             return true;
         }
-        print(request.URL?.fragment!)
+       // print(request.URL?.fragment!)
             let  actionType : String = (request.URL?.host)!
             let  jsonDictString : String = (request.URL?.fragment!.stringByReplacingPercentEscapesUsingEncoding(NSASCIIStringEncoding))!
         let  text2 = jsonDictString.stringByReplacingOccurrencesOfString("\"", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let  text3 = text2.stringByReplacingOccurrencesOfString("}", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        print(text2)
+      //  print(text2)
        
         
         let tokenstring : String!
@@ -125,9 +125,9 @@ class AccountRegistrationWebView: UIViewController,UIWebViewDelegate {
                // LoadingOverlay.shared.showOverlay(window)
                 
                 let wsm : WebServiceClass = WebServiceClass.sharedInstance
-                print("token %@,%@",token,orderid)
+              //  print("token %@,%@",token,orderid)
                 wsm.accregister(token, oredrID: orderid)
-            print("token %@",token)
+          //  print("token %@",token)
         }
         
         if (request.URL?.scheme == myAppScheme)

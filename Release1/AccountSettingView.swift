@@ -132,7 +132,7 @@ class AccountSettingView: UIViewController , UITextFieldDelegate, UIGestureRecog
          
             if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
             {
-                print(blog)
+                //print(blog)
                 wsm.callAdressApi(blog.valueForKey("userId")! as! Int)
                 self.emailTextField.text = blog.valueForKey("email")! as! String
                 self.personalNameTF.text = blog.valueForKey("firstName")! as! String
@@ -362,7 +362,7 @@ class AccountSettingView: UIViewController , UITextFieldDelegate, UIGestureRecog
     {
         if let dfaultadd : Bool = address["isDefault"] as! Bool
     {
-        print(dfaultadd)
+       // print(dfaultadd)
         if(dfaultadd)
         {
         self.addressTextField.text = "\(address["address1"] as! String),\(address["area"] as! String),\(address["city"] as! String),\(address["stateName"] as! String),\(address["zipCode"] as! String)"
@@ -374,7 +374,7 @@ class AccountSettingView: UIViewController , UITextFieldDelegate, UIGestureRecog
     }
     func  callAddressapiFailedDelegate()
     {
-    print("ERROR")
+   // print("ERROR")
     
     }
     func textFieldDidEndEditing(textField: UITextField) {

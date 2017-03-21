@@ -67,6 +67,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
     @IBOutlet var wifiImg:UIImageView!
     @IBOutlet var noconnetinlbl:UILabel!
     @IBOutlet var retryBtn:UIButton!
+    var availableQntArray:NSMutableArray!=NSMutableArray()
     var dataLayer: TAGDataLayer = TAGManager.instance().dataLayer
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,19 +110,20 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
         ]
         //
        
-        print("url  \(baseUrl)product?id=\(productDictin["productId"]!)&offers=X")
+       // print("url  \(baseUrl)product?id=\(productDictin["productId"]!)&offers=X")
         // JHProgressHUD.sharedHUD.showInWindow(self.view.window!)
         Alamofire.request(.GET, "\(baseUrl)product?id=\(productDictin["productId"]!)&offers=X", headers: headers)
             .validate(contentType: ["application/json"])
             
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)
                 var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
                 print("Body: \(strData)")// server data
-                print(response.result)   // result of response serialization
+                //print(response.result)   // result of response serialization
                 self.productSellerArray.removeAllObjects()
+                self.availableQntArray = NSMutableArray()
                 if let JSON : NSArray = response.result.value as! NSArray {
                     
                     for (index, seller) in JSON.enumerate() {
@@ -158,19 +160,24 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
                         {
                             // self.priceArr.addObject(skuNumber)
                             prodDet.setValue(avaliableQuantity, forKey: "avaliableQuantity")
+                        }else{
+                             prodDet.setValue(0, forKey: "avaliableQuantity")
                         }
                         if let sellerName : String = seller["sellerName"] as? String where index > 0
                         {
                             self.sellerArr.addObject(sellerName)
                             prodDet.setValue(sellerName, forKey: "sellerName")
-                            
-                           
+                            if let avaliableQuantity : Int = seller["avaliableQuantity"] as? Int where index > 0
+                            {
+                                // self.priceArr.addObject(skuNumber)
+                               self.availableQntArray.addObject(avaliableQuantity)
+                            }
                         }
                          self.productSellerArray.addObject(prodDet)
                         let  headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! CustomHeaderCell
                         headerCell.headerImage.hidden =  false
-                         print(prodDet)
-                         print(seller.valueForKey("netPrice"))
+//                         print(prodDet)
+//                         print(seller.valueForKey("netPrice"))
                     }
                    
                 }
@@ -230,8 +237,9 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
     }
     func internetReachable(notification:NSNotification){
        noInternetClk()
-        print("in reseller via reachable")
+        //print("in reseller via reachable")
     }
+    
     @IBAction func noInternetClk(){
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         if (appdelegate.isReachable == true)
@@ -245,18 +253,18 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
             ]
             //
             
-            print("url  \(baseUrl)product?id=\(productDictin["productId"]!)&offers=X")
+          //  print("url  \(baseUrl)product?id=\(productDictin["productId"]!)&offers=X")
             // JHProgressHUD.sharedHUD.showInWindow(self.view.window!)
             Alamofire.request(.GET, "\(baseUrl)product?id=\(productDictin["productId"]!)&offers=X", headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)
                     var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
                     print("Body: \(strData)")// server data
-                    print(response.result)   // result of response serialization
+                   // print(response.result)   // result of response serialization
                     self.productSellerArray.removeAllObjects()
                     if let JSON : NSArray = response.result.value as! NSArray {
                         
@@ -305,8 +313,8 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
                             self.productSellerArray.addObject(prodDet)
                             let  headerCell = self.tableView.dequeueReusableCellWithIdentifier("HeaderCell") as! CustomHeaderCell
                             headerCell.headerImage.hidden =  false
-                            print(prodDet)
-                            print(seller.valueForKey("netPrice"))
+//                            print(prodDet)
+//                            print(seller.valueForKey("netPrice"))
                         }
                         
                     }
@@ -342,7 +350,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
         {
        // var prodDet:NSMutableDictionary!
            let prodDet = self.productSellerArray[tagIndx+1]
-            print(prodDet)
+          //  print(prodDet)
             
         isClick="buynow"
         var qnt = qnty
@@ -351,7 +359,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
         qnt = qnt.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
         // let prodDet:NSMutableDictionary! = self.productSellerArray[tagIndx] as! NSMutableDictionary
-          print("prodDet    \(self.priceArr[tagIndx])")
+          //print("prodDet    \(self.priceArr[tagIndx])")
         // self.productDictin.setValue(self.productSellerArray[tagIndx].valueForKey("imageURLMedium"), forKey: "imageURLMedium")
         self.productDictin.setValue(prodDet.valueForKey("sellerName"), forKey: "sellerName")
         self.productDictin.setValue(prodDet.valueForKey("sellerNumber"), forKey: "sellerNumber")
@@ -361,14 +369,14 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
         self.productDictin.setValue(qnt, forKey: "quantity")
              self.productDictin.setValue("y", forKey: "runSalesOrder")
         self.productDictin.setValue(self.priceArr[tagIndx], forKey: "placedPrice")
-            print(productDictin)
+           // print(productDictin)
         var abc = productDictin["placedPrice"]! as! String
         var str = abc.stringByReplacingOccurrencesOfString(",", withString: "")
              str = str.stringByReplacingOccurrencesOfString(".00", withString: "")
-        print(abc)
+       // print(abc)
             let a = Int(str as String)
         let b = Int(qnt)
-        print("price \(a) qnt \(b)")
+        //print("price \(a) qnt \(b)")
         let exprsdf = a! * b! as Int
         self.productDictin.setValue(exprsdf, forKey: "extendedPrice")
         
@@ -402,8 +410,8 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
         if (appdelegate.isReachable == true)
         {
             let prodDet = self.productSellerArray[tagIndx+1]
-            print(prodDet)
-        print("qnty \(qnty)  tag \(tagIndx) productSellerArray \(self.productSellerArray.count) ")
+           // print(prodDet)
+       // print("qnty \(qnty)  tag \(tagIndx) productSellerArray \(self.productSellerArray.count) ")
         isClick="cart"
         var qnt = qnty
         var arqnt = qnt.componentsSeparatedByString(":")
@@ -411,7 +419,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
         qnt = qnt.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
        // let prodDet:NSMutableDictionary! = self.productSellerArray[tagIndx] as! NSMutableDictionary
-        print("prodDet    \(productDictin["placedPrice"]!)")
+       // print("prodDet    \(productDictin["placedPrice"]!)")
        // self.productDictin.setValue(self.productSellerArray[tagIndx].valueForKey("imageURLMedium"), forKey: "imageURLMedium")
         self.productDictin.setValue(prodDet.valueForKey("sellerName"), forKey: "sellerName")
         self.productDictin.setValue(prodDet.valueForKey("sellerNumber"), forKey: "sellerNumber")
@@ -427,11 +435,11 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
        // let a:Int = Int(str)!
         let a = Int(str)
         let b = Int(qnt)
-        print("price \(a) qnt \(b)")
+       // print("price \(a) qnt \(b)")
         let exprsdf = a! * b! as Int
         self.productDictin.setValue(exprsdf, forKey: "extendedPrice")
         
-         print(self.productDictin)
+       //  print(self.productDictin)
             
             
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -443,9 +451,9 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
             wsm.addToBasketOnlineDetails(usernm as! Int, sitecode: "IN", productDet: self.productDictin)
         }else{
 
-                print("prod dict \(productDictin)")
+               // print("prod dict \(productDictin)")
             var abc = productDictin["placedPrice"]! as! String
-            print(abc)
+           // print(abc)
             //var str : String = productDictin["placedPrice"] as! String
             abc = abc.stringByReplacingOccurrencesOfString(",", withString: "")
             abc = abc.stringByReplacingOccurrencesOfString(".00", withString: "")
@@ -460,18 +468,18 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
             {
             avaliableQuantity1 = productDictin["avaliableQuantity"] as! Int
             }
-            print(String(productDictin["productId"]!))
-                print(String(productDictin["vendorPartNumber"]!))
-                    print(String(productDictin["vendorCode"]!))
-                        print(String(productDictin["description"]!))
-                            print(String(productDictin["sellerName"]!))
-             print(String(productDictin["sellerNumber"]!))
-            print(String(productDictin["skuNumber"]!))
-            // print(prc as! Int)
-             print(String(qnt))
-            
-             print(exprsdf)
-             print(limitedStock,maximumQuantity,avaliableQuantity1)
+//            print(String(productDictin["productId"]!))
+//                print(String(productDictin["vendorPartNumber"]!))
+//                    print(String(productDictin["vendorCode"]!))
+//                        print(String(productDictin["description"]!))
+//                            print(String(productDictin["sellerName"]!))
+//             print(String(productDictin["sellerNumber"]!))
+//            print(String(productDictin["skuNumber"]!))
+//            // print(prc as! Int)
+//             print(String(qnt))
+//            
+//             print(exprsdf)
+//             print(limitedStock,maximumQuantity,avaliableQuantity1)
 //            let imageurl = productDictin["imageURLMedium"] as! String
 //            if imageurl.isEmpty
 //            {
@@ -565,6 +573,22 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
           cell.SellerName.text = "By \(self.sellerArr.objectAtIndex(indexPath.row) as! String)"
         
         
+       var proDict =  self.productSellerArray.objectAtIndex(indexPath.row) as! NSDictionary
+        
+        let availableQty = availableQntArray.objectAtIndex(indexPath.row) as? Int
+        
+      //  print(availableQty)
+        
+        if(availableQty > 0){
+            cell.AddToCart.hidden = false
+            cell.BuyNowBtn.hidden = false
+        }else{
+            cell.AddToCart.hidden = true
+            cell.BuyNowBtn.hidden = true
+        }
+        
+        
+        
         return cell
     }
 
@@ -609,8 +633,8 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
             .responseImage { response in
                 debugPrint(response)
                 
-                print(response.request)
-                print(response.response)
+//                print(response.request)
+//                print(response.response)
                 debugPrint(response.result)
                 
                 
@@ -689,9 +713,9 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
                     }
                 }  else
                 {
-//                    let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-//                    let context:NSManagedObjectContext = appDel.managedObjectContext
-//                    context.deleteObject(people.last!)
+                    //                    let appDel:AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                    //                    let context:NSManagedObjectContext = appDel.managedObjectContext
+                    //                    context.deleteObject(people.last!)
                     let person = results[0] as! NSManagedObject
                     var qnt:String!=""
                     if let qntt = person.valueForKey("quantity") as? String{
@@ -701,13 +725,13 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
                     var qnty:Int = Int(qnt)!
                     qnty = qnty + 1
                     do {
-                       // try context.save()
+                        // try context.save()
                         
-//                        let entity =  NSEntityDescription.entityForName("MyCart",
-//                                                                        inManagedObjectContext:managedContext)
-//                        
-//                        let recentsearch = NSManagedObject(entity: entity!,
-//                                                           insertIntoManagedObjectContext: managedContext)
+                        //                        let entity =  NSEntityDescription.entityForName("MyCart",
+                        //                                                                        inManagedObjectContext:managedContext)
+                        //
+                        //                        let recentsearch = NSManagedObject(entity: entity!,
+                        //                                                           insertIntoManagedObjectContext: managedContext)
                         
                         //3
                         person.setValue(placedPrice, forKey: "placedPrice")
@@ -781,11 +805,15 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
                 //                data.append(people)
             } catch let error as NSError {
                 print("Could not fetch \(error), \(error.userInfo)")
+            }catch {
+                // Catch any other errors
             }
             
             
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
+        }catch {
+            // Catch any other errors
         }
         
         
@@ -811,7 +839,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
             }
             let chkVC = self.storyboard?.instantiateViewControllerWithIdentifier("checkoutVc") as! CheckoutViewController
             //self.productDictin.setValue(qnt, forKey: "quantity")
-           print(String(productDictin["extendedPrice"]!))
+          // print(String(productDictin["extendedPrice"]!))
             chkVC.TotalPrice = "₹ \(String(productDictin["extendedPrice"]!))"
             chkVC.isCalled = "buy"
             chkVC.cartItemArray = NSArray().mutableCopy() as! NSArray
@@ -842,7 +870,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
                 }
                 // }
             }
-            print(string.valueForKey("lineCount"))
+           // print(string.valueForKey("lineCount"))
             
         }
     }

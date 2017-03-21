@@ -253,6 +253,13 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+//        
+//        let logo = UIImage(named: "titleImage")
+//        let imageView = UIImageView(image:logo)
+//        self.navigationItem.titleView = imageView
+        
+        
 //         var returnValue : [String]? = NSUserDefaults.standardUserDefaults().objectForKey("Location") as! [String]
 //        print(returnValue)
 //        
@@ -402,7 +409,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     }
     func badgecountResponse(notification: NSNotification)
     {
-        print(notification.userInfo)
+       // print(notification.userInfo)
         let string : AnyObject = notification.userInfo!
         var cartCnt : NSMutableArray! = NSMutableArray()
      //   cartCnt.removeAllObjects()
@@ -414,7 +421,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 cartCnt.addObject(forecast)
                 
             }
-            print(String(bastetcartarry.count))
+           // print(String(bastetcartarry.count))
             let tabArray = self.tabBarController?.tabBar.items as NSArray!
            
               
@@ -470,7 +477,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
 //               // self.basketArray.addObject(forecast)
 //                
 //            }
-            print(bastetcartarry.count)
+            //print(bastetcartarry.count)
            // }
            
         }
@@ -511,10 +518,10 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             let touchPoint = touch .locationInView(self.pageViewController!.view)
             if (touchPoint.y > 40 ){
                 
-                print("index touched ")
+               // print("index touched ")
                 return false
             }else{
-                print("index touched ")
+               // print("index touched ")
                 return true
             }
         }
@@ -547,15 +554,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     }
     func myDelegateFunction(string:ImgList)
     {
-        print(string)
+        //print(string)
         self.imgArrTemp = NSMutableArray()
         self.keywordsArrTemp = NSMutableArray()
         if let threeDayForecast = string.bannerList {
             if let threeDayForecast1 = threeDayForecast.homeSlot1 {
-                print(threeDayForecast1.richContent)
+               // print(threeDayForecast1.richContent)
                 self.imgArray = threeDayForecast1.richContent!.componentsSeparatedByString(";")
-                print(self.imgArray?.count)
-                print(self.imgArray?.objectAtIndex(0))
+               // print(self.imgArray?.count)
+               // print(self.imgArray?.objectAtIndex(0))
                 for str in self.imgArray!
                 {
 //                    if (str.length != nil)
@@ -577,8 +584,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                  }
                     
                 }
-                print(imgArrTemp)
-                print(keywordsArrTemp)
+               // print(imgArrTemp)
+               // print(keywordsArrTemp)
                 contentImages = NSArray.init(array: imgArrTemp!)
                 //contentImages = NSArray.init(array: self.imgArray!)
                 pageController = UIPageViewController()
@@ -596,7 +603,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
        // self.wishListArray.removeAllObjects()
         if let COD : AnyObject  = wishList["product"]
         {
-            print(COD)
+           // print(COD)
             
             if let customer : Array<LstProducts> = Mapper<LstProducts>().mapArray(COD["lstProducts"])! {
                 //  if let customer = COD["lstProducts"]{
@@ -604,8 +611,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 {
                     wishLstGlobalArray.addObject(prodt.sku!)
                  //   self.wishListArray .addObject(prodt)
-                    print("testing   \(prodt)")
-                    print("testing2")
+                  //  print("testing   \(prodt)")
+                    //print("testing2")
                     
                 }
             }
@@ -622,7 +629,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     }
     override func viewWillDisappear(animated: Bool) {
         
-         myTimer.invalidate()
+        // myTimer.invalidate()
       //  let wsm : WebServiceClass = WebServiceClass.sharedInstance
          self.navigationController?.navigationBarHidden = false
        self.tabBarController?.tabBar.hidden = false
@@ -631,6 +638,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         myTimer = nil
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "reachable", object: nil)
        // wsm.delegates=nil
+        
     }
    
     @IBAction func FeaturedProductVL(sender: AnyObject)
@@ -668,7 +676,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         RecentSkuArray = NSMutableArray()
         
         var data : String = ""
-      print(self.recentlyViewedArray)
+     // print(self.recentlyViewedArray)
         for result in self.recentlyViewedArray
         {
 //            if let skuno = result.valueForKey("sku")
@@ -749,14 +757,14 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         Alamofire.request(.GET, "\(baseUrl)MarketPlaceCMS?itemtype=featuredvendors&page=Home&key=featuredvendors",headers: headers).validate(contentType: ["application/json"])
             
             .responseJSON { response in        //responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if let JSON = response.result.value {
                     print(JSON)
                     let vendorlogo : Array<VendorLogoList> = Mapper<VendorLogoList>().mapArray(JSON)!
-                    print(self.vendorArray)
+                   // print(self.vendorArray)
                     for forecast in vendorlogo
                     {
                         self.vendorArray .addObject(forecast)
@@ -772,10 +780,10 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         Alamofire.request(.GET, "\(baseUrl)MarketPlaceCMS?itemtype=maketplaceconfiguration&page=Home&key=banner",headers: headers).validate(contentType: ["application/json"])
             //.responseJSON { response in
             .responseObject { (response: Response<ConfigurationArray, NSError>) in      //responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if let JSON = response.result.value {
                     print(JSON.toJSONString())
                     if let marketPlace = JSON.marketPlaceConfigurationLibrary {
@@ -783,25 +791,25 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                             self.noOfFeatureProd = Int(featureCont.configurationKeyValue!)
                         }
                         if let featureCont = marketPlace.newArrival_DisplayLimit{
-                            print(marketPlace.newArrival_DisplayLimit)
+                           // print(marketPlace.newArrival_DisplayLimit)
                             self.noOfNewArrival = Int(featureCont.configurationKeyValue!)
                         }
                         if let featuredProducts = marketPlace.featuredProducts{
-                            print(featuredProducts.configurationKeyValue)
+                           // print(featuredProducts.configurationKeyValue)
                             self.featuredArray = featuredProducts.configurationKeyValue!.componentsSeparatedByString(";")
-                            print("featuredArray:-",self.featuredArray.count)
-                            print("featuredArray:-",self.featuredArray)
+                           // print("featuredArray:-",self.featuredArray.count)
+                            //print("featuredArray:-",self.featuredArray)
                           //  self.callfeaturedproduct()
                             self.featureViewCollection.reloadData()
                         }
                         if let featuredProducts = marketPlace.newArrivals{
-                            print(featuredProducts.configurationKeyValue)
+                           // print(featuredProducts.configurationKeyValue)
                             self.newArrivalArray = featuredProducts.configurationKeyValue!.componentsSeparatedByString(";")
                            // self.newArrivalproduct()
-                            print("newArrivalArray:-",self.newArrivalArray)
+                           // print("newArrivalArray:-",self.newArrivalArray)
                             self.newArrivalViewCollection.reloadData()
                         }
-                        print(self.newArrivalArray)
+                       // print(self.newArrivalArray)
                     }
                     LoadingOverlay.shared.hideOverlayView()
                     self.scroll.hidden = false
@@ -873,14 +881,14 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             Alamofire.request(.GET, "\(baseUrl)MarketPlaceCMS?itemtype=featuredvendors&page=Home&key=featuredvendors",headers: headers).validate(contentType: ["application/json"])
                 
                 .responseJSON { response in        //responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if let JSON = response.result.value {
                         print(JSON)
                         let vendorlogo : Array<VendorLogoList> = Mapper<VendorLogoList>().mapArray(JSON)!
-                        print(self.vendorArray)
+                       // print(self.vendorArray)
                         for forecast in vendorlogo
                         {
                             self.vendorArray .addObject(forecast)
@@ -896,10 +904,10 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             Alamofire.request(.GET, "\(baseUrl)MarketPlaceCMS?itemtype=maketplaceconfiguration&page=Home&key=banner",headers: headers).validate(contentType: ["application/json"])
                 //.responseJSON { response in
                 .responseObject { (response: Response<ConfigurationArray, NSError>) in      //responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if let JSON = response.result.value {
                         print(JSON.toJSONString())
                         if let marketPlace = JSON.marketPlaceConfigurationLibrary {
@@ -907,25 +915,25 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                 self.noOfFeatureProd = Int(featureCont.configurationKeyValue!)
                             }
                             if let featureCont = marketPlace.newArrival_DisplayLimit{
-                                print(marketPlace.newArrival_DisplayLimit)
+                                //print(marketPlace.newArrival_DisplayLimit)
                                 self.noOfNewArrival = Int(featureCont.configurationKeyValue!)
                             }
                             if let featuredProducts = marketPlace.featuredProducts{
-                                print(featuredProducts.configurationKeyValue)
+                               // print(featuredProducts.configurationKeyValue)
                                 self.featuredArray = featuredProducts.configurationKeyValue!.componentsSeparatedByString(";")
-                                print("featuredArray:-",self.featuredArray.count)
-                                print("featuredArray:-",self.featuredArray)
+                               // print("featuredArray:-",self.featuredArray.count)
+                               // print("featuredArray:-",self.featuredArray)
                                 //  self.callfeaturedproduct()
                                 self.featureViewCollection.reloadData()
                             }
                             if let featuredProducts = marketPlace.newArrivals{
-                                print(featuredProducts.configurationKeyValue)
+                                //print(featuredProducts.configurationKeyValue)
                                 self.newArrivalArray = featuredProducts.configurationKeyValue!.componentsSeparatedByString(";")
                                 // self.newArrivalproduct()
-                                print("newArrivalArray:-",self.newArrivalArray)
+                                //print("newArrivalArray:-",self.newArrivalArray)
                                 self.newArrivalViewCollection.reloadData()
                             }
-                            print(self.newArrivalArray)
+                            //print(self.newArrivalArray)
                         }
                         LoadingOverlay.shared.hideOverlayView()
                         self.scroll.hidden = false
@@ -960,7 +968,14 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     
     override func viewWillAppear(animated: Bool) {
        //self.tabBarController?.tabBar.set
-        self.title="IMOL"
+        //self.title="IMOL"
+        
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 40))
+        imageView.contentMode = .ScaleAspectFit
+        let image = UIImage(named: "titleImage")
+        imageView.image = image
+        navigationItem.titleView = imageView
+        
        // self.navigationController?.navigationBar.titl
         let items = self.tabBarController?.tabBar.items
         let tabItem = items![0]
@@ -1016,7 +1031,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     
     func  callfeaturedproduct ()
     {
-        print("data is not available")
+        //print("data is not available")
         let headers = [
             "Authorization": authorizationWithoutLogin,
             "Accept": "application/json"
@@ -1028,34 +1043,34 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         {
             data += "\(str);"
         }
-        print(data)
+       // print(data)
         //                let data = self.featuredArray.objectAtIndex(indexPath.row).stringByTrimmingCharactersInSet(
         //                    NSCharacterSet.whitespaceAndNewlineCharacterSet())
         
         let url = NSURL(string:"\(baseUrl)product?txtSearch=\(data)")
-        print(url!.absoluteString, terminator: "")
+        //print(url!.absoluteString, terminator: "")
         
         Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
             .responseJSON { response in
                 //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if let JSON = response.result.value {
                     print(JSON)
                     let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
                     let customer1 : Array<LstProducts> = Mapper<LstProducts>().mapArray(JSON)!
-                    print(customer)
-                    print(customer1)
+//                    print(customer)
+//                    print(customer1)
                     self.featuredArrayViewAll.removeAllObjects()
                     
                     for product in customer1
                     {
                     self.featuredArrayViewAll .addObject(product)
-                    print(product.description)
+                    //print(product.description)
                     }
-                    print(self.featuredArrayViewAll)
+                   // print(self.featuredArrayViewAll)
                     
                     let collectionViewPush = self.storyboard?.instantiateViewControllerWithIdentifier("productList") as! CollectionViewController
                     collectionViewPush.comingfrom = "ViewAll"
@@ -1188,7 +1203,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     func  newArrivalproduct ()
     {
         
-        print("data is not available")
+        //print("data is not available")
         
         let headers = [
             "Authorization":authorizationWithoutLogin,
@@ -1214,8 +1229,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         let trimmedString = data.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
          let trimmedString2 = trimmedString.stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let trimmedString3 = trimmedString2.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        print(data)
-        print(trimmedString3)
+//        print(data)
+//        print(trimmedString3)
 
         
         let url = NSURL(string:"\(baseUrl)product?txtSearch=\(trimmedString3)")
@@ -1224,10 +1239,10 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
             .responseJSON { response in
                 //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if let JSON = response.result.value {
                     print(JSON)
                     self.NewArrArrayViewAll.removeAllObjects()
@@ -1235,24 +1250,24 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     
                     let customer1 : Array<LstProducts> = Mapper<LstProducts>().mapArray(JSON)!
                    // print(customer)
-                    print(customer1)
+                   // print(customer1)
                     
                     for product in customer1
                     {
                         self.NewArrArrayViewAll .addObject(product)
-                        print(product.description)
+                        //print(product.description)
                     }
                     
                    
 
-                    print(self.NewArrArrayViewAll)
+                   // print(self.NewArrArrayViewAll)
     }
         }
     }
     func  recentlyViewedProduct ()
     {
         self.recentlyViewARR.removeAllObjects()
-        print("data is not available")
+        //print("data is not available")
         
         let headers = [
             "Authorization":authorizationWithoutLogin,
@@ -1276,8 +1291,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         let trimmedString = data.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         let trimmedString2 = trimmedString.stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let trimmedString3 = trimmedString2.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        print(data)
-        print(trimmedString3)
+//        print(data)
+//        print(trimmedString3)
         
         
         let url = NSURL(string:"\(baseUrl)product?txtSearch=\(trimmedString3)")
@@ -1286,18 +1301,18 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
             .responseJSON { response in
                 //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if let JSON = response.result.value {
-                    print(JSON)
+                   // print(JSON)
                     
                     //  let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
                     
                     let customer1 : Array<LstProducts> = Mapper<LstProducts>().mapArray(JSON)!
                     // print(customer)
-                    print(customer1)
+                   // print(customer1)
                     
                     for product in customer1
                     {
@@ -1314,7 +1329,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     
     func internetReachable(notification:NSNotification){
         retryBtnClk()
-        print("in landing via reachable")
+        //print("in landing via reachable")
     }
     override func viewDidAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
@@ -1398,7 +1413,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     arr.addObject(searchstring.valueForKey("sku")!)
                     
                    // print(searchstring.valueForKey("desc")!)
-                   print(searchstring.valueForKey("sku"))
+                  // print(searchstring.valueForKey("sku"))
 //                   print(searchstring.valueForKey("netPrice"))
 //                    print(searchstring.valueForKey("grossPrice"))
 //                    print(searchstring.valueForKey("imageURLHigh"))
@@ -1462,7 +1477,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             self.recencetlyDataArray.removeAllObjects()
             if (self.recencetlyDataArray.count > indexPath.row)
             {
-                print("data is available")
+                //print("data is available")
              //   print("newArrivalDataArray:",self.newArrivalDataArray.description)
                 let prod = self.recencetlyDataArray.objectAtIndex(indexPath.row) as! ProductDetails
                 cell.categoryLabl.text = prod.description
@@ -1578,11 +1593,11 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 
                 let url =  prod.imageURLHigh
                 let imgURL: NSURL = NSURL(string: url!)!
-                print(imgURL.absoluteString)
+                //print(imgURL.absoluteString)
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                   // print("IN cache")
                     cell.prodImg.image = image
                     
                 }
@@ -1592,15 +1607,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             
                             
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                                //print(imgURL.absoluteString)
                                 cell.prodImg.image = image
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                             }
@@ -1615,7 +1630,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 
             }else
             {
-                print("data is not available")
+                //print("data is not available")
                 let headers = [
                     "Authorization":authorizationWithoutLogin,
                     "Accept": "application/json"
@@ -1630,18 +1645,18 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     
                     .responseJSON { response in
                         //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response) // URL response
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response) // URL response
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if let JSON = response.result.value {
                             
                             let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
-                            print(customer)
+                          //  print(customer)
                             if customer.count != 0{
                                 if let prod = customer[0] as? ProductDetails{
                                     self.recencetlyDataArray .addObject(prod)
-                                    print(prod.description)
+                                   // print(prod.description)
                                     // print(prod.netPriceDisplayString!)
                                     cell.categoryLabl.text = prod.description
                                     cell.sku = prod.sku
@@ -1756,7 +1771,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                     //                                }
                                     let url =  prod.imageURLHigh
                                     let imgURL: NSURL = NSURL(string: url!)!
-                                    print(imgURL.absoluteString)
+                                    //print(imgURL.absoluteString)
                                     
                                     if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                                     {
@@ -1770,15 +1785,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                             .responseImage { response in
                                                 debugPrint(response)
                                                 
-                                                print(response.request)
-                                                print(response.response)
+//                                                print(response.request)
+//                                                print(response.response)
                                                 debugPrint(response.result)
                                                 
                                                 
                                                 
                                                 
                                                 if let image = response.result.value {
-                                                    print(imgURL.absoluteString)
+                                                   // print(imgURL.absoluteString)
                                                     cell.prodImg.image = image
                                                     photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                                                 }
@@ -1966,8 +1981,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             cell.DescriptionLbl.hidden = true
             
             if (self.newArrivalDataArray.count > indexPath.row){
-                print("data is available")
-                print("newArrivalDataArray:",self.newArrivalDataArray.description)
+//                print("data is available")
+//                print("newArrivalDataArray:",self.newArrivalDataArray.description)
                 let prod = self.newArrivalDataArray.objectAtIndex(indexPath.row) as! ProductDetails
                 cell.categoryLabl.text = prod.description
                 cell.sku = prod.sku
@@ -2082,11 +2097,11 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 
                 let url =  prod.imageURLHigh
                 let imgURL: NSURL = NSURL(string: url!)!
-                print(imgURL.absoluteString)
+               // print(imgURL.absoluteString)
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                    //print("IN cache")
                     cell.prodImg.image = image
                     
                 }
@@ -2096,15 +2111,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             
                             
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                                //print(imgURL.absoluteString)
                                 cell.prodImg.image = image
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                             }
@@ -2119,7 +2134,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                
             }else
             {
-                print("data is not available")
+               // print("data is not available")
                 let headers = [
                     "Authorization":authorizationWithoutLogin,
                     "Accept": "application/json"
@@ -2127,25 +2142,25 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 let data = self.newArrivalArray.objectAtIndex(indexPath.row).stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 let url = NSURL(string:"\(baseUrl)product?txtSearch=\(data)")
-                print(url!.absoluteString, terminator: "")
+               // print(url!.absoluteString, terminator: "")
                 
                 
                 Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
                     
                     .responseJSON { response in
                         //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response) // URL response
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response) // URL response
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if let JSON = response.result.value {
                             
                             let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
-                            print(customer)
+                            //print(customer)
                             if customer.count != 0{
                            if let prod = customer[0] as? ProductDetails{
                                 self.newArrivalDataArray .addObject(prod)
-                                print(prod.description)
+                                //print(prod.description)
                             // print(prod.netPriceDisplayString!)
                                 cell.categoryLabl.text = prod.description
                                 cell.sku = prod.sku
@@ -2260,11 +2275,11 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
 //                                }
                                 let url =  prod.imageURLHigh
                                 let imgURL: NSURL = NSURL(string: url!)!
-                                print(imgURL.absoluteString)
+                               // print(imgURL.absoluteString)
                                 
                                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                                 {
-                                    print("IN cache")
+                                    //print("IN cache")
                                     cell.prodImg.image = image
                                     
                                 }
@@ -2274,15 +2289,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                         .responseImage { response in
                                             debugPrint(response)
                                             
-                                            print(response.request)
-                                            print(response.response)
+//                                            print(response.request)
+//                                            print(response.response)
                                             debugPrint(response.result)
                                             
                                             
                                             
                                             
                                             if let image = response.result.value {
-                                                print(imgURL.absoluteString)
+                                               // print(imgURL.absoluteString)
                                                 cell.prodImg.image = image
                                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                                             }
@@ -2314,11 +2329,11 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             let image : UIImage = UIImage(named:"placeholder")!
             cell.logoImg.image = image
             let imgURL: NSURL = NSURL(string: vendor.featuredVendorLogo!)!
-            print(imgURL.absoluteString)
+            //print(imgURL.absoluteString)
             
             if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
             {
-                print("IN cache")
+               // print("IN cache")
                 cell.logoImg.image = image
                 
             }
@@ -2328,15 +2343,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     .responseImage { response in
                         debugPrint(response)
                         
-                        print(response.request)
-                        print(response.response)
+//                        print(response.request)
+//                        print(response.response)
                         debugPrint(response.result)
                         
                         
                         
                         
                         if let image = response.result.value {
-                            print(imgURL.absoluteString)
+                           // print(imgURL.absoluteString)
                             cell.logoImg.image = image
                             photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                         }
@@ -2365,19 +2380,19 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             
             if (self.featuredDataArray.count > indexPath.row)
             {
-                print("data is available")
+                //print("data is available")
                 
                 let prod = self.featuredDataArray.objectAtIndex(indexPath.row) as! ProductDetails
                 cell.categoryLabl.text = prod.description
                 cell.sku = prod.sku
-                 print("net price:",prod.netPrice)
-                print("net price:",prod.grossPrice)
+//                 print("net price:",prod.netPrice)
+//                print("net price:",prod.grossPrice)
                 
 //                let showPercentage = self.featuredDataArray[indexPath.row].valueForKey("showPerc")!
 //                print(showPercentage)
                 let showPercentage = self.featuredDataArray.objectAtIndex(indexPath.row) as! ProductDetails
                // cell.categoryLabl.text = prod.description
-                print(showPercentage.showPerc)
+               // print(showPercentage.showPerc)
                 if(prod.showPerc!){
                     cell.DescriptionLbl.hidden = false
                     cell.DescriptionLbl.text = String(format:"%@Off  ",prod.percentage!)
@@ -2482,11 +2497,11 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
 //                }
                 let url =  prod.imageURLHigh
                 let imgURL: NSURL = NSURL(string: url!)!
-                print("img url **** \(imgURL.absoluteString)")
+               // print("img url **** \(imgURL.absoluteString)")
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                   // print("IN cache")
                     cell.prodImg.image = image
                     
                 }
@@ -2496,12 +2511,12 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                                //print(imgURL.absoluteString)
                                 cell.prodImg.image = image
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                             }
@@ -2517,7 +2532,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             }
             else
             {
-                print("data is not available")
+                //print("data is not available")
                 let headers = [
                     "Authorization": authorizationWithoutLogin,
                     "Accept": "application/json"
@@ -2534,21 +2549,21 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
                 let url = NSURL(string:"\(baseUrl)product?txtSearch=\(data)")
-                print(url!.absoluteString, terminator: "")
+               // print(url!.absoluteString, terminator: "")
                 
                 Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
                     .responseJSON { response in
                         //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response) // URL response
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response) // URL response
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if let JSON = response.result.value {
-                            print(JSON)
+                            //print(JSON)
                             let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
                             let customer1 : Array<LstProducts> = Mapper<LstProducts>().mapArray(JSON)!
-                            print(customer)
-                             print(customer1)
+//                            print(customer)
+//                             print(customer1)
                           /*  if customer1.count != 0
                             {
                                 if let prod1 = customer1[0] as? LstProducts
@@ -2562,8 +2577,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                 
                                 self.featuredDataArray .addObject(prod)
                                
-                                print(prod.description)
-                                print(prod.showPerc!)
+//                                print(prod.description)
+//                                print(prod.showPerc!)
                                 cell.categoryLabl.text = prod.description
                                 cell.sku = prod.sku
                                 if(prod.showPerc!){
@@ -2663,11 +2678,11 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
 //                                }
                                 let url =  prod.imageURLHigh
                                 let imgURL: NSURL = NSURL(string: url!)!
-                                print("########\(imgURL.absoluteString)")
+                               // print("########\(imgURL.absoluteString)")
                                 
                                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                                 {
-                                    print("IN cache")
+                                    //print("IN cache")
                                     cell.prodImg.image = image
                                     
                                 }
@@ -2677,15 +2692,15 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                         .responseImage { response in
                                             debugPrint(response)
                                             
-                                            print(response.request)
-                                            print(response.response)
+//                                            print(response.request)
+//                                            print(response.response)
                                             debugPrint(response.result)
                                             
                                             
                                             
                                             
                                             if let image = response.result.value {
-                                                print(imgURL.absoluteString)
+                                               // print(imgURL.absoluteString)
                                                 cell.prodImg.image = image
                                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                                             }
@@ -2713,17 +2728,17 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         // handle tap events
         
-        print("You selected cell #\(indexPath.item)!")
+        //print("You selected cell #\(indexPath.item)!")
         if(collectionView == recentViewCollection){
           // let cell = self.recentlyViewedArray.objectAtIndex(indexPath.row) as! RecentViewCell
-            print(recencetlyDataArray)
-            print(recentlyViewedArray)
+//            print(recencetlyDataArray)
+//            print(recentlyViewedArray)
 //            if let rvc = self.recencetlyDataArray[indexPath.row].valueForKey("sku")! as? String {
              if let rvc = self.recentlyViewedArray.objectAtIndex(indexPath.row) as? String
              {
                 let secondViewController = self.storyboard?.instantiateViewControllerWithIdentifier("prodDet") as! ViewController
 //                secondViewController.skuNumber = self.recentlyViewedArray[indexPath.row].valueForKey("sku")! as! String
-                print(rvc)
+               // print(rvc)
                 secondViewController.skuNumber = rvc 
                 secondViewController.ratingfloat = 0
                 self.navigationController?.pushViewController(secondViewController, animated: true)
@@ -2814,7 +2829,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     func handleOffTap() {
         
         
-        print(currntIndex)
+        //print(currntIndex)
        let  inx = currentControllerIndex()
        /* print(contentImages.objectAtIndex(currntIndex))
         let p :String = contentImages.objectAtIndex(currntIndex) as! String
@@ -2943,7 +2958,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         
         let itemController = viewController as! PageItemController
-        print(itemController.itemIndex)
+        //print(itemController.itemIndex)
         itemController.view.translatesAutoresizingMaskIntoConstraints = true
         itemController.view.frame=CGRectMake(0, 0, boundss.width, self.bannerView.frame.size.height)
         if itemController.itemIndex+1 < contentImages.count {
@@ -2979,7 +2994,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
 //    }
     
     private func getItemController(itemIndex: Int) -> PageItemController? {
-        print(contentImages.count)
+        //print(contentImages.count)
         if itemIndex < contentImages.count {
             if let img = contentImages[itemIndex] as? String{
             let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as! PageItemController
@@ -3022,7 +3037,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         {  
             currntIndex = currentControllerIndex()
             currntIndex = currntIndex + 1
-            print("currntIndex  \(currntIndex)")
+           // print("currntIndex  \(currntIndex)")
             if(currntIndex < self.contentImages.count){
                 let firstController = getItemController(currntIndex)!
                 pageController.setViewControllers([firstController], direction: .Forward, animated: true, completion: nil)
@@ -3047,7 +3062,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
         let pageItemController = self.currentController()
         
         if let controller = pageItemController as? PageItemController {
-            print("itemIndex",controller.itemIndex)
+           // print("itemIndex",controller.itemIndex)
             return controller.itemIndex
         }
         
