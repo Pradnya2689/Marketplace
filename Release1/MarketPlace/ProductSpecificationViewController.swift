@@ -41,13 +41,13 @@ class ProductSpecificationViewController: UIViewController {
         
         if let url =   self.imgStr as? String{
         let imgURL: NSURL = NSURL(string: url)!
-        print(imgURL.absoluteString)
+       // print(imgURL.absoluteString)
             let image : UIImage = UIImage(named:"placeholder")!
             self.prodImg.image = image
 
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+           // print("IN cache")
             self.prodImg.image = image
             
         }
@@ -57,15 +57,15 @@ class ProductSpecificationViewController: UIViewController {
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+//                    print(response.request)
+//                    print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                        //print(imgURL.absoluteString)
                         self.prodImg.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }

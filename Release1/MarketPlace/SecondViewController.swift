@@ -364,7 +364,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
                 }
                 for searchstring in people{
                     
-                    print(searchstring.valueForKey("placedPrice"))
+                  //  print(searchstring.valueForKey("placedPrice"))
                     self.basketArray.addObject(searchstring)
                 }
                 
@@ -373,7 +373,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
             }
           
         } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+           // print("Could not fetch \(error), \(error.userInfo)")
         }
         
 
@@ -412,8 +412,8 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
             }
             
             cell.prodTitleLabel.text = self.basketArray.valueForKey("description").objectAtIndex(indexPath.row) as? String
-            print(self.basketArray)
-            print(self.basketArray.valueForKey("placedPrice").objectAtIndex(indexPath.row) as! String)
+//            print(self.basketArray)
+//            print(self.basketArray.valueForKey("placedPrice").objectAtIndex(indexPath.row) as! String)
             cell.prodPriceLabel.text = "₹ \(self.basketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as! String)"
             cell.placedPrice = self.basketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as! String
             cell.quantityBtn.setTitle("Qty : \(self.basketArray.valueForKey("quantity").objectAtIndex(indexPath.row) as! Int)", forState: UIControlState.Normal)
@@ -441,11 +441,11 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
         
         let url =  self.basketArray.valueForKey("imageURLMedium").objectAtIndex(indexPath.row) as? String
         let imgURL: NSURL = NSURL(string: url!)!
-        print(imgURL.absoluteString)
+       // print(imgURL.absoluteString)
         
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+            //print("IN cache")
             cell.productImg.image = image
             
         }
@@ -455,15 +455,15 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+//                    print(response.request)
+//                    print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                       // print(imgURL.absoluteString)
                         cell.productImg.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }
@@ -481,7 +481,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
     }
   func internetReachable(notification:NSNotification){
     
-    print("in cart via reachable")
+   // print("in cart via reachable")
     self.noInternetClk()
     }
     var totalNetVal:String!
@@ -514,7 +514,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
                     self.basketArray.addObject(forecast)
                     
                 }
-                print(self.basketArray)
+              //  print(self.basketArray)
                 self.mycartTable.reloadData()
             }
         
@@ -921,7 +921,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
     func updatebasketdetailSuccess(string:NSDictionary){
         
         
-        print("update basket \(string)")
+       // print("update basket \(string)")
         if let subtotal = string.valueForKey("grossAmountDisplayString") as? String{
             self.subTotalLbl.text = "₹ \(subtotal)"
         }
@@ -951,7 +951,7 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
        // }
     }
     func deletebasketdetailSuccess(string:NSDictionary){
-    print("update basket \(string)")
+  //  print("update basket \(string)")
        // dispatch_async(dispatch_get_main_queue()) {
             LoadingOverlay.shared.hideOverlayView()
        // }

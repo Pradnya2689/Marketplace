@@ -200,7 +200,7 @@ class ConfirmPasswordViewController: UIViewController,webServiceDelegate,UITextF
     }
     func confirmpwdapiresponse(string:NSDictionary)
     {
-        print(string)
+       // print(string)
          LoadingOverlay.shared.hideOverlayView()
         self.title = " ";
         

@@ -110,7 +110,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
             (action) -> Void in
             let code = alert.textFields![0].text
             self.promoCodeStr = code
-            print(code)
+            //print(code)
 //            if(self.promoCodeStr?.characters.count == 0){
 //                alert.view.tintColor = UIColor.redColor()
 //                var messageTitle = "Please Enter Promo Code"
@@ -129,7 +129,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     headers = [
                         
                         "Authorization" : authorization,
@@ -171,7 +171,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 
                             ]
                 LoadingOverlay.shared.showOverlay(self.view)
-                            print(url)
+                            //print(url)
                 
                 Alamofire.request(.GET, url, headers: headers)
                     
@@ -179,19 +179,19 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                     
                     .responseJSON { response in
                         self.dismissViewControllerAnimated(true, completion: nil)
-                        print(response.request)
-                        print(response.response)
-                        print(response.data)
-                        print(response.result.value)
+//                        print(response.request)
+//                        print(response.response)
+//                        print(response.data)
+//                        print(response.result.value)
                         
                         if let JSON = response.result.value{
-                            print(JSON)
+                            //print(JSON)
                             LoadingOverlay.shared.hideOverlayView()
                             if(response.result.isSuccess){
                                 
                                 
                                 if let totl = JSON["totalShippingAmount"] as? String{
-                            print(totl)
+                           // print(totl)
                            
                             let promotional = JSON["promotional"] as! Int
                             if(promotional == 0  ){
@@ -290,7 +290,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 
                             ]
                 LoadingOverlay.shared.showOverlay(self.view)
-                            print(parameters)
+                          //  print(parameters)
                 
                 Alamofire.request(.GET, url, headers: headers)
                     
@@ -298,18 +298,18 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                     
                     .responseJSON { response in
                          self.dismissViewControllerAnimated(true, completion: nil)
-                        print(response.request)
-                        print(response.response)
-                        print(response.data)
-                        print(response.result.value)
+//                        print(response.request)
+//                        print(response.response)
+//                        print(response.data)
+//                        print(response.result.value)
                         
                         if let JSON = response.result.value{
-                            print(JSON)
+                            //print(JSON)
                             LoadingOverlay.shared.hideOverlayView()
                               if(response.result.isSuccess){
                                 
                                 if let totl = JSON["totalShippingAmount"] as? String{
-                                    print(totl)
+                                    //print(totl)
                                     
                                     let promotional = JSON["promotional"] as! Int
                                     if(promotional == 0  ){
@@ -566,14 +566,14 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
     {
         let dict : AnyObject = notification.userInfo!
         let receivednumber : NSDictionary = dict["valueToPass"] as! NSDictionary
-        print(receivednumber)
+        //print(receivednumber)
                if let a = TotalPrice{
                     let arr = TotalPrice!.componentsSeparatedByString(" ")
                     let trimmedProductprice = arr[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
                     let wsm : WebServiceClass = WebServiceClass.sharedInstance
                     wsm.delegates=self
                     self.pincodestr = receivednumber["zipCode"] as! String
-                    print("pincode \(pincodestr)   productprice \(trimmedProductprice)")
+                    //print("pincode \(pincodestr)   productprice \(trimmedProductprice)")
                     wsm.isCODAPIcall(pincodestr as String, trimmedProductprice: trimmedProductprice)
                 }else{
                     self.pincodestr = receivednumber["zipCode"] as! String
@@ -641,7 +641,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
             // JHProgressHUD.sharedHUD.showInView(self.view)
             var window :UIWindow = UIApplication.sharedApplication().keyWindow!
             LoadingOverlay.shared.showOverlay(window)
-            print(totalMoneyLabel?.text)
+           // print(totalMoneyLabel?.text)
           
 
             wsm.placeOrderDetails(addressId, isCOD: "false",promoCode: self.promoCodeStr,promotionalShippableValue: (totalMoneyLabel?.text)!)
@@ -697,7 +697,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
             let wsm : WebServiceClass = WebServiceClass.sharedInstance
             wsm.delegates=self
             wsm.confirmOrdersDetails(orderResp["orderNumber"]! as! String)
-            print("orderresp \(orderResp["orderNumber"])")
+            //print("orderresp \(orderResp["orderNumber"])")
         }
         else{
             LoadingOverlay.shared.hideOverlayView()
@@ -726,7 +726,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
             let total = totalMoneyLabel?.text!.stringByReplacingOccurrencesOfString("₹", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             let pricetotal1 = total!.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
             let pricetotal = pricetotal1.stringByReplacingOccurrencesOfString(",", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            print(pricetotal)
+            //print(pricetotal)
             let chkboj = Checkout.init();
             chkboj.setMerchantIdentifier("L98044")
             //chkboj.setMerchantIdentifier("T98044")
@@ -765,8 +765,8 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
             
              if (self.skuNo == ""){
                 for (index, cartItem) in cartItemArray.enumerate(){
-                    print(cartItem)
-                    print(index)
+                    //print(cartItem)
+                   // print(index)
                     if(index == 0 || index == 1){
                         let desc = cartItem["description"] as! String
                         let sku = cartItem["vpn"] as! String
@@ -789,9 +789,9 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 chkboj.setCartDescription(ordrhdr)
             chkboj.addCartItem("Ingr", amount: String(pricetotal), surchargeOrDiscount: "0.00", SKU: self.skuNo, description: "Samsung Galaxy Duos New", providerID: "snapdeal.com", reference: "Test", commisionAmt: "0.00")
             }
-            print(chkboj)
+           // print(chkboj)
             let paymentVc:PMPaymentOptionView = PMPaymentOptionView.init(publicKey: "3819872362YHYMJP", checkout: chkboj, paymentType: "Default", success: { (anyobject) -> Void in
-                print(anyobject)
+               // print(anyobject)
                 
                 if let msg = anyobject["message"] as? String{
                     self.encryptedToken = msg
@@ -816,11 +816,11 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 }
                 
                 }, failure: { (failureObj) -> Void in
-                    print("failureObj \(failureObj)")
+                   // print("failureObj \(failureObj)")
                      LoadingOverlay.shared.hideOverlayView()
                 }, cancel: { (cancelobj) -> Void in
                     LoadingOverlay.shared.hideOverlayView()
-                    print("cancelled")
+                   // print("cancelled")
             })
             
             self.navigationController?.presentViewController(paymentVc, animated: true, completion: nil)
@@ -829,7 +829,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
         
     }
     func getorderConfirmedSuccess(orderResp:NSDictionary){
-        print(orderResp)
+        //print(orderResp)
         //isOrderPlaced
          LoadingOverlay.shared.hideOverlayView()
         confirmOrderTopView.hidden = false
@@ -889,10 +889,10 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
             for address in string
             {
                 deliveryAddressView.hidden = false
-                print("address  \(address)")
+                //print("address  \(address)")
                 if let dfaultadd : Bool = address["isDefault"] as? Bool
                 {
-                    print(dfaultadd)
+                    //print(dfaultadd)
                     if(dfaultadd)
                     {
                         if let a = TotalPrice{
@@ -901,7 +901,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                             let wsm : WebServiceClass = WebServiceClass.sharedInstance
                             wsm.delegates=self
                             self.pincodestr = address["zipCode"] as! String
-                            print("pincode \(pincodestr)   productprice \(trimmedProductprice)")
+                            //print("pincode \(pincodestr)   productprice \(trimmedProductprice)")
                             wsm.isCODAPIcall(pincodestr as String, trimmedProductprice: trimmedProductprice)
                         }else{
                             self.pincodestr = address["zipCode"] as! String
@@ -937,13 +937,13 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
     func isCODSuccess(codResp:NSDictionary){
        
         
-        print(codResp)
+       // print(codResp)
         if let COD : AnyObject  = codResp["isCOD"]
         {
             
             let codstr = "\(COD)"
             isCOD = codstr
-            print("COD:\(codstr)")
+           // print("COD:\(codstr)")
             let index = NSIndexPath.init(forRow: 0, inSection: 1)
             let cell = paymentTable.cellForRowAtIndexPath(index) as! PaymentTableViewCell
             if(isCOD == "0"){

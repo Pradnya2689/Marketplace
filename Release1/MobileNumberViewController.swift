@@ -81,7 +81,7 @@ self.title = "Update Contact"
     
     func updatecontactOTPSuccess(string:NSDictionary)
     {
-      print(string)
+      //print(string)
         
         let nextViewController = self.storyboard!.instantiateViewControllerWithIdentifier("OTPView") as! OTPViewController
         nextViewController.comingfrom = "UpdateMobileNumber"
@@ -91,14 +91,14 @@ self.title = "Update Contact"
         
         if let data = defaults.objectForKey("LoginObject") as? NSData
         {
-            print("mobile no:",self.enterMobileNumberTF.text)
+            //print("mobile no:",self.enterMobileNumberTF.text)
             
              defaults.setObject(self.enterMobileNumberTF.text, forKey:"contactNumber")
             defaults.synchronize()
          
             if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
             {
-                print(blog)
+                //print(blog)
                // blog.setValue(self.enterMobileNumberTF.text!, forKey: "contactNumber")
                 nextViewController.email = blog.valueForKey("email")! as! String
             }
@@ -108,7 +108,7 @@ self.title = "Update Contact"
     }
     func  updatecontactOTPFailure(string:String)
     {
-        print("ERROR")
+       // print("ERROR")
         self.showAlert(string)
         
     }

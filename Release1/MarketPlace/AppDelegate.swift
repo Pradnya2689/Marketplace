@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
         UINavigationBar.appearance().translucent = false
        
         
-        print("testing")
+       // print("testing")
       
 
         do {
@@ -48,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
             }
         } catch {
             isReachable = false
-            print("Unable to create Reachability")
+            //print("Unable to create Reachability")
             //return
         }
         
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
         do{
             try reachability?.startNotifier()
         }catch{
-            print("could not start reachability notifier")
+            //print("could not start reachability notifier")
         }
        
         
@@ -102,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
     }
     
     func startNotifier() {
-        print("--- start notifier")
+       // print("--- start notifier")
         do {
             try reachability?.startNotifier()
         } catch {
@@ -114,14 +114,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
     }
     
     func stopNotifier() {
-        print("--- stop notifier")
+        //print("--- stop notifier")
         reachability?.stopNotifier()
         NSNotificationCenter.defaultCenter().removeObserver(self, name: ReachabilityChangedNotification, object: nil)
         reachability = nil
     }
     
     func updateLabelColourWhenReachable(reachability: Reachability) {
-        print("\(reachability.description) - \(reachability.currentReachabilityString)")
+        //print("\(reachability.description) - \(reachability.currentReachabilityString)")
         if reachability.isReachableViaWiFi() {
              isReachable = true
          //   self.networkStatus.textColor = UIColor.greenColor()
@@ -134,7 +134,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
     }
     
     func updateLabelColourWhenNotReachable(reachability: Reachability) {
-        print("\(reachability.description) - \(reachability.currentReachabilityString)")
+        //print("\(reachability.description) - \(reachability.currentReachabilityString)")
          isReachable = false
        // self.networkStatus.textColor = UIColor.redColor()
         
@@ -147,7 +147,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
         
         if reachability.isReachable() {
             if reachability.isReachableViaWiFi() {
-                print("Reachable via WiFi")
+               // print("Reachable via WiFi")
                 
                 isReachable = true
                 NSNotificationCenter.defaultCenter().postNotificationName("reachable", object: nil, userInfo: nil )
@@ -155,11 +155,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate,TAGContainerOpenerNotifier
                 
                 isReachable = true
                  NSNotificationCenter.defaultCenter().postNotificationName("reachable", object: nil, userInfo: nil )
-                print("Reachable via Cellular")
+                //print("Reachable via Cellular")
             }
         } else {
             isReachable = false
-            print("Network not reachable")
+           // print("Network not reachable")
         }
        // let reachability = note.object as! Reachability
         
@@ -279,7 +279,7 @@ extension UIApplication {
         if let presented = base?.presentedViewController {
             return topViewController(presented)
         }
-        print("top vc \(base)")
+        //print("top vc \(base)")
         return base
     }
 }

@@ -44,11 +44,11 @@ class TrackViewController: UIViewController {
         
         let url =  imgUrlstr
         let imgURL: NSURL = NSURL(string: url!)!
-        print("########\(imgURL.absoluteString)")
+       // print("########\(imgURL.absoluteString)")
         
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+          //  print("IN cache")
            trackImgView.image = image
             
         }
@@ -58,15 +58,15 @@ class TrackViewController: UIViewController {
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+//                    print(response.request)
+//                    print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                        //print(imgURL.absoluteString)
                         self.trackImgView.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }

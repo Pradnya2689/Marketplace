@@ -307,7 +307,7 @@ class AccountViewController: UIViewController,UINavigationControllerDelegate,web
     
     func  StateApiFailedDelegate(string:String)
     {
-        print(string)
+       // print(string)
         
     }
     

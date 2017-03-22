@@ -36,11 +36,11 @@ class PageItemController: UIViewController {
 //                   {
                     
                         if let imgURL = NSURL(string: url)! as? NSURL {
-                            print(imgURL.absoluteString)
+                           // print(imgURL.absoluteString)
                             
                             if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                             {
-                                print("IN cache")
+                               // print("IN cache")
                                 imageView.image = image
                                 imageView.contentMode = .ScaleToFill
                             }
@@ -50,15 +50,15 @@ class PageItemController: UIViewController {
                                     .responseImage { response in
                                         debugPrint(response)
                                         
-                                        print(response.request)
-                                        print(response.response)
+//                                        print(response.request)
+//                                        print(response.response)
                                         debugPrint(response.result)
                                         
                                         
                                         
                                         
                                         if let image = response.result.value {
-                                            print(imgURL.absoluteString)
+                                            //print(imgURL.absoluteString)
                                             imageView.image = image
                                             imageView.contentMode = .ScaleToFill
                                             photoCache.addImage(image, withIdentifier: imgURL.absoluteString)

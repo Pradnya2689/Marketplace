@@ -41,21 +41,21 @@ class SubCategoryViewController: UITableViewController {
 
     override func viewDidLoad() {
          super.viewDidLoad()
-        print(passedValue, terminator: "")
-         print(subcategoryArr, terminator: "")
-        
-         print(subcatOject, terminator: "")
+//        print(passedValue, terminator: "")
+//         print(subcategoryArr, terminator: "")
+//        
+//         print(subcatOject, terminator: "")
         
       
        
         for item in subcatOject!
         {
             let subcattest1  = item  as! SubCategory
-            print(subcattest1.subCategoryName)
+            //print(subcattest1.subCategoryName)
             self.SubCatMarr.addObject(subcattest1)
             
         }
-        print(SubCatMarr)
+       // print(SubCatMarr)
         
         self.tableView.tableFooterView = UIView()
         var arr1 : NSArray = NSArray()
@@ -139,7 +139,7 @@ class SubCategoryViewController: UITableViewController {
         }
 */
         let extarctValue :SubCategory  = self.SubCatMarr[indexPath.row] as! SubCategory
-        print(extarctValue.subCategoryName)
+       // print(extarctValue.subCategoryName)
         var stringvalue1: String = extarctValue.subCategoryName!
         
             cell.textLabel?.font = UIFont(name: "MyriadPro-Regular", size: 20)
@@ -164,7 +164,7 @@ class SubCategoryViewController: UITableViewController {
        
     
         passedDict["SubcategoryDic"] = self.subcategoryArr[indexPath.row]
-        print(passedDict)
+       // print(passedDict)
         
         let indexPath = tableView.indexPathForSelectedRow
         
@@ -186,7 +186,7 @@ class SubCategoryViewController: UITableViewController {
         glblArr.removeAllObjects()
         glblArr.addObject(catDict)
         glblArr.addObject(catDic)
-        print(valueToPass)
+      //  print(valueToPass)
         
         let array1:NSMutableArray = NSMutableArray ()
         for item in self.level3Arr
@@ -250,7 +250,7 @@ class SubCategoryViewController: UITableViewController {
             // var viewController = segue.destinationViewController as SubCategoryViewController
             let viewController = (segue.destinationViewController as! FinalCategoryViewController)
             // your new view controller should have property that will store passed value
-            print(valueToPass, terminator: "")
+           // print(valueToPass, terminator: "")
           
             
             let myString = valueToPass

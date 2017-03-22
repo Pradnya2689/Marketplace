@@ -169,7 +169,7 @@ class ForgetPasswordController: UIViewController,webServiceDelegate,UINavigation
     }
     func forgotpwdapiresponse(string:NSDictionary)
     {
-        print(string)
+       // print(string)
          LoadingOverlay.shared.hideOverlayView()
         self.title = " ";
         let OTPViewControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("OTPView") as? OTPViewController

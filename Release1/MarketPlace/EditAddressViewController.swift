@@ -40,7 +40,7 @@ class EditAddressViewController: UIViewController, UITextFieldDelegate, UIGestur
     @IBAction func addressSegment(sender: UISegmentedControl) {
         
 
-        print(EditFlag)
+        //print(EditFlag)
         if (EditFlag == "EditOff")
         {
             self.stateTF.text = ""
@@ -147,7 +147,7 @@ class EditAddressViewController: UIViewController, UITextFieldDelegate, UIGestur
         self.EditFlag = "EditOff"
         if (self.NoAddrFlag == "NoAddress")
         {
-            print("NoAddress")
+           // print("NoAddress")
             self.addSegmentoutlet.selectedSegmentIndex = 1;
             self.addSegmentoutlet .setEnabled(false, forSegmentAtIndex: 0)
 //           
@@ -157,7 +157,7 @@ class EditAddressViewController: UIViewController, UITextFieldDelegate, UIGestur
         }
         else if (self.NoAddrFlag == "Address")
         {
-        print("Address")
+       // print("Address")
             self.addSegmentoutlet .setEnabled(true, forSegmentAtIndex: 0)
             self.addSegmentoutlet.selectedSegmentIndex = 0;
             self.addSegmentoutlet.sendActionsForControlEvents(UIControlEvents.ValueChanged)
@@ -257,7 +257,7 @@ class EditAddressViewController: UIViewController, UITextFieldDelegate, UIGestur
     }
     func  callAddressapiFailedDelegate()
     {
-        print("ERROR")
+       // print("ERROR")
         let alertView:UIAlertView = UIAlertView()
         alertView.title = "IMOL"
         alertView.message = ConstantsFile.requestFail_msg
@@ -330,7 +330,7 @@ class EditAddressViewController: UIViewController, UITextFieldDelegate, UIGestur
         var escapepercent = receivednumber.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
          wsm.delegates=self
         wsm.callCityApiTogetState(escapepercent)
-        print("****** \(escapepercent)")
+        //print("****** \(escapepercent)")
     }
     func countryList(notification: NSNotification)
     {
@@ -392,7 +392,7 @@ class EditAddressViewController: UIViewController, UITextFieldDelegate, UIGestur
             // LoadingOverlay.shared.showOverlay(view)
             
              let SearchAddressControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("SearchAddress") as? SearchAddressController
-             print(arrayCountries)
+             //print(arrayCountries)
              SearchAddressControllerObj?.countryToPass = arrayCountries
              SearchAddressControllerObj?.flagset = "country"
              
@@ -738,8 +738,8 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
         let buttonRow = sender.tag
         let buttonPosition = sender.convertPoint(CGPointZero, toView: self.addressTableView)
         let indexPath = self.addressTableView.indexPathForRowAtPoint(buttonPosition)
-        print(indexPath?.section)
-        print(indexPath?.row)
+//        print(indexPath?.section)
+//        print(indexPath?.row)
         if indexPath != nil {
         
         
@@ -871,10 +871,10 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
         let buttonRow = sender.tag
         let buttonPosition = sender.convertPoint(CGPointZero, toView: self.addressTableView)
         let indexPath = self.addressTableView.indexPathForRowAtPoint(buttonPosition)
-        print(indexPath?.section)
-        print(indexPath?.row)
+//        print(indexPath?.section)
+//        print(indexPath?.row)
         let row = indexPath?.row
-        print(self.AddressRow1)
+       // print(self.AddressRow1)
       
 
         if  indexPath?.section == 1
@@ -893,13 +893,13 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
         let buttonRow = sender.tag
         let buttonPosition = sender.convertPoint(CGPointZero, toView: self.addressTableView)
         let indexPath = self.addressTableView.indexPathForRowAtPoint(buttonPosition)
-        print(indexPath?.section)
-        print(indexPath?.row)
-        print(self.AddressRow1.objectAtIndex((indexPath?.row)!))
+//        print(indexPath?.section)
+//        print(indexPath?.row)
+//        print(self.AddressRow1.objectAtIndex((indexPath?.row)!))
         
         let dict = self.AddressRow1.objectAtIndex((indexPath?.row)!) as! NSDictionary
        
-        print(dict["addressId"]!)
+        //print(dict["addressId"]!)
         let defaults = NSUserDefaults.standardUserDefaults()
        
     
@@ -921,7 +921,7 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
                     if let addressid = dict["addressId"]
                     {
                        // print(self.USRID)
-                        print(addressid)
+                       // print(addressid)
                        LoadingOverlay.shared.showOverlay(view)
                          wsm.delegates=self
                         wsm.callSetDefaultApi(String(blog.valueForKey("userId")!), addressID: addressid as! String)
@@ -946,11 +946,11 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
         {
             if let dfaultadd : Bool = address["isDefault"] as! Bool
             {
-                print(dfaultadd)
+                //print(dfaultadd)
                 if(dfaultadd == true)
                 {
                     self.AddressRow.addObject(address)
-                print(self.AddressRow)
+               // print(self.AddressRow)
                 }
                 else
                 {
@@ -959,8 +959,8 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
             }
             
         }
-        print(self.AddressRow)
-        print(self.AddressRow1)
+//        print(self.AddressRow)
+//        print(self.AddressRow1)
         if(AddressRow.count > 0){
             addressTableView.hidden = false
             addSegmentoutlet.selectedSegmentIndex = 0
@@ -978,7 +978,7 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func  callAddressEditapiFailedDelegate()
     {
-        print("ERROR")
+       // print("ERROR")
         LoadingOverlay.shared.hideOverlayView()
         addSegmentoutlet.hidden = false
         addressTableView.hidden = false
@@ -1029,10 +1029,10 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
         LoadingOverlay.shared.hideOverlayView()
         let dict : AnyObject = notification.userInfo!
         if  let stateIdd = dict["stateId"] as? String{
-        print(arrayCountries)
+       // print(arrayCountries)
         for address in arrayCountries
         {
-            print(address["stateId"])
+            //print(address["stateId"])
             if let addr = address["stateId"]
             {
                 var sts = addr as! String
@@ -1052,7 +1052,7 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
     
     func  StateApiFailedDelegate(string:String)
     {
-        print(string)
+        //print(string)
         
     }
     
@@ -1074,7 +1074,7 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
     func deleteAddressapiFailedDelegate(string:String)
     {
          LoadingOverlay.shared.hideOverlayView()
-        print(String)
+       // print(String)
     }
     
     func getCityApiResponse(notification: NSNotification)  {
@@ -1088,7 +1088,7 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
         //
         for city  in cityArr
         {
-            print(city)
+            //print(city)
             self.arrayCities.addObject(city)
         }
         LoadingOverlay.shared.hideOverlayView()
@@ -1111,7 +1111,7 @@ extension EditAddressViewController: UITableViewDelegate, UITableViewDataSource{
     func  CityApiFailedDelegate(string:String)
     {
          LoadingOverlay.shared.hideOverlayView()
-        print(string)
+        //print(string)
         
     }
    func SetDefaultApiResponse (string:String)

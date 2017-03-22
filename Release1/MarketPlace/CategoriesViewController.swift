@@ -518,22 +518,22 @@ class CategoriesViewController: UITableViewController
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)   // result of response serialization
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)   // result of response serialization
                     
                     if let JSON = response.result.value {
                         //  print(self.delegates)
                         
-                        print("application viewc \(UIApplication.topViewController())")
+                       // print("application viewc \(UIApplication.topViewController())")
                         
-                        print(JSON)
+                        //print(JSON)
                         let customer : Array<Category> = Mapper<Category>().mapArray(JSON)!
                         
                         for forecast in customer
                         {
-                            print("category name:\(forecast.aCategoryName!)")
+                            //print("category name:\(forecast.aCategoryName!)")
                             
                             self.newObjectMarr.addObject(forecast)
                             let subcat : Array<SubCategory> = forecast.subCategory!
@@ -541,25 +541,25 @@ class CategoriesViewController: UITableViewController
                             for subcategory in subcat
                             {
                                 self.newObjectMSubCatarr.addObject(subcategory)
-                                print("subcategory name:\(subcategory.subCategoryName!)")
+                               // print("subcategory name:\(subcategory.subCategoryName!)")
                                 let category3 : Array<category3List> = subcategory.category3List1!
                                 
                                 for level3cat in category3
                                 {
                                     self.newObjectM3Levelarr.addObject(level3cat)
-                                    print("level3cat name:\(level3cat.category3Name!)")
+                                    //print("level3cat name:\(level3cat.category3Name!)")
                                 }
                             }
                             //                       print(forecast.subCategoryId)
                             //                        print(forecast.subCatRecCount)
                         }
                         
-                        print(self.newObjectM3Levelarr)
-                        print(self.newObjectMSubCatarr)
-                        print(self.newObjectMarr.objectAtIndex(0))
-                        print(self.newObjectMarr.objectAtIndex(1))
-                        print(self.newObjectMarr.objectAtIndex(2))
-                        print(self.newObjectMarr.objectAtIndex(3))
+//                        print(self.newObjectM3Levelarr)
+//                        print(self.newObjectMSubCatarr)
+//                        print(self.newObjectMarr.objectAtIndex(0))
+//                        print(self.newObjectMarr.objectAtIndex(1))
+//                        print(self.newObjectMarr.objectAtIndex(2))
+//                        print(self.newObjectMarr.objectAtIndex(3))
                         
                         // }
                     }
@@ -735,10 +735,10 @@ class CategoriesViewController: UITableViewController
             request.setValue(authorizationWithoutLogin, forHTTPHeaderField: "Authorization")
             
             var task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-                print("Response: \(response)")
+               // print("Response: \(response)")
                 self.tableView.hidden = false
                 if  let strData = NSString(data: data!, encoding: NSUTF8StringEncoding){
-                    print("Body: \(strData)")
+                   // print("Body: \(strData)")
                     var err: NSError?
                     let json = (try? NSJSONSerialization.JSONObjectWithData(data!, options:[]) as? NSDictionary)
                     var arrayOfDicts : NSMutableArray? = (try? NSJSONSerialization.JSONObjectWithData(data!, options:NSJSONReadingOptions.MutableContainers)) as? NSMutableArray
@@ -821,14 +821,14 @@ class CategoriesViewController: UITableViewController
                         }
                     }
                     
-                    print("category array ::\(self.newArrayofDicts)", terminator: "")
-                    print("Subcategory array ::\(self.subcatArray)", terminator: "")
-                    print("level3category array :: \(self.level3catArray)", terminator: "")
+//                    print("category array ::\(self.newArrayofDicts)", terminator: "")
+//                    print("Subcategory array ::\(self.subcatArray)", terminator: "")
+//                    print("level3category array :: \(self.level3catArray)", terminator: "")
                     
                     if(err != nil) {
-                        print(err!.localizedDescription)
+                       // print(err!.localizedDescription)
                         let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                        print("Error could not parse JSON: '\(jsonStr)'")
+                       // print("Error could not parse JSON: '\(jsonStr)'")
                     }
                     else {
                         
@@ -876,7 +876,7 @@ class CategoriesViewController: UITableViewController
     }
     func internetReachable(notification:NSNotification){
         noInternetConnectionClk()
-        print("in category via reachable")
+       // print("in category via reachable")
     }
     override  func viewWillDisappear(animated: Bool) {
        // self.title = ""
@@ -934,9 +934,9 @@ class CategoriesViewController: UITableViewController
         var stringvalue1: String = stringvalue["aCategoryName"] as! String
         print(stringvalue1, terminator: "")*/
         let extarctValue :Category  = self.newObjectMarr[indexPath.row] as! Category
-        print(extarctValue.aCategoryName)
+       // print(extarctValue.aCategoryName)
         var stringvalue1: String = extarctValue.aCategoryName!
-        print(stringvalue1, terminator: "")
+        //print(stringvalue1, terminator: "")
 
    /*     var stringvalue2: String = stringvalue["aCategoryId"] as! String
         print(stringvalue2, terminator: "")
@@ -976,13 +976,13 @@ class CategoriesViewController: UITableViewController
         let indexPath = tableView.indexPathForSelectedRow
         let somevalue1   = self.newObjectMarr.objectAtIndex((indexPath?.row)!) as! Category
         let somevalue2 = somevalue1.subCategory
-        print(somevalue2!)
+        //print(somevalue2!)
        
        self.objectToPass = self.newObjectMarr.objectAtIndex((indexPath?.row)!) as! Category
                let somevalue :Category  = self.objectToPass
         self.somevalue1  = somevalue.subCategory as! NSArray
         
-        print(self.somevalue1)
+       // print(self.somevalue1)
        
         let currentCell = tableView.cellForRowAtIndexPath(indexPath!) as! categoryCell!
        
@@ -992,8 +992,8 @@ class CategoriesViewController: UITableViewController
         glblArr.addObject(catDic)
         valueToPass = currentCell.categoryText.text!
        
-        print(self.subcatArray.count)
-         print(self.subcatArray)
+        //print(self.subcatArray.count)
+        // print(self.subcatArray)
         var array1:NSMutableArray = NSMutableArray ()
         for item in subcatArray
         {
@@ -1034,7 +1034,7 @@ class CategoriesViewController: UITableViewController
             let viewController = (segue.destinationViewController as! SubCategoryViewController)
             
             // your new view controller should have property that will store passed value
-            print(valueToPass, terminator: "")
+           // print(valueToPass, terminator: "")
           //  myString.stringByReplacingOccurrencesOfString(" ", withString: "")
             let trimmedString = valueToPass.stringByReplacingOccurrencesOfString(" ", withString: "", options: []
                 , range: nil)

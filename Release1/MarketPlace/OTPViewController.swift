@@ -112,7 +112,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
         }
         else
         {
-        print("coming back")
+       // print("coming back")
         }
         
     }
@@ -176,7 +176,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
             
         ]
         
-        print(parameters)
+        //print(parameters)
         
         //        let parameters = [
         //            "contactNumber":"9870256703",
@@ -194,12 +194,12 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
             .validate(contentType: ["application/json"])
             
             .responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)
                 var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Body: \(strData!)")// server data
-                print(response.result)
+               // print("Body: \(strData!)")// server data
+               // print(response.result)
                 
                 
                 if (response.result .isSuccess)
@@ -255,7 +255,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
     }
     func registartionapiresponse(string:NSDictionary)
     {
-        print(string)
+       // print(string)
         
         if let Message  : AnyObject  = string["message"]
         {
@@ -279,7 +279,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
     }
      func Done() -> Void
      {
-    print("done clicked")
+   // print("done clicked")
        
     }
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -311,7 +311,7 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
             UIView.animateWithDuration(((note.userInfo! as NSDictionary).objectForKey(UIKeyboardAnimationCurveUserInfoKey)?.doubleValue)!, delay: 0, options: UIViewAnimationOptions.CurveEaseIn, animations: { () -> Void in
                 self.view.frame = CGRectOffset(self.view.frame, 0, 0)
                 }, completion: { (complete) -> Void in
-                    print("Complete")
+                   // print("Complete")
             })
         }
     }
@@ -353,9 +353,9 @@ class OTPViewController: UIViewController, UITextFieldDelegate, UIGestureRecogni
         }
         let newLength = currentCharacterCount + string.characters.count - range.length
         if(newLength < 1){
-            print("something deleted")
+           // print("something deleted")
             let textfield = self.view.viewWithTag(textField.tag - 1)
-            print("something deleted")
+          //  print("something deleted")
             
             let delayInSeconds = 0.0
             let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))

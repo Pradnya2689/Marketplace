@@ -797,7 +797,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
     func internetReachable(notification:NSNotification){
         noInternetClk()
-        print("in category via reachable")
+        //print("in category via reachable")
     }
     func callApi()  {
         
@@ -824,7 +824,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
     
     func orderFail(notification: NSNotification)  {
-        print(notification)
+       // print(notification)
         self.noInternetVc.hidden = false
         self.wifiImg.translatesAutoresizingMaskIntoConstraints = true
         self.noconnetinlbl.translatesAutoresizingMaskIntoConstraints = true
@@ -835,16 +835,16 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
         self.retryBtn.frame = CGRectMake((screenSize.width - 144 )/2, 420, 144, 40)
     }
     func getOrderListOpen(notification: NSNotification)  {
-        print(notification)
+      //  print(notification)
         LoadingOverlay.shared.hideOverlayView()
         orderTableView.hidden = false
         orderTableView.tableFooterView = nil
         
         let dict : AnyObject = notification.userInfo!
-        print(dict["orders"])
+       // print(dict["orders"])
         isLockUI = false
         if let orderlistDict  = dict["salesOrderSearch"] as? NSDictionary{
-            print(orderlistDict["totalNumberOfResults"])
+          //  print(orderlistDict["totalNumberOfResults"])
           
             if(orderlistDict.count <= 0){
                 searchVc.hidden = true
@@ -868,7 +868,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     
                 }
                 self.orderTableView.reloadData()
-                print(odersOpenArray.count)
+               // print(odersOpenArray.count)
             if(self.currentPageOpen == 1){
                 let totalcount   = orderlistDict["totalNumberOfResults"] as! Int
                 let pagecount   = orderlistDict["numberOfResults"] as! Int
@@ -877,7 +877,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 let roundof  = ceil(Double(totalcount)/Double(pagecount))
                 //
                 let introundof = Int(roundof)
-                print(introundof, terminator: "")
+               // print(introundof, terminator: "")
                 //  print(productList1.pageIndex!)
                 self.totalPagesOpen  = introundof
             }else{
@@ -900,7 +900,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                         {
                             let authorization = authorizationWithLogin
                             
-                            print(authorization)
+                           // print(authorization)
                             
                             headers = [
                                 
@@ -918,19 +918,19 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
                     //  let url = "\(baseUrl)OrderSearch?userId=\(userId!)&currentPage=\(currentPage)&orderNumber=\(orderNumber)&orderStatus=\(orderStatus)"
                     let url = "\(baseUrl)OrderSearch?orderNumber=\(ordeData["orderNumber"]! as! String)"
-                    print(url)
+                   // print(url)
                     Alamofire.request(.GET,  url, headers: headers)
                         .validate(contentType: ["application/json"])
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                     let arrayofprod = JSON as! NSArray
                                     self.orderProductsDictOpen[String(i)] = arrayofprod
                                     // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -945,8 +945,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                                 
                                 
                             }
-                            print("val  of i \(i)")
-                            print("order dict \(self.orderProductsDictOpen)")
+//                            print("val  of i \(i)")
+//                            print("order dict \(self.orderProductsDictOpen)")
                             self.orderTableView.reloadData()
                     }
                     
@@ -961,12 +961,12 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
     }
 
     func getOrderList(notification: NSNotification)  {
-        print(notification)
+       // print(notification)
         orderTableView.hidden = false
         LoadingOverlay.shared.hideOverlayView()
         orderTableView.tableFooterView = nil
         let dict : AnyObject = notification.userInfo!
-        print(dict["orders"])
+       // print(dict["orders"])
         isLockUI = false
         if let orderlistDict  = dict["salesOrderSearch"] as? NSDictionary{
             if(orderlistDict.count <= 0){
@@ -981,7 +981,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 self.noResultLabl.hidden = true
             }
 
-        print(orderlistDict["totalNumberOfResults"])
+       // print(orderlistDict["totalNumberOfResults"])
         //let orderData = orderlistDict["orders"] as! NSMutableArray
            let orderData =  NSMutableArray(array: orderlistDict["orders"]! as! [AnyObject])
         // self.attributeDetailsArray = NSMutableArray(array: productHeader)
@@ -989,7 +989,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 self.odersArray.addObject(orderass)
             }
             self.orderTableView.reloadData()
-            print(odersArray.count)
+           // print(odersArray.count)
             
             if(currentPage == 1){
                 let totalcount   = orderlistDict["totalNumberOfResults"] as! Int
@@ -997,7 +997,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 let roundof  = ceil(Double(totalcount)/Double(pagecount))
                 //
                 let introundof = Int(roundof)
-                print(introundof, terminator: "")
+                //print(introundof, terminator: "")
                 //  print(productList1.pageIndex!)
                 self.totalPages  = introundof
             }else{
@@ -1021,7 +1021,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                         {
                             let authorization = authorizationWithLogin
                             
-                            print(authorization)
+                          //  print(authorization)
                             
                             headers = [
                                 
@@ -1037,19 +1037,19 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     let ordeData:AnyObject = odersArray.objectAtIndex(i)
                     
                      let url = "\(baseUrl)OrderSearch?orderNumber=\(ordeData["orderNumber"]! as! String)"
-                    print(url)
+                   // print(url)
                     Alamofire.request(.GET,  url, headers: headers)
                         .validate(contentType: ["application/json"])
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
                             print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                     let arrayofprod = JSON as! NSArray
                                     self.orderProductsDict[String(i)] = arrayofprod
                                    
@@ -1061,8 +1061,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                                 
                                 
                             }
-                            print("val  of i \(i)")
-                            print("order dict \(self.orderProductsDict)")
+//                            print("val  of i \(i)")
+//                            print("order dict \(self.orderProductsDict)")
                             self.orderTableView.reloadData()
                     }
 
@@ -1124,7 +1124,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     //  callGetProductAPI(url!, isCalled: callApi)
                 }
             }
-            print("reach end")
+           // print("reach end")
         }else{
              orderTableView.tableFooterView = nil
             
@@ -1184,7 +1184,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     {
                         let authorization = authorizationWithLogin
                         
-                        print(authorization)
+                       // print(authorization)
                         
                         headers = [
                             
@@ -1202,19 +1202,19 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
                 //  let url = "\(baseUrl)OrderSearch?userId=\(userId!)&currentPage=\(currentPage)&orderNumber=\(orderNumber)&orderStatus=\(orderStatus)"
                 let url = "\(baseUrl)OrderSearch?orderNumber=\(ordeData["orderNumber"]! as! String)"
-                print(url)
+               // print(url)
                 Alamofire.request(.GET,  url, headers: headers)
                     .validate(contentType: ["application/json"])
                     .responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response?.statusCode) // URL response
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response?.statusCode) // URL response
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if(response.result .isSuccess)
                         {
                             if let JSON = response.result.value
                             {
-                                print(JSON)
+                               // print(JSON)
                                 let arrayofprod = JSON as! NSArray
                                 self.orderProductsDictOpen[String(i)] = arrayofprod
                                 // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -1229,8 +1229,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                             
                             //  self.showAlertForRequestFail()
                         }
-                        print("val  of i \(i)")
-                        print("order dict \(self.orderProductsDictOpen)")
+//                        print("val  of i \(i)")
+//                        print("order dict \(self.orderProductsDictOpen)")
                         self.orderTableView.reloadData()
                 }
                 
@@ -1251,7 +1251,7 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                     {
                         let authorization = authorizationWithLogin
                         
-                        print(authorization)
+                       // print(authorization)
                         
                         headers = [
                             
@@ -1269,19 +1269,19 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                 //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
                 //  let url = "\(baseUrl)OrderSearch?userId=\(userId!)&currentPage=\(currentPage)&orderNumber=\(orderNumber)&orderStatus=\(orderStatus)"
                 let url = "\(baseUrl)OrderSearch?orderNumber=\(ordeData["orderNumber"]! as! String)"
-                print(url)
+               // print(url)
                 Alamofire.request(.GET,  url, headers: headers)
                     .validate(contentType: ["application/json"])
                     .responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response?.statusCode) // URL response
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response?.statusCode) // URL response
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if(response.result .isSuccess)
                         {
                             if let JSON = response.result.value
                             {
-                                print(JSON)
+                               // print(JSON)
                                 let arrayofprod = JSON as! NSArray
                                 self.orderProductsDict[String(i)] = arrayofprod
                              
@@ -1293,8 +1293,8 @@ class OrderViewController: UIViewController, UITextFieldDelegate, UIGestureRecog
                             
                             //  self.showAlertForRequestFail()
                         }
-                        print("val  of i \(i)")
-                        print("order dict \(self.orderProductsDict)")
+//                        print("val  of i \(i)")
+//                        print("order dict \(self.orderProductsDict)")
                         self.orderTableView.reloadData()
                 }
                 
@@ -1401,14 +1401,14 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
          if(orderSegmentOutlet.selectedSegmentIndex == 0){
         if  let prd = self.orderProductsDict.valueForKey(String(section)){
-            print("######### \(prd.count)")
+            //print("######### \(prd.count)")
         return (prd.count)!+1
         }else{
             return 1
         }
          }else{
             if  let prd = self.orderProductsDictOpen.valueForKey(String(section)){
-                print("######### \(prd.count)")
+               // print("######### \(prd.count)")
                 return (prd.count)!+1
             }else{
                 return 1
@@ -1466,7 +1466,7 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
             }
             cell.delegates = self
            
-            print("prod  \(prod)")
+            //print("prod  \(prod)")
             let prodAtrow = prod.objectAtIndex(indexPath.row-1)
             if let freebe = prodAtrow["freeItemIndicator"] as? String {
                 if(freebe == ""){
@@ -1475,8 +1475,8 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
                     cell.freeBeLabl.hidden = false
                 }
             }
-            print("prod array \(prodAtrow)")
-            print("prod array \(prodAtrow["imageURL"] as! String)")
+//            print("prod array \(prodAtrow)")
+//            print("prod array \(prodAtrow["imageURL"] as! String)")
             cell.customerLineNumber = prodAtrow["sku"] as! String
           //  let imgurl = prodAtrow["imageURL"] as! String
             let image : UIImage = UIImage(named:"placeholder")!
@@ -1501,11 +1501,11 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
             }
             let url =  prodAtrow["imageURL"] as! String
             let imgURL: NSURL = NSURL(string: url)!
-            print("img url **** \(imgURL.absoluteString)")
+            //print("img url **** \(imgURL.absoluteString)")
             
             if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
             {
-                print("IN cache")
+                //print("IN cache")
                 cell.imgOrderCell!.image = image
                 
             }
@@ -1515,12 +1515,12 @@ extension OrderViewController: UITableViewDataSource, UITableViewDelegate {
                     .responseImage { response in
                         debugPrint(response)
                         
-                        print(response.request)
-                        print(response.response)
+//                        print(response.request)
+//                        print(response.response)
                         debugPrint(response.result)
                         
                         if let image = response.result.value {
-                            print(imgURL.absoluteString)
+                            //print(imgURL.absoluteString)
                             cell.imgOrderCell!.image = image
                             photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                         }

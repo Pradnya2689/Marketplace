@@ -45,7 +45,7 @@ class PolicyViewController: UIViewController, UIWebViewDelegate {
                     {
                         if  let termAndcond: AnyObject = staticcontent["text"]
                         {
-                            print(termAndcond)
+                            //print(termAndcond)
                             LoadingOverlay.shared.hideOverlayView()
                             // let trm = termAndcond["text"] as! String
                             //self.termsConditionWebView.loadHTMLString(trm, baseURL: nil)
@@ -85,7 +85,7 @@ class PolicyViewController: UIViewController, UIWebViewDelegate {
                     {
                         if  let termAndcond: AnyObject = staticcontent["text"]
                         {
-                            print(termAndcond)
+                            //print(termAndcond)
                             LoadingOverlay.shared.hideOverlayView()
                             // let trm = termAndcond["text"] as! String
                             //self.termsConditionWebView.loadHTMLString(trm, baseURL: nil)
@@ -125,7 +125,7 @@ class PolicyViewController: UIViewController, UIWebViewDelegate {
                     {
                         if  let termAndcond: AnyObject = staticcontent["text"]
                         {
-                            print(termAndcond)
+                            //print(termAndcond)
                             LoadingOverlay.shared.hideOverlayView()
                             // let trm = termAndcond["text"] as! String
                             //self.termsConditionWebView.loadHTMLString(trm, baseURL: nil)

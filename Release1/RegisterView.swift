@@ -46,8 +46,8 @@
         let defaults = NSUserDefaults.standardUserDefaults()
         if let usernm = defaults.valueForKey("username") , let pwd = defaults.valueForKey("password")
         {
-            print(usernm)
-            print(pwd)
+//            print(usernm)
+//            print(pwd)
             
         }
         else
@@ -139,7 +139,7 @@
                     
                 ]
                 
-                print(parameters)
+                //print(parameters)
                 
                 //        let parameters = [
                 //            "contactNumber":"9870256703",
@@ -157,12 +157,12 @@
                     .validate(contentType: ["application/json"])
                     
                     .responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response) // URL response
-                        print(response.data)
+//                        print(response.request)  // original URL request
+//                        print(response.response) // URL response
+//                        print(response.data)
                         var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                        print("Body: \(strData!)")// server data
-                        print(response.result)
+//                        print("Body: \(strData!)")// server data
+//                        print(response.result)
                         
                         
                         if (response.result .isSuccess)
@@ -171,13 +171,13 @@
                             if let JSON = response.result.value
                             {
                                 if JSON .isKindOfClass(NSDictionary){
-                                    print("dictionary")
+                                    //print("dictionary")
                                     if let msg = JSON["message"] as? String {
                                     self.showAlert(JSON["message"] as! String )
                                     }
                                 }
                                 if JSON .isKindOfClass(NSString){
-                                    print("String")
+                                    //print("String")
                                     if(JSON .isEqualToString("Verification Code sent to"))
                                     {
                                         self.showAlertForCodeSent("Verification Code sent to your mobile no.")

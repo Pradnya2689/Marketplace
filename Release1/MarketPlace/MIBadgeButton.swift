@@ -100,6 +100,6 @@ public class MIBadgeButton: UIButton {
         badgeLabel.backgroundColor = badgeBackgroundColor
         badgeLabel.textColor = badgeTextColor
         badgeLabel.layer.cornerRadius = badgeLabel.bounds.size.height / 2
-        print(badgeLabel.layer.cornerRadius)
+        //print(badgeLabel.layer.cornerRadius)
     }
 }

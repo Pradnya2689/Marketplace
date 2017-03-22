@@ -201,7 +201,7 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
 //    }
     func internetReachable(notification:NSNotification){
        noInternetClk()
-        print("in return via reachable")
+        //print("in return via reachable")
     }
    
     @IBAction func noInternetClk(){
@@ -245,10 +245,10 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
             // self.changeAddressBtn.setTitle("CHANGE ADDRESS", forState: UIControlState.Normal)
             for address in string
             {
-                print("address  \(address)")
+               // print("address  \(address)")
                 if let dfaultadd : Bool = address["isDefault"] as? Bool
                 {
-                    print(dfaultadd)
+                   // print(dfaultadd)
                     if(dfaultadd)
                     {
                        pincodestr = address["zipCode"] as! String
@@ -263,13 +263,13 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
     func isCODSuccess(codResp:NSDictionary){
         
         
-        print(codResp)
+        //print(codResp)
         if let COD : AnyObject  = codResp["isCOD"]
         {
             
             let codstr = "\(COD)"
             isCOD = codstr
-            print("COD:\(codstr)")
+            //print("COD:\(codstr)")
          //   let index = NSIndexPath.init(forRow: 0, inSection: 1)
           //  let cell = paymentTable.cellForRowAtIndexPath(index) as! PaymentTableViewCell
             if(isCOD == "0"){
@@ -280,7 +280,7 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
         }
     }
     func submitReturnList(notification: NSNotification)  {
-        print(notification)
+       // print(notification)
         LoadingOverlay.shared.hideOverlayView()
        
          var dict = notification.userInfo!
@@ -299,26 +299,26 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
        
     }
     func getOrderList(notification: NSNotification)  {
-        print(notification)
+        //print(notification)
         LoadingOverlay.shared.hideOverlayView()
         returnTable.hidden = false
         orderDetailDictn = notification.userInfo!
         orderDetails = Mapper<OrderDetails>().map(orderDetailDictn)
         
-        print("order details dict \(orderDetails)")
+        //print("order details dict \(orderDetails)")
        linesArray=NSMutableArray()
         serialNumber=NSMutableArray()
-        print("product cnt \(linesArray.count)")
+       // print("product cnt \(linesArray.count)")
         let arry = orderDetailDictn["lines"] as! NSMutableArray
         for i in 0..<arry.count {
             let productDet = arry.objectAtIndex(i) as? NSDictionary
-            print(productDet!["ingramPartNumber"] as! String)
+            //print(productDet!["ingramPartNumber"] as! String)
             if(customerLineNumber == productDet!["ingramPartNumber"] as! String){
                 linesArray.addObject(productDet!)
             }
         }
         orderDetails?.lines = Mapper<Lines>().mapArray(linesArray)
-        print(orderDetails?.lines?.count)
+       // print(orderDetails?.lines?.count)
         let productDet = linesArray.objectAtIndex(0) as? NSDictionary
         orderDetails?.lines![0].delivery = productDet!["delivery"] as? NSMutableArray
         orderDetails?.lines![0].orderReturninfo = productDet!["orderReturninfo"] as? NSMutableArray
@@ -394,7 +394,7 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
        var line = orderDetails?.lines![0]
         line?.ReasonCode = val
         orderDetails?.lines![0] = line!
-        print(orderDetails?.lines![0].ReasonCode, orderDetails?.lines![0].ingramPartNumber)
+        //print(orderDetails?.lines![0].ReasonCode, orderDetails?.lines![0].ingramPartNumber)
         
         
     }
@@ -434,7 +434,7 @@ class ReturnBtnViewController: UIViewController,webServiceDelegate,returnRequest
     {
         let dict : AnyObject = notification.userInfo!
         let receivednumber : NSDictionary = dict["valueToPass"] as! NSDictionary
-        print(receivednumber)
+        //print(receivednumber)
 //        if let a = TotalPrice{
 //            let arr = TotalPrice!.componentsSeparatedByString(" ")
 //            let trimmedProductprice = arr[1].stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -517,11 +517,11 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
                 cell.prodImageView.image = image
                 let url =  productDet["imageURL"] as! String
                 let imgURL: NSURL = NSURL(string: url)!
-                print("img url **** \(imgURL.absoluteString)")
+                //print("img url **** \(imgURL.absoluteString)")
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                    //print("IN cache")
                     cell.prodImageView!.image = image
                     
                 }
@@ -531,12 +531,12 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                                //print(imgURL.absoluteString)
                                 cell.prodImageView!.image = image
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                             }
@@ -678,7 +678,7 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
                 if let productDet = linesArray.objectAtIndex(0) as? NSDictionary{
                     let unitamnt = productDet["unitNetAmount"] as! String
                     let amnt = Float(prodArray.count) * Float(unitamnt)!
-                    print(String(amnt))
+                   // print(String(amnt))
                     refundAmntLbl.text = "₹ \(String(amnt)) "
                 }
             return serialFooterView
@@ -766,9 +766,9 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
         var index = NSIndexPath.init(forRow: 0, inSection: 3)
         var cell = tableView(returnTable, cellForRowAtIndexPath: index) as! ReasonCellTableViewCell
         
-          print(cell.chkBoxBtn1.selected)
-        print("hello")
-        print(prodArray)
+//          print(cell.chkBoxBtn1.selected)
+//        print("hello")
+//        print(prodArray)
         if(prodArray.count == 0){
             let alertView:UIAlertView = UIAlertView()
             alertView.title = ""
@@ -805,10 +805,10 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
             for i in 0..<prodArray.count{
                 let abc = String(i)
                 let val = prodArray.objectAtIndex(i) as! String
-                print(abc , prodArray.objectAtIndex(i))
+                //print(abc , prodArray.objectAtIndex(i))
                 prodDict.setValue(val, forKey:abc)
             }
-            print(prodDict)
+            //print(prodDict)
             orderDetails?.lines![0].nwSkuDescription = orderDetails?.lines![0].skuDescription
             orderDetails?.lines![0].nwIngramPartNumber = orderDetails?.lines![0].ingramPartNumber
             orderDetails?.lines![0].NewSerialNumbers = prodArray
@@ -817,7 +817,7 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
             if let productDet = linesArray.objectAtIndex(0) as? NSDictionary{
                 let unitamnt = productDet["unitNetAmount"] as! String
                 let amnt = Float(prodArray.count) * Float(unitamnt)!
-                print(String(amnt))
+               // print(String(amnt))
                 orderDetails?.lines![0].TotalRefundAmount = String(amnt)
             }
             orderDetails?.lines![0].AddressID = addressId
@@ -894,7 +894,7 @@ extension ReturnBtnViewController: UITableViewDataSource, UITableViewDelegate{
             
             
             
-            print("final array \(orderReturnDict)")
+            //print("final array \(orderReturnDict)")
             let wsm : WebServiceClass = WebServiceClass.sharedInstance
             var window :UIWindow = UIApplication.sharedApplication().keyWindow!
              // JHProgressHUD.sharedHUD.showInView(self.view)

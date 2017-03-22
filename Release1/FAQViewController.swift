@@ -43,7 +43,7 @@ class FAQViewController: UIViewController, UIWebViewDelegate {
                 {
                     if  let termAndcond: AnyObject = staticcontent["text"]
                     {
-                        print(termAndcond)
+                       // print(termAndcond)
                         LoadingOverlay.shared.hideOverlayView()
                         self.faqWebView.loadHTMLString(termAndcond as! String, baseURL: nil)
                         

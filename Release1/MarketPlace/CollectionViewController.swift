@@ -444,7 +444,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         sortTable.tableHeaderView = sortHeaderVC
         self.collectionView?.registerClass(FooterReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "Footer")
         //      self.collectionView?.registerClass(HeaderReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "Header")
-        print(comingfrom)
+        //print(comingfrom)
         
         
         
@@ -467,7 +467,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         self.collectionView?.delegate = self
         self.automaticallyAdjustsScrollViewInsets = true
         
-        print(glblArr)
+        //print(glblArr)
         
         if let b = comingfrom
         {
@@ -477,13 +477,13 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 {
                     self.title = ttle
                 }
-                print(glblArr, terminator: "")
+               // print(glblArr, terminator: "")
                 let catid :AnyObject = glblArr.objectAtIndex(0).valueForKey("categoryID")!
                 // http://immarketapi-stg2.azurewebsites.net/api/product?pageNumber=1&searchCriteria=&categoryId=4294967081&priceRange=%3E%205000&filterAppliedLast=price
                 catId = catid as! String
                 URLString = "\(baseUrl)product?searchCriteria=&categoryId=\(catid)"
                 url = NSURL(string:"\(baseUrl)product?searchCriteria=&categoryId=\(catid)")
-                print(url.absoluteString, terminator: "")
+                //print(url.absoluteString, terminator: "")
             }
             else if self.comingfrom == "SubCategory"
             {
@@ -492,7 +492,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 {
                     self.title = ttle
                 }
-                print(glblArr, terminator: "")
+                //print(glblArr, terminator: "")
                 let catid :AnyObject = glblArr.objectAtIndex(0).valueForKey("categoryID")!
                 let subcatid : AnyObject = glblArr.objectAtIndex(1).valueForKey("categoryID")!
                 //           url = NSURL(string:"http://immarketapi-dev.azurewebsites.net/api/product?searchCriteria=&categoryId=\(catid)&subCategoryId=\(subcatid)&pageNumber=1")
@@ -501,8 +501,8 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 url = NSURL(string:"\(baseUrl)product?&searchCriteria=&categoryId=\(catid)&subCategoryId=\(subcatid)")
                 catId = catid as! String
                 subCatId = subcatid as! String
-                print(url.absoluteString, terminator: "")
-                print("from SubCategory", terminator: "")
+                //print(url.absoluteString, terminator: "")
+               // print("from SubCategory", terminator: "")
             }
                 
             else if self.comingfrom == "FinalCategory"
@@ -521,13 +521,13 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 {
                     dictry["cat\(index)"] = glblArr[index].valueForKey("categoryID")
                     
-                    print(dictry["cat0"]!, terminator: "")
+                   // print(dictry["cat0"]!, terminator: "")
                     
                     
                 }
                 
                 let catid : AnyObject = dictry["cat0"]!
-                print("\(catid)", terminator: "")
+                //print("\(catid)", terminator: "")
                 var subcatid  : AnyObject  = dictry["cat1"]!
                 var level3catid:AnyObject!=""
                 if let  le3catid : AnyObject = dictry["cat2"]!{
@@ -542,7 +542,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 subCatId = subcatid as! String
                 finalCatId = level3catid as! String
                 URLString = "\(baseUrl)product?searchCriteria=&categoryId=\(catid)&subCategoryId=\(subcatid)&category3Id=\(level3catid)"
-                print("url str \(URLString)")
+                //print("url str \(URLString)")
                 url = NSURL(string:"\(baseUrl)product?searchCriteria=&categoryId=\(catid)&subCategoryId=\(subcatid)&category3Id=\(level3catid)")
                 
             }
@@ -563,7 +563,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 catId = ""
                 subCatId = ""
                 finalCatId = ""
-                print("coming from tag is nil", terminator: "")
+                //print("coming from tag is nil", terminator: "")
                 if let ttle = keyWords
                 {
                 self.title = ttle
@@ -574,11 +574,11 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 // url = NSURL(string:"http://immarketapi-dev.azurewebsites.net/api/product?searchCriteria=\(escapepercent)&pageNumber=1")
                 URLString = "\(baseUrl)product?searchCriteria=\(escapepercent)"
                 url = NSURL(string:"\(baseUrl)product?searchCriteria=\(escapepercent)")// nope
-                print("url ----- \(url)")
+                //print("url ----- \(url)")
             }
              else if self.comingfrom == "ViewAll"
             {
-                print("url ----- \(url)")
+               // print("url ----- \(url)")
                 var window :UIWindow = UIApplication.sharedApplication().keyWindow!
                 LoadingOverlay.shared.showOverlay(window)
                 self.newArrivalproduct()
@@ -591,12 +591,12 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         else
             
         {
-            print("coming from tag is nil", terminator: "")
+            //print("coming from tag is nil", terminator: "")
             self.noDataFlag = nil
           
         }
         
-        print(url, terminator: "")
+        //print(url, terminator: "")
         
 //        if (self.comingfrom == "ViewAll")
 //        {
@@ -700,7 +700,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         
         
        //self.headerView.hidden = false
-        print(self.title)
+        //print(self.title)
         if(self.view.subviews.contains(self.noResultVc)){
            // self.noresultLbl.removeFromSuperview()
             self.noResultVc.removeFromSuperview()
@@ -722,16 +722,16 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 "Accept": "application/json"
             ]
             let urlstr = "\(url)&pageNumber=\(currentPage)&sortIds=\(sortIds)&filterAppliedLast=\(appliedfilter)&productConditions=\("")"
-            print(appliedfilter)
+            //print(appliedfilter)
             Alamofire.request(.GET, NSURL(string:urlstr)!,headers: headers).responseObject { (response: Response<Product, NSError>) in
                 
                 let productResponse = response.result.value
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)
                 var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Body: \(strData)")// server data
-                print(response.result)
+//                print("Body: \(strData)")// server data
+//                print(response.result)
                 
                 if(isCalled != "filter"){
                     self.techSpecArray.removeAllObjects()
@@ -740,29 +740,29 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                         {
                             
                             self.techSpecArray .addObject(prodt)
-                            print("testing")
-                            print("testing2")
+//                            print("testing")
+//                            print("testing2")
                             
                         }
                     }else{
                         self.techSpecArray = NSMutableArray()
                     }
                     
-                    print(productResponse?.result?.product?.lstPrices)
+                    //print(productResponse?.result?.product?.lstPrices)
                     if let pricelist = productResponse?.result?.product?.lstPrices{
                         self.priceArray = NSArray.init(array: pricelist)
-                        print("pricelist \(pricelist)")
+                        //print("pricelist \(pricelist)")
                     }else{
                         self.priceArray = NSArray()
                     }
                     
                     if let vendorFacet = productResponse?.result?.vendorFacet{
-                        print("applied \(vendorFacet.vendorList)")
+                        //print("applied \(vendorFacet.vendorList)")
                         self.vendorList = vendorFacet
                     }
                     if let reviewlist = productResponse?.result?.product?.lstUserReview{
                         self.reviewArray = NSArray.init(array: reviewlist)
-                        print("pricelist \(reviewlist)")
+                       // print("pricelist \(reviewlist)")
                     }else{
                         self.reviewArray = NSArray()
                     }
@@ -775,15 +775,15 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                     let roundof  = ceil(Double(self.totalCount)/Double(pagecount))
                     //
                     let introundof = Int(roundof)
-                    print(introundof, terminator: "")
-                    print(productList1.pageIndex!)
+//                    print(introundof, terminator: "")
+//                    print(productList1.pageIndex!)
                     self.totalPages  = introundof
                     // self.currentPage   = productList1.pageIndex!
                     
                     
                 }
                 if let appliedFilterList = productResponse?.result?.appliedFilters{
-                    print("applied \(appliedFilterList)")
+                    //print("applied \(appliedFilterList)")
                     
                     
                     if(appliedFilterList.count > 0){
@@ -855,8 +855,8 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                     {
                         
                         self.CollectionData .addObject(prodt)
-                        print("testing")
-                        print("testing2")
+//                        print("testing")
+//                        print("testing2")
                         
                     }
                     
@@ -1079,7 +1079,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                         
                     }
                 }
-                print(productResponse?.result)
+               // print(productResponse?.result)
                 if(response.result.isSuccess){
 //                     self.activity.stopAnimating()
 //                    LoadingOverlay.shared.hideOverlayView()
@@ -1094,7 +1094,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 })
                 {
                     completed in
-                   print("completedLoading")
+                   //print("completedLoading")
                     self.activity.stopAnimating()
                     LoadingOverlay.shared.hideOverlayView()
                   
@@ -1196,7 +1196,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         
     }
     func returnDataToPrev(vendrDet:NSMutableArray,priceArray:NSMutableArray,techSpecAray:NSMutableArray,categoryArray:NSMutableArray,fileteApplied:NSString,reviewArray:NSMutableArray){
-        print(self.navigationController?.title)
+       // print(self.navigationController?.title)
         if let ttle = self.keyWords
         {
             // self.title = "\(ttle)"
@@ -1209,7 +1209,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         }
         
        
-        print(self.title)
+       // print(self.title)
         selBrandArray = vendrDet
         selPriceArray = priceArray
         selreviewArray = reviewArray
@@ -1221,9 +1221,9 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         self.CollectionData.removeAllObjects()
         self.collectionView?.reloadData()
         
-        print("filter \(lastAppliedFilter)")
+        //print("filter \(lastAppliedFilter)")
         LoadingOverlay.shared.hideOverlayView()
-        print("selBrandArray \(selBrandArray.count)  selPriceArray \(selPriceArray.count)  seltechSpecArray \(seltechSpecArray.count)  selCatArray \(selCatArray.count) ")
+        //print("selBrandArray \(selBrandArray.count)  selPriceArray \(selPriceArray.count)  seltechSpecArray \(seltechSpecArray.count)  selCatArray \(selCatArray.count) ")
         
         let dictry : NSMutableDictionary = NSMutableDictionary ()
         
@@ -1231,7 +1231,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         {
             dictry["cat\(index)"] = glblArr[index].valueForKey("categoryID")
             
-            print(dictry["cat0"]!, terminator: "")
+            //print(dictry["cat0"]!, terminator: "")
             
             
         }
@@ -1321,7 +1321,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
       url = NSURL(string:urlwithPercentEscapes!)
 
 
-        print(url!)
+        //print(url!)
          self.activity.stopAnimating()
         currentPage = 1
         callApi = "filter"
@@ -1356,12 +1356,12 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         self.sortView.frame = CGRectMake(0, 0, boundss.width, boundss.height)
         self.view .addSubview(self.sortView)
         
-        print(sortTable.bounds.width)
-        print(boundss.width)
-        print(boundss.height)
+//        print(sortTable.bounds.width)
+//        print(boundss.width)
+//        print(boundss.height)
     }
     @IBAction func handleTap() {
-        print("tap working")
+        //print("tap working")
         self.sortView.removeFromSuperview()
         //view1.removeFromSuperview()
         // view1.alpha = 0.1
@@ -1370,7 +1370,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         
         if scrollView.panGestureRecognizer.translationInView(scrollView).y < 0
         {
-            print("scrolled up", terminator: "")
+           // print("scrolled up", terminator: "")
             
             changeTabBar(true, animated: true)
             
@@ -1387,7 +1387,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                         
                         //                if ( self.noDataFlag == "noData")
                         //                {
-                        print("No more data", terminator: "")
+                       // print("No more data", terminator: "")
                         
                         
                         
@@ -1403,7 +1403,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                         myActivityIndicator.center = CGPointMake(180.5, 38.0);
                         
                         DynamicView.hidden=true
-                        print(self.CollectionData.count, terminator: "")
+                        //print(self.CollectionData.count, terminator: "")
                         //                if indexPath.row == self.CollectionData.count-1
                         //                {
                         DynamicView.hidden=false
@@ -1418,7 +1418,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             }
         }
         else{
-            print("scrolled down", terminator: "")
+            //print("scrolled down", terminator: "")
             changeTabBar(false, animated: true)
         }
     }
@@ -1450,7 +1450,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 callGetProductAPI(url!, isCalled: callApi)
             }
            
-            print("reach end")
+            //print("reach end")
         }
         //self.productListTable.contentInset = UIEdgeInsetsMake(0, 0, 0, 0)
         changeTabBar(false, animated: true)
@@ -1560,11 +1560,11 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
     func hideResult(notification:NSNotification)
     {
     //self.title = self.keyWords
-        print(self.title)
+        //print(self.title)
     }
     func internetReachable(notification:NSNotification){
        noInternetClk()
-        print("in collection via reachable")
+        //print("in collection via reachable")
     }
     override func   viewDidAppear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
@@ -1632,7 +1632,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
     {
         
         //LoadingOverlay.shared.showOverlay(window)
-        print("data is not available")
+        //print("data is not available")
         
         let headers = [
             "Authorization":authorizationWithoutLogin,
@@ -1650,7 +1650,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         //        ]
         //
         //
-        print(self.skuarrayVL)
+        //print(self.skuarrayVL)
         var data : String = ""
         for str in self.skuarrayVL
         {
@@ -1659,8 +1659,8 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         let trimmedString = data.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         let trimmedString2 = trimmedString.stringByReplacingOccurrencesOfString("\r\n", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
         let trimmedString3 = trimmedString2.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        print(data)
-        print(trimmedString3)
+//        print(data)
+//        print(trimmedString3)
         
         
         let url = NSURL(string:"\(baseUrl)product?txtSearch=\(trimmedString3)")
@@ -1669,23 +1669,23 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
             .responseJSON { response in
                 //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if let JSON = response.result.value {
-                    print(JSON)
+                   // print(JSON)
                     self.CollectionData.removeAllObjects()
                     //  let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
                     LoadingOverlay.shared.hideOverlayView()
                     let customer1 : Array<LstProducts> = Mapper<LstProducts>().mapArray(JSON)!
                     // print(customer)
-                    print(customer1)
+                    //print(customer1)
                     
                     for product in customer1
                     {
                         self.CollectionData .addObject(product)
-                        print(product.description)
+                        //print(product.description)
                     }
                     
 //                    let collectionViewPush = self.storyboard?.instantiateViewControllerWithIdentifier("productList") as! CollectionViewController
@@ -1709,7 +1709,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         {
             if(setflag == "sameview")
             {
-                print("same collection view again", terminator: "")
+                //print("same collection view again", terminator: "")
                 
             }
         }
@@ -1754,7 +1754,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
        // self.removeObserver(self, forKeyPath: "contentSize")
        // NSNotificationCenter.defaultCenter().removeObserver(self, name: "refresh", object: nil)
 
-        print("deallocated", terminator: "")
+       // print("deallocated", terminator: "")
         glblArr .removeLastObject()
         // NSNotificationCenter.defaultCenter().removeObserver(self)
     }
@@ -1793,7 +1793,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         cell.delegates = self
       
         let prodt  = self.CollectionData.objectAtIndex(indexPath.row) as! LstProducts
-        print(prodt.imageURLHigh!)
+       // print(prodt.imageURLHigh!)
        //ratings
         cell.skuNumber = prodt.sku!
         
@@ -1841,11 +1841,11 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         cell.productImage.image = image
         //caching image
         let imgURL: NSURL = NSURL(string: prodt.imageURLHigh!)!
-        print(imgURL.absoluteString)
+        //print(imgURL.absoluteString)
         
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+            //print("IN cache")
             cell.productImage.image = image
             
         }
@@ -1855,15 +1855,15 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+//                    print(response.request)
+//                    print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                       // print(imgURL.absoluteString)
                         cell.productImage.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }
@@ -2102,7 +2102,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         }
     }
     func addWishListSuccess(wishList:NSDictionary){
-        print("wishData   \(wishList.valueForKey("wishData"))")
+       // print("wishData   \(wishList.valueForKey("wishData"))")
         LoadingOverlay.shared.hideOverlayView()
         //        let wishStr = wishList.valueForKey("wishData")! as! NSString
         //        let array = wishStr.componentsSeparatedByString(",")
@@ -2117,7 +2117,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
     {
         
         let prodt  = self.CollectionData.objectAtIndex(indexPath.row) as! LstProducts
-        print(prodt.sku!)
+        //print(prodt.sku!)
         self.skuno = prodt.sku!
         
         if (self.comingfrom == "ViewAll")
@@ -2134,7 +2134,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             if let rate = productrati.overallRating
             {
                 self.ratings = Float(rate)
-                print(self.ratings)
+                //print(self.ratings)
             }
         }
             }
@@ -2204,7 +2204,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         {
         if indexPath.row == (self.CollectionData.count-1)
         {
-            print("last item visible")
+            //print("last item visible")
             self.activity.removeFromSuperview()
         }
         if(self.CollectionData.count == 0){
@@ -2228,7 +2228,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         switch kind {
             
         case UICollectionElementKindSectionHeader:
-            print("now showing suppl view")
+            //print("now showing suppl view")
             
              headerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Header", forIndexPath: indexPath) as! HeaderReusableView
             let filter = UIImage(named: "Filter")!
@@ -2312,7 +2312,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             
             
         case UICollectionElementKindSectionFooter:
-            print("now showing suppl view")
+            //print("now showing suppl view")
             let footerView = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: "Footer", forIndexPath: indexPath) as! FooterReusableView
             
             activity = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.WhiteLarge)
@@ -2320,7 +2320,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             activity.startAnimating()
             activity.hidesWhenStopped = true
             activity.tag = 42
-            print(footerView.center)
+           // print(footerView.center)
             activity.center = CGPointMake(footerView.center.x,30)
             
             
@@ -2361,16 +2361,16 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
     override func collectionView(collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, atIndexPath indexPath: NSIndexPath)
         
     {
-        print("did end showing ")
+        //print("did end showing ")
         
     }
     
     func loadmoredata (pageno:Int)
     {
         
-        print(pageno)
-        print(self.CollectionData.count)
-        print(self.CollectionData)
+//        print(pageno)
+//        print(self.CollectionData.count)
+//        print(self.CollectionData)
         let articleString = url?.absoluteString
         var name: String = articleString!
         let stringLength = name.characters.count
@@ -2378,14 +2378,14 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         var editingstr: String = name.substringToIndex(name.startIndex.advancedBy(substringIndex))
         editingstr+="\(pageno)"
         
-        print(editingstr)
+       // print(editingstr)
         var newurl = NSURL(string:editingstr)
         //        if lastComponent == "App Store.app" {
         //            println("Yes")
         //        }
         
-        print(url!, terminator: "")
-        print(newurl!, terminator: "")
+//        print(url!, terminator: "")
+//        print(newurl!, terminator: "")
         
         
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -2406,13 +2406,13 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 if let productList1 = productResponse?.result
                 {
                     
-                    print(productList1.pageSize!)
+                   // print(productList1.pageSize!)
                     let totalcount   = productList1.totalCount!
                     let pagecount   = productList1.pageSize!
                     let roundof  = ceil(Double(totalcount)/Double(pagecount))
                     //
                     let introundof = Int(roundof)
-                    print(introundof, terminator: "")
+                   // print(introundof, terminator: "")
                     //
                     self.pages = introundof
                     
@@ -2524,7 +2524,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             }
             
             let prodt  = self.CollectionData.objectAtIndex(indexPath.row) as! LstProducts
-            print(prodt.imageURLHigh!)
+            //print(prodt.imageURLHigh!)
             //ratings
             cell.skuNumber = prodt.sku!
             cell.delegates = self
@@ -2549,11 +2549,11 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             cell.productImage.image = image
             //caching image
             let imgURL: NSURL = NSURL(string: prodt.imageURLHigh!)!
-            print(imgURL.absoluteString)
+            //print(imgURL.absoluteString)
             
             if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
             {
-                print("IN cache")
+                //print("IN cache")
                 cell.productImage.image = image
                 
             }
@@ -2563,15 +2563,15 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                     .responseImage { response in
                         debugPrint(response)
                         
-                        print(response.request)
-                        print(response.response)
+//                        print(response.request)
+//                        print(response.response)
                         debugPrint(response.result)
                         
                         
                         
                         
                         if let image = response.result.value {
-                            print(imgURL.absoluteString)
+                            //print(imgURL.absoluteString)
                             cell.productImage.image = image
                             photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                         }
@@ -2679,7 +2679,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         //sortIds=0&filterAppliedLast=sort
         if(tableView == productListTable){
             let prodt  = self.CollectionData.objectAtIndex(indexPath.row) as! LstProducts
-            print(prodt.sku!)
+            //print(prodt.sku!)
             self.skuno = prodt.sku!
             if (self.comingfrom == "ViewAll")
             {
@@ -2693,7 +2693,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 if let rate = productrati.overallRating
                 {
                     self.ratings = Float(rate)
-                    print(self.ratings)
+                   // print(self.ratings)
                 }
             }
                 }
@@ -2728,7 +2728,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
        sortIds = indexPath.row
         appliedfilter = "sort"
       //  URLString = "\(URLString)&sortIds=\(indexPath.row)&filterAppliedLast=sort"
-        print(URLString)
+       // print(URLString)
        // url = NSURL(string: URLString)
          currentPage = 1
         callApi = "filter"

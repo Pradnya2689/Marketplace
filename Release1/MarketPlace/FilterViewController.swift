@@ -94,7 +94,7 @@ class FilterViewController: UIViewController {
         optionArray = ["Category","Brand","Price"]
         optionArray.addObject("Review")
         var rv = reviewArray.objectAtIndex(0) as! LstUserReview
-        print("review array cnt \(rv.rid)")
+       // print("review array cnt \(rv.rid)")
         
         let border = CALayer()
         let width = CGFloat(0.5)
@@ -130,7 +130,7 @@ class FilterViewController: UIViewController {
              self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         }else{
         let vendorIDs = selectedBrandValArray.componentsJoinedByString(",")
-        print("vendorIDs \(selectedPriceArray)")
+       // print("vendorIDs \(selectedPriceArray)")
             NSNotificationCenter.defaultCenter().postNotificationName("hideResultCount", object: nil, userInfo: nil )
         self.delegates?.returnDataToPrev!(selectedBrandValArray, priceArray: selectedPriceArray, techSpecAray: selectedTechSpecArray, categoryArray: selectedCategoryArray, fileteApplied: filterApplied,reviewArray:self.selReviewArray)
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
@@ -813,9 +813,9 @@ class FilterViewController: UIViewController {
             else{
 //                let vendor  = s[indexPath.row] as! [LstTechOptions]
 //                print("vendor  \(vendor)")
-                print("index \(indexPath.row)")
+                //print("index \(indexPath.row)")
                 let optionval = selectedTech[indexPath.row] as! LstTechOptions
-                print("opt \(optionval.specName)")
+                //print("opt \(optionval.specName)")
                 cell.valueLbl.text = optionval.specName
                 cell.uniqueId = optionval.dimensionValueId
                 if selectedTechSpecArray.containsObject(optionval.dimensionValueId!){
@@ -996,7 +996,7 @@ class FilterViewController: UIViewController {
                 let indexPat : NSIndexPath = NSIndexPath(forRow: indexOfA, inSection: 0)
                 let cell = filterKeyTable.cellForRowAtIndexPath(indexPat) as? FilterKeyCell
                 
-                print("row -- \(indexPath.row)  section  \(indexPath.section)")
+               // print("row -- \(indexPath.row)  section  \(indexPath.section)")
                 let indx : NSIndexPath = NSIndexPath(forRow: indexPath.row, inSection: indexPath.section)
                 let valcell = filterValueTable.cellForRowAtIndexPath(indx) as! FilterValueCell
                 if selectedTechSpecArray.containsObject(valcell.uniqueId){
