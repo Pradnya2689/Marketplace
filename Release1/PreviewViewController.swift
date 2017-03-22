@@ -79,7 +79,7 @@ class PreviewViewController: UIViewController,UIPageViewControllerDelegate,UIPag
     }
     
     func viewControllerAtIndex(index: Int) -> ContentImageViewController{
-        print(slideImgArray.count)
+       // print(slideImgArray.count)
         let vc1 = self.storyboard?.instantiateViewControllerWithIdentifier("ImageContentView") as! ContentImageViewController
         vc1.view.translatesAutoresizingMaskIntoConstraints = true
         vc1.view.frame=CGRectMake(0, 77, boundss.width,screenHeight-77)
@@ -87,7 +87,7 @@ class PreviewViewController: UIViewController,UIPageViewControllerDelegate,UIPag
         vc1.imageViewContent!.frame=CGRectMake(0, 0, screenWidth, vc1.view.frame.size.height)
         vc1.imageName = self.slideImgArray[index] as! String
 
-        print(vc1.imageName)
+       // print(vc1.imageName)
         vc1.pageIndex = index
         vc1.view.bringSubviewToFront(vc1.imageViewContent!)
         

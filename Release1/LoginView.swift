@@ -98,7 +98,7 @@ class LoginView: UIViewController,UITextFieldDelegate,webServiceDelegate,UIGestu
         titleString.addAttribute(NSUnderlineStyleAttributeName, value: NSUnderlineStyle.StyleSingle.rawValue, range: NSMakeRange(0, text.characters.count))
         titleString.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 17)!], range:NSMakeRange(0, text.characters.count))
         titleString.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 30/255.0, green: 74/255.0, blue: 154/255.0, alpha: 1.0) , range: NSMakeRange(0, text.characters.count))
-        print(titleString)
+        //print(titleString)
         registerBtn.setAttributedTitle(titleString, forState: .Normal)
 
 //        termsBtnOutlet.translatesAutoresizingMaskIntoConstraints = true
@@ -269,7 +269,7 @@ class LoginView: UIViewController,UITextFieldDelegate,webServiceDelegate,UIGestu
             "Password" : pwd
         ]
         
-        print(parameters)
+        //print(parameters)
       
         var url : NSURL!
         url = NSURL(string:"\(baseUrl)session")

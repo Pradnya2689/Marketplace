@@ -79,7 +79,7 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
     }
     func internetReachable(notification:NSNotification){
         noInternetClk()
-        print("in category via reachable")
+        //print("in category via reachable")
     }
      @IBAction func noInternetClk(){
          wishListArray = NSMutableArray()
@@ -142,11 +142,11 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
         cell.skunumber = prodt.sku!
         let url =  prodt.imageURLHigh
         let imgURL: NSURL = NSURL(string: url!)!
-        print(imgURL.absoluteString)
+      //  print(imgURL.absoluteString)
         
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+           // print("IN cache")
             cell.productImg.image = image
             
         }
@@ -156,15 +156,15 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+                   // print(response.request)
+                    //print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                      //  print(imgURL.absoluteString)
                         cell.productImg.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }
@@ -199,7 +199,7 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
         self.wishListArray.removeAllObjects()
         if let COD : AnyObject  = wishList["product"]
         {
-            print(COD)
+           // print(COD)
             
             if let customer : Array<LstProducts> = Mapper<LstProducts>().mapArray(COD["lstProducts"])! {
           //  if let customer = COD["lstProducts"]{
@@ -207,8 +207,8 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
             {
                 wishLstGlobalArray.addObject(prodt.sku!)
                 self.wishListArray .addObject(prodt)
-                print("testing   \(prodt)")
-                print("testing2")
+//                print("testing   \(prodt)")
+//                print("testing2")
                 
             }
             }
@@ -239,7 +239,7 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
         // JHProgressHUD.sharedHUD.showInView(window)
         LoadingOverlay.shared.showOverlay(window)
         wishLstGlobalArray.removeObject(sku)
-        print(wishLstGlobalArray)
+        //print(wishLstGlobalArray)
         
         let alldta = wishLstGlobalArray.componentsJoinedByString(",") as NSString
         // JHProgressHUD.sharedHUD.showInView(self.view)
@@ -249,7 +249,7 @@ class WishListViewController: UIViewController,webServiceDelegate,wishListDelega
     }
     func addWishListSuccess(wishList:NSDictionary){
          //JHProgressHUD.sharedHUD.hide()
-        print("wishData   \(wishList.valueForKey("wishData"))")
+        //print("wishData   \(wishList.valueForKey("wishData"))")
         wishListArray = NSMutableArray()
         // Do any additional setup after loading the view.
         let wsm : WebServiceClass = WebServiceClass.sharedInstance

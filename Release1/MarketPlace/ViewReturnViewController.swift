@@ -72,7 +72,7 @@ class ViewReturnViewController: UIViewController {
     }
     func internetReachable(notification:NSNotification){
         noInternetClk()
-        print("in category via reachable")
+       // print("in category via reachable")
     }
     @IBAction func noInternetClk(){
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -99,7 +99,7 @@ class ViewReturnViewController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "reachable", object: nil)
     }
     func getOrderList(notification: NSNotification)  {
-        print(notification)
+      //  print(notification)
         orderReturnArray = NSMutableArray()
         LoadingOverlay.shared.hideOverlayView()
         let dict : AnyObject = notification.userInfo!
@@ -107,10 +107,10 @@ class ViewReturnViewController: UIViewController {
         orderDetailDictn = notification.userInfo!
         paymentTypeLbl.text = "Payment: \(orderDetailDictn["paymentTerms"] as! String)"
         let arry = orderDetailDictn["lines"] as! NSMutableArray
-        print("custnumber \(customerLineNumber)")
+       // print("custnumber \(customerLineNumber)")
         for i in 0..<arry.count {
             let productDet = arry.objectAtIndex(i) as? NSDictionary
-            print(productDet!["ingramPartNumber"] as! String)
+            //print(productDet!["ingramPartNumber"] as! String)
             if(customerLineNumber == productDet!["ingramPartNumber"] as! String){
                 linesArray.addObject(productDet!)
             }
@@ -129,11 +129,11 @@ class ViewReturnViewController: UIViewController {
             prodImg.image = image
             let url =  productDet["imageURL"] as! String
             let imgURL: NSURL = NSURL(string: url)!
-            print("img url **** \(imgURL.absoluteString)")
+           // print("img url **** \(imgURL.absoluteString)")
             
             if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
             {
-                print("IN cache")
+              //  print("IN cache")
                 prodImg.image = image
                 
             }
@@ -143,12 +143,12 @@ class ViewReturnViewController: UIViewController {
                     .responseImage { response in
                         debugPrint(response)
                         
-                        print(response.request)
-                        print(response.response)
+//                        print(response.request)
+//                        print(response.response)
                         debugPrint(response.result)
                         
                         if let image = response.result.value {
-                            print(imgURL.absoluteString)
+                           // print(imgURL.absoluteString)
                             self.prodImg.image = image
                             photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                         }
@@ -169,7 +169,7 @@ class ViewReturnViewController: UIViewController {
                 //cell.shipmentNoLb.text = delivery["trackingNumber"] as!  String
             }
             if let delivery1 = productDet["orderReturninfo"] as? NSArray {
-                print("order cnt \(delivery1)")
+               // print("order cnt \(delivery1)")
                 orderReturnArray = delivery1 as? NSMutableArray
                // let delivery = delivery1.objectAtIndex(0)
                 //cell.returnStatusLb.text = delivery["returnSOStatus"] as! String
@@ -183,8 +183,8 @@ class ViewReturnViewController: UIViewController {
         
         returnView.hidden = false
         
-        print("product cnt \(linesArray.count)")
-        print(linesArray)
+//        print("product cnt \(linesArray.count)")
+//        print(linesArray)
        
         
     }
@@ -195,7 +195,7 @@ class ViewReturnViewController: UIViewController {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(orderReturnArray.count > 0 ){
-            print(section)
+           // print(section)
             if  let orderDet = orderReturnArray.objectAtIndex(section) as? NSDictionary{
             if  let serialNumber = orderDet["serialNumber"] as? NSArray{
             return serialNumber.count+2

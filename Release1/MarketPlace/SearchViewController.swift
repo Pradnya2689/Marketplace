@@ -54,7 +54,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
             {
                 for searchstring in people
                 {
-                    print(searchstring.valueForKey("searchValue"))
+                   // print(searchstring.valueForKey("searchValue"))
                     
                     let str  = searchstring.valueForKey("searchValue") as! String
                     
@@ -65,7 +65,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
             
         }
         catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+           // print("Could not fetch \(error), \(error.userInfo)")
         }
         filteredData = data1
         searchBar.becomeFirstResponder()
@@ -79,7 +79,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TableCell")! as UITableViewCell
-        print(filteredData[indexPath.row])
+       // print(filteredData[indexPath.row])
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         cell.textLabel?.font = UIFont(name:"MyriadPro-Regular", size:20)
         cell.textLabel?.textColor = UIColor(red: 51.0/255.0, green: 51.0/255.0, blue: 51.0/255.0, alpha: 1)
@@ -168,7 +168,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
                 {
                     for searchstring in people
                     {
-                        print(searchstring.valueForKey("searchValue"))
+                       // print(searchstring.valueForKey("searchValue"))
                         
                         let str  = searchstring.valueForKey("searchValue") as! String
                         
@@ -176,17 +176,17 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
                         
                         //data1.append(s)
                     }
-                    print(data1)
+                    //print(data1)
                     filteredData = data1
                     tableView.reloadData()
                 }
                 //                data.append(people)
             } catch let error as NSError {
-                print("Could not fetch \(error), \(error.userInfo)")
+                //print("Could not fetch \(error), \(error.userInfo)")
             }
            
         } catch let error as NSError  {
-            print("Could not save \(error), \(error.userInfo)")
+           // print("Could not save \(error), \(error.userInfo)")
         }
     }
     
@@ -223,7 +223,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
                 
                 else
                 {
-                print("Empty Objects")
+                //print("Empty Objects")
                 
                 }
                
@@ -231,7 +231,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
             }
           
         } catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+            //print("Could not fetch \(error), \(error.userInfo)")
         }
        
         
@@ -275,7 +275,7 @@ class SearchViewController: UIViewController , UITableViewDataSource, UISearchBa
     
     deinit
     {
-       print("deallocated", terminator: "")
+      // print("deallocated", terminator: "")
         // NSNotificationCenter.defaultCenter().removeObserver(self)
     }
 

@@ -189,15 +189,15 @@ class WebServiceClass: NSObject {
                 "Accept": "application/json"
             ]
             let url = "\(baseUrl)MarketPlaceCMS?itemtype=\(itemtype)&page=\(page)&key=\(key)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET, url,headers: headers).responseObject { (response: Response<ImgList, NSError>) in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if(response.result .isSuccess){
                     if let JSON = response.result.value {
-                        print(JSON)
+                       // print(JSON)
                         if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             self.delegates?.myDelegateFunction!(JSON)
                         }
@@ -205,7 +205,7 @@ class WebServiceClass: NSObject {
                 }
                 if(response.result .isFailure){
                     if let JSON = response.result.value {
-                        print(JSON)
+                        //print(JSON)
                         if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             self.delegates?.requestFailDelegate!()
                         }
@@ -244,20 +244,20 @@ class WebServiceClass: NSObject {
                 "password" : password,
                 "promotionalOffers":false
             ]
-            print(parameters)
+           // print(parameters)
             Alamofire.request(.POST,  url!, parameters: parameters as! [String : AnyObject], encoding:.JSON, headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                            //print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 self.delegates?.registartionapiresponse!(JSON as! NSDictionary)
                             }
@@ -274,7 +274,7 @@ class WebServiceClass: NSObject {
                         }
                         else if let statuscode = response.response?.statusCode
                         {
-                            print(statuscode)
+                           // print(statuscode)
                             var dict = NSDictionary()
                             dict = ["message" : "200"]
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -308,15 +308,15 @@ class WebServiceClass: NSObject {
                 "Accept": "application/json"
             ]
             let url = "\(baseUrl)password?userName=\(email)&mode=2"
-            print(url)
+           // print(url)
             Alamofire.request(.GET, url,headers: headers).responseObject { (response: Response<ImgList, NSError>) in
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 if(response.result .isSuccess){
                     if let JSON = response.result.value {
-                        print(JSON)
+                       // print(JSON)
                         var dict = NSDictionary()
                         if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             self.delegates?.forgotpwdapiresponse!(dict as NSDictionary)
@@ -332,7 +332,7 @@ class WebServiceClass: NSObject {
                     }
                     else if let statuscode = response.response?.statusCode
                     {
-                        print(statuscode)
+                       // print(statuscode)
                         //                        if (statuscode == 200)
                         //                        {
                         var dict = NSDictionary()
@@ -383,7 +383,7 @@ class WebServiceClass: NSObject {
                 "Password":pwd,
                 "UserName":usrname
             ]
-            print(parameters)
+           // print(parameters)
             Alamofire.request(.PUT,  url, parameters: parameters as! [String : String], encoding:.JSON, headers: headers)
                 .validate(contentType: ["application/json"])
                 
@@ -391,13 +391,13 @@ class WebServiceClass: NSObject {
                     
                     //            print(url)
                     //            Alamofire.request(.PUT, url,headers: headers).responseObject { (response: Response<ImgList, NSError>) in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess){
                         if let JSON = response.result.value {
-                            print(JSON)
+                           // print(JSON)
                             var dict = NSDictionary()
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                // if(JSON.isKindOfClass(NSDictionary)){
@@ -418,7 +418,7 @@ class WebServiceClass: NSObject {
                         }
                         else if let statuscode = response.response?.statusCode
                         {
-                            print(statuscode)
+                            //print(statuscode)
                             //                        var dict = NSDictionary()
                             //                        dict = ["message" : "200"]
                             //                        self.delegates?.forgotpwdapiresponse!(dict as NSDictionary)
@@ -448,23 +448,23 @@ class WebServiceClass: NSObject {
             ]
             
             // var url : NSURL!
-            print(headers)
+           // print(headers)
             let url = "\(baseUrl)basket?userId=\(userId)&sitecode=\(contryId)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET, url,headers: headers).responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response?.statusCode) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response?.statusCode) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
               //  print(self.delegates as! UIViewController)
                 
-                print("application viewc \(UIApplication.topViewController())")
+               // print("application viewc \(UIApplication.topViewController())")
                 
                 if(response.result .isSuccess)
                 {
                     if let JSON = response.result.value
                     {
-                        print(JSON)
+                       // print(JSON)
                        // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.basketdetailSuccess!(JSON as! NSDictionary)
                             LoadingOverlay.shared.hideOverlayView()
@@ -505,23 +505,23 @@ class WebServiceClass: NSObject {
             ]
             
             // var url : NSURL!
-            print(headers)
+           // print(headers)
             let url = "\(baseUrl)basket?userId=\(userId)&sitecode=\(contryId)"
-            print(url)
+            //print(url)
             Alamofire.request(.GET, url,headers: headers).responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response?.statusCode) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response?.statusCode) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 //  print(self.delegates as! UIViewController)
                 
-                print("application viewc \(UIApplication.topViewController())")
+               // print("application viewc \(UIApplication.topViewController())")
                 
                 if(response.result .isSuccess)
                 {
                     if let JSON = response.result.value
                     {
-                        print(JSON)
+                       // print(JSON)
                         // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                         //self.delegates?.basketdetailSuccess!(JSON as! NSDictionary)
                         LoadingOverlay.shared.hideOverlayView()
@@ -561,23 +561,23 @@ class WebServiceClass: NSObject {
             ]
             
             // var url : NSURL!
-            print(headers)
+           // print(headers)
             let url = "\(baseUrl)basket?userId=\(userId)&sitecode=\(contryId)"
-            print(url)
+            //print(url)
             Alamofire.request(.GET, url,headers: headers).responseJSON { response in
-                print(response.request)  // original URL request
-                print(response.response?.statusCode) // URL response
-                print(response.data)     // server data
-                print(response.result)
+//                print(response.request)  // original URL request
+//                print(response.response?.statusCode) // URL response
+//                print(response.data)     // server data
+//                print(response.result)
                 //  print(self.delegates as! UIViewController)
                 
-                print("application viewc \(UIApplication.topViewController())")
+                //print("application viewc \(UIApplication.topViewController())")
                 
                 if(response.result .isSuccess)
                 {
                     if let JSON = response.result.value
                     {
-                        print(JSON)
+                        //print(JSON)
                         // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                         //self.delegates?.basketdetailSuccess!(JSON as! NSDictionary)
                         LoadingOverlay.shared.hideOverlayView()
@@ -617,18 +617,18 @@ class WebServiceClass: NSObject {
                 "Accept": "application/json"
             ]
             let url = "\(baseUrl)address?addressId=&UserId=\(userID)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET, url, headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess){
                         if let JSON = response.result.value {
-                            print(JSON)
+                          //  print(JSON)
                             var dict = NSDictionary()
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 
@@ -644,7 +644,7 @@ class WebServiceClass: NSObject {
                         }
                         else if let statuscode = response.response?.statusCode
                         {
-                            print(statuscode)
+                           // print(statuscode)
                              var dict = NSDictionary()
                             dict = ["message" : "200"]
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -678,18 +678,18 @@ class WebServiceClass: NSObject {
                 "Accept": "application/json"
             ]
             let url = "\(baseUrl)address?addressId=&UserId=\(userID)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET, url, headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess){
                         if let JSON = response.result.value {
-                            print(JSON)
+                            //print(JSON)
                             var dict = NSDictionary()
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 self.delegates?.callAddressEditapiresponse!(JSON as! NSArray)
@@ -705,7 +705,7 @@ class WebServiceClass: NSObject {
                         }
                         else if let statuscode = response.response?.statusCode
                         {
-                            print(statuscode)
+                           // print(statuscode)
                             //                        if (statuscode == 200)
                             //                        {
                             var dict = NSDictionary()
@@ -745,7 +745,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                   // print(blog)
                     let authorization = authorizationWithLogin
                      let headers = [
                         "Authorization" : authorization,
@@ -760,19 +760,19 @@ class WebServiceClass: NSObject {
                         "lastName": lastName
                     ]
                     
-                    print(parameters)
+                   // print(parameters)
                     
                     let url = "\(baseUrl)Profile"
                     Alamofire.request(.POST,  url, parameters: parameters as! [String: AnyObject], encoding:.JSON, headers: headers)
                         .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response) // URL response
-                            print(response.data)
+//                            print(response.request)  // original URL request
+//                            print(response.response) // URL response
+//                            print(response.data)
                             var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                            print("Body: \(strData!)")// server data
-                            print(response.result)
+//                            print("Body: \(strData!)")// server data
+//                            print(response.result)
                             
                             
                             if (response.result .isSuccess)
@@ -782,7 +782,7 @@ class WebServiceClass: NSObject {
                                 {
                                     if let Message  : AnyObject  = JSON
                                     {
-                                        print(Message)
+                                       // print(Message)
                                         
                                         // print(message)
                                         if(Message .isEqual("Verification Code sent to"))
@@ -856,7 +856,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                    //print(blog)
                     let authorization = authorizationWithLogin
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -876,20 +876,20 @@ class WebServiceClass: NSObject {
                         "email":email,
                         "codeSentBySMS": otp
                     ]
-                    print(parameters)
+                   // print(parameters)
                     Alamofire.request(.POST,  url!, parameters: parameters as! [String : AnyObject], encoding:.JSON, headers: headers)
                         .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                     if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                         var dict = String()
                                         self.delegates?.OTPconfirmationapiresponse!(contactNumber)
@@ -962,7 +962,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     headers = [
                         
                         "Authorization" : authorization,
@@ -989,19 +989,19 @@ class WebServiceClass: NSObject {
             
             //  let url = "\(baseUrl)basket?index=\(index)&lineItemId=\(lineItemId)&BasketId=\(BasketId)&quantity=\(quantity)&userId=\(userId)&sitecode=\(sitecode)&placedPrice=\(placedPrice)"
             let url = "\(baseUrl)basket"
-            print(url)
+           // print(url)
             Alamofire.request(.PUT,  url, parameters: parameters as! [String : String], encoding:.JSON, headers: headers)
                 .responseJSON { response in
                     // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 //if(JSON.isKindOfClass(NSDictionary)){
                                 self.delegates?.updatebasketdetailSuccess!(JSON as! NSDictionary)
@@ -1055,21 +1055,21 @@ class WebServiceClass: NSObject {
             // var url : NSURL!
             let url = "\(baseUrl)basket?index=\(index)&lineItemId=\(lineItemId)&BasketItemId=\(BasketId)&userId=\(userId)&sitecode=\(sitecode)&placedPrice=\(placedPrice)"
             //let url = "\(baseUrl)basket"
-            print(url)
+           // print(url)
             Alamofire.request(.DELETE,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
                     // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 self.delegates?.deletebasketdetailSuccess!(JSON as! NSDictionary)
                             }
@@ -1113,7 +1113,7 @@ class WebServiceClass: NSObject {
             "vendorPartNumber": "301556",
             "runSalesOrder":"y"
         ]
-        print(productDet)
+       // print(productDet)
         if (appdelegate.isReachable == true) {
             var headers : [String : String]!
             let defaults = NSUserDefaults.standardUserDefaults()
@@ -1131,7 +1131,7 @@ class WebServiceClass: NSObject {
                     
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                  //  print(authorization)
                     
                     
                     headers = [
@@ -1153,26 +1153,26 @@ class WebServiceClass: NSObject {
                 "BasketLineItem": [productDet]
                 
             ]
-            print(parameters)
+           // print(parameters)
             // var url : NSURL!
             let url = "\(baseUrl)basket"
             //let url = "\(baseUrl)basket"
-            print(url)
+          //  print(url)
             Alamofire.request(.POST,  url,parameters: parameters as! [String : AnyObject], encoding:.JSON, headers: headers)
                 .validate(contentType: ["application/json"])
                 
                 .responseJSON { response in
                     // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
                             
-                            print(JSON)
+                           // print(JSON)
                             LoadingOverlay.shared.hideOverlayView()
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                // if(JSON.isKindOfClass(NSDictionary)){
@@ -1276,7 +1276,7 @@ class WebServiceClass: NSObject {
                     
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -1319,25 +1319,25 @@ class WebServiceClass: NSObject {
                     "BasketLineItem": prodArr!
                     
                 ]
-                print(parameters)
+               // print(parameters)
                 
                 let url = "\(baseUrl)basket"
                 
-                print(url)
+               // print(url)
                 Alamofire.request(.POST,  url,parameters: parameters as! [String : AnyObject], encoding:.JSON, headers: headers)
                     .validate(contentType: ["application/json"])
                     
                     .responseJSON { response in
                         // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response?.statusCode) // URL response
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response?.statusCode) // URL response
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if(response.result .isSuccess)
                         {
                             if let JSON = response.result.value
                             {
-                                print(JSON)
+                               // print(JSON)
                                 //proceedTochk
                                 NSNotificationCenter.defaultCenter().postNotificationName("proceedTochk", object: nil, userInfo: JSON as! [NSObject : AnyObject] )
                                 self.deleteMyCartData()
@@ -1407,22 +1407,22 @@ class WebServiceClass: NSObject {
                         .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                  //  print(JSON)
                                     
                                     LoadingOverlay.shared.hideOverlayView()
                                     
                                     let dict : AnyObject = JSON as! [NSObject : AnyObject]
-                                    print(dict)
+                                    //print(dict)
                                     var stateDict = dict as! NSDictionary
-                                    print(stateDict)
+                                   // print(stateDict)
                                     arrayState.removeAllObjects()
                                     let countryArr = dict["state"] as! NSArray
                                     for country  in countryArr
@@ -1497,7 +1497,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                    //print(blog)
                     let authorization = authorizationWithLogin1
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -1515,15 +1515,16 @@ class WebServiceClass: NSObject {
                     Alamofire.request(.GET, url, headers: headers)
                         .validate(contentType: ["application/json"])
                         
-                        .responseJSON { response in                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+                        .responseJSON { response in
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                     
                                     LoadingOverlay.shared.hideOverlayView()
                                    
@@ -1537,7 +1538,7 @@ class WebServiceClass: NSObject {
                                         {
                                             arrayCountries.addObject(country)
                                         }
-                                        print(arrayCountries)
+                                        //print(arrayCountries)
                                         
                                        
 //                                    if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -1602,7 +1603,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                   // print(blog)
                     let authorization = authorizationWithLogin
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -1620,15 +1621,16 @@ class WebServiceClass: NSObject {
                     Alamofire.request(.GET, url, headers: headers)
                         .validate(contentType: ["application/json"])
                         
-                        .responseJSON { response in                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+                        .responseJSON { response in
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                       NSNotificationCenter.defaultCenter().postNotificationName("cityResp", object: nil, userInfo: JSON as! [NSObject : AnyObject] )
 //                                    if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
 //                                        var dict = String()
@@ -1691,7 +1693,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                    //print(blog)
                     let authorization = authorizationWithLogin
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -1710,15 +1712,15 @@ class WebServiceClass: NSObject {
                        // .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                    //print(JSON)
 //                                    if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
 //                                        var dict = String()
                                         // self.delegates?.CityApiResponse!(JSON as! NSDictionary)
@@ -1798,7 +1800,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                    //print(blog)
                     let authorization = authorizationWithLogin
                     authorization1 = authorization
                     
@@ -1807,7 +1809,7 @@ class WebServiceClass: NSObject {
                         "Content-Type":"application/json"
                         
                     ]
-                    print(headers)
+                    //print(headers)
                 }
             }
             
@@ -1828,14 +1830,14 @@ class WebServiceClass: NSObject {
                 "userId":userID,
                 "zipCode":zipcode
                 ]]
-            print(parameters2)
+          //  print(parameters2)
             request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(parameters2, options:[])
             Alamofire.request(request)
                 .responseJSON { response in
                     // do whatever you want here
                     switch response.result {
                     case .Failure(let error):
-                        print(error)
+                       // print(error)
                         
                         if let data = response.data, let responseString = String(data: data, encoding:NSUTF8StringEncoding) {
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -1843,7 +1845,7 @@ class WebServiceClass: NSObject {
                             }
                         }
                     case .Success(let responseObject):
-                        print(responseObject)
+                        //print(responseObject)
                         if (responseObject.isEqual(1))
                         {
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -1851,7 +1853,7 @@ class WebServiceClass: NSObject {
                             }
                         }else{
                             if let data = response.data, let responseString = String(data: data, encoding:NSUTF8StringEncoding) {
-                                print(responseString)
+                                //print(responseString)
                                   if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                self.delegates?.saveAddressapiFailedDelegate!(responseString as String)
                                 }
@@ -1883,7 +1885,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                    //print(blog)
                     let authorization = authorizationWithLogin
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -1900,15 +1902,15 @@ class WebServiceClass: NSObject {
                         .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                    //print(JSON)
                                     var dict = String()
                                     if (JSON as! NSObject == 1)
                                     {
@@ -1966,7 +1968,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -1981,22 +1983,22 @@ class WebServiceClass: NSObject {
                 
                 let url = "\(baseUrl)WishList?userId=\(userId!)&WishDetails=t"
                 //let url = "\(baseUrl)basket"
-                print(url)
+              //  print(url)
                 do{
                     Alamofire.request(.GET,  url, headers: headers)
                         .validate(contentType: ["application/json"])
                         .responseJSON { response  in
                             //.responseObject { (response: Response<Product, NSError>) in
                             // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                    //print(JSON)
                                     
                                     LoadingOverlay.shared.hideOverlayView()
                                     // JHProgressHUD.sharedHUD.hide()
@@ -2004,7 +2006,7 @@ class WebServiceClass: NSObject {
                                     // self.wishListArray.removeAllObjects()
                                     if let COD : AnyObject  = JSON["product"]
                                     {
-                                        print(COD)
+                                        //print(COD)
                                         
                                         if let customer : Array<LstProducts> = Mapper<LstProducts>().mapArray(COD["lstProducts"])! {
                                             //  if let customer = COD["lstProducts"]{
@@ -2012,8 +2014,8 @@ class WebServiceClass: NSObject {
                                             {
                                                 wishLstGlobalArray.addObject(prodt.sku!)
                                                 //   self.wishListArray .addObject(prodt)
-                                                print("testing   \(prodt)")
-                                                print("testing2")
+//                                                print("testing   \(prodt)")
+//                                                print("testing2")
                                                 
                                             }
                                         }
@@ -2032,7 +2034,7 @@ class WebServiceClass: NSObject {
                             
                     }
                 }catch let error as NSError {
-                    print("Could not fetch \(error), \(error.userInfo)")
+                   // print("Could not fetch \(error), \(error.userInfo)")
                 }
                 
                 
@@ -2064,7 +2066,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -2079,24 +2081,24 @@ class WebServiceClass: NSObject {
                 
                 let url = "\(baseUrl)WishList?userId=\(userId!)&WishDetails=t"
                 //let url = "\(baseUrl)basket"
-                print(url)
+               // print(url)
                 do{
                     Alamofire.request(.GET,  url, headers: headers)
                         .validate(contentType: ["application/json"])
                         .responseJSON { response  in
                             //.responseObject { (response: Response<Product, NSError>) in
                             // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                      if let a = self.delegates{
-                                        print(self.delegates! as! UIViewController)
+                                       // print(self.delegates! as! UIViewController)
                                         if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                            // self.delegates?.getWishListSuccess!(JSON as! NSDictionary)
                                             NSNotificationCenter.defaultCenter().postNotificationName("wishlistDetails", object: nil, userInfo: JSON as! [NSObject : AnyObject] )
@@ -2113,7 +2115,7 @@ class WebServiceClass: NSObject {
                             
                     }
                 }catch let error as NSError {
-                    print("Could not fetch \(error), \(error.userInfo)")
+                   // print("Could not fetch \(error), \(error.userInfo)")
                 }
                 
                 
@@ -2145,7 +2147,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -2168,21 +2170,21 @@ class WebServiceClass: NSObject {
                 "wishList": wishList
                 
             ]
-            print(url)
+           // print(url)
             Alamofire.request(.POST,  url,parameters: parameters as! [String : AnyObject], encoding:.JSON, headers: headers)
                 
                 
                 .responseJSON { response in
                     // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             do{
                                 LoadingOverlay.shared.hideOverlayView()
                                 if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -2190,7 +2192,7 @@ class WebServiceClass: NSObject {
                                 }
                                 
                             }catch let error as NSError {
-                                print("Could not fetch \(error), \(error.userInfo)")
+                                //print("Could not fetch \(error), \(error.userInfo)")
                             }
                         }
                         
@@ -2221,11 +2223,11 @@ class WebServiceClass: NSObject {
             
             var url : NSURL!
             url = NSURL(string:"\(baseUrl)address?pincode=\(pincode1)&total=\(trimmedProductprice)&stateCode=MH&expand=1")
-            print(url!)
+           // print(url!)
             Alamofire.request(.GET, url!, headers: headers)
                 
                 .responseJSON { response in
-                    print(response.result)
+                   // print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
@@ -2268,7 +2270,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                  //  print(blog)
                     let authorization = authorizationWithLogin
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -2289,15 +2291,15 @@ class WebServiceClass: NSObject {
                         .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response?.statusCode) // URL response
-                            print(response.data)     // server data
-                            print(response.result)
+//                            print(response.request)  // original URL request
+//                            print(response.response?.statusCode) // URL response
+//                            print(response.data)     // server data
+//                            print(response.result)
                             if(response.result .isSuccess)
                             {
                                 if let JSON = response.result.value
                                 {
-                                    print(JSON)
+                                   // print(JSON)
                                     var dict = String()
                                     if (JSON.isEqual(1))
                                     {
@@ -2364,7 +2366,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                   // print(blog)
                     let authorization = authorizationWithLogin
                     authorization1 = authorization
                     //                print(authorization)
@@ -2377,7 +2379,7 @@ class WebServiceClass: NSObject {
                         "Content-Type ": "application/json"
                         
                     ]
-                    print(headers)
+                   // print(headers)
                 }
                 
             }
@@ -2403,8 +2405,8 @@ class WebServiceClass: NSObject {
             //            "stateName": "MAHARASHTRA",
             //            "isDefault": false
             
-            print(addressID)
-            print(addressID)
+//            print(addressID)
+//            print(addressID)
             let parameters2  =  [[
                 "addressId": addressID,
                 "title": title,
@@ -2418,7 +2420,7 @@ class WebServiceClass: NSObject {
                 "showAddress":false,
                 "isDefault": isDefault
                 ]]
-            print(parameters2)
+           // print(parameters2)
             //  request.httpBody = try! JSONSerialization.data(withJSONObject: parameters2)
             request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(parameters2, options:[])
             Alamofire.request(request)
@@ -2426,7 +2428,7 @@ class WebServiceClass: NSObject {
                     // do whatever you want here
                     switch response.result {
                     case .Failure(let error):
-                        print(error)
+                        //print(error)
                         
                         if let data = response.data, let responseString = String(data: data, encoding:NSUTF8StringEncoding) {
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -2434,7 +2436,7 @@ class WebServiceClass: NSObject {
                             }
                         }
                     case .Success(let responseObject):
-                        print(responseObject)
+                        //print(responseObject)
                         if (responseObject.isEqual(1))
                         {
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -2449,7 +2451,7 @@ class WebServiceClass: NSObject {
                             {
                                 
                                 appendMessage += " \(message)"
-                                print(appendMessage)
+                                //print(appendMessage)
                                 
                             }
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
@@ -2493,7 +2495,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -2506,10 +2508,10 @@ class WebServiceClass: NSObject {
                 }
                 
             }
-            print(headers)
+           // print(headers)
             // var url : NSURL!
             let url = "\(baseUrl)PaymentReceived"
-            print(url)
+           // print(url)
             
             var cod:Bool!=false
             if(isCOD == "true"){
@@ -2526,21 +2528,21 @@ class WebServiceClass: NSObject {
                 "promotionalShippableValue":promotionalShippableValue
                 
             ]
-            print(parameters)
+           // print(parameters)
             Alamofire.request(.POST,  url,parameters: parameters as [String : AnyObject], encoding:.JSON, headers: headers)
                 
                 
                 .responseJSON { response in
                     // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                // if(JSON.isKindOfClass(NSDictionary)){
                                 self.delegates?.placeOrderSuccess!(JSON as! NSDictionary)
@@ -2584,7 +2586,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -2597,19 +2599,19 @@ class WebServiceClass: NSObject {
             }
             
             let url = "\(baseUrl)orderview?userId=\(userId!)&orderCofirm=true&orderId=\(orderId)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                          //  print(JSON)
                             
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 //if(JSON .isKindOfClass(NSDictionary)){
@@ -2657,19 +2659,19 @@ class WebServiceClass: NSObject {
             //rishikesh edit
             let escapepercent = mpn.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             let url = "\(baseUrl)RatingReview?userId=0&PageIndex=\(PageIndex)&mpn=\(escapepercent)&onSearchPage=\(onSearchPage)&onProductPage=\(onProductPage)&onReviewPage=\(onReviewPage)&onAdminPage=\(onAdminPage)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                            //print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                
                                 if(JSON.isKindOfClass(NSDictionary)){
@@ -2712,19 +2714,19 @@ class WebServiceClass: NSObject {
             //rishikesh edit
               let escapepercent = mpn.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
             let url = "\(baseUrl)RatingReview?userId=\(userId!)&PageIndex=\(PageIndex)&mpn=\(escapepercent)&onSearchPage=\(onSearchPage)&onProductPage=\(onProductPage)&onReviewPage=\(onReviewPage)&onAdminPage=\(onAdminPage)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)
                                 NSNotificationCenter.defaultCenter().postNotificationName("myReview", object: nil, userInfo: JSON as! [NSObject : AnyObject])
@@ -2765,7 +2767,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -2783,10 +2785,10 @@ class WebServiceClass: NSObject {
 //                "Accept": "application/json"
 //            ]
 //            
-            print(headers)
+            //print(headers)
             // var url : NSURL!
             let url = "\(baseUrl)RatingReview"
-            print(url)
+            //print(url)
             let parameters: [String : AnyObject]
             if(Review != ""){
                  parameters  = [
@@ -2817,21 +2819,21 @@ class WebServiceClass: NSObject {
             }
             
            
-            print(parameters)
+            //print(parameters)
             Alamofire.request(.POST,  url,parameters: parameters as [String : AnyObject], encoding:.JSON, headers: headers)
                 
                 
                 .responseJSON { response in
                     // Alamofire.request(.PUT, url,headers: headers).responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                            //print(JSON)
                             if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                // self.delegates?.placeOrderSuccess!(JSON as! NSDictionary)
                                 NSNotificationCenter.defaultCenter().postNotificationName("addReview", object: nil, userInfo:nil)
@@ -2870,7 +2872,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -2887,7 +2889,7 @@ class WebServiceClass: NSObject {
             
             let url = "\(baseUrl)OrderSearch?userId=\(userId!)&currentPage=\(currentPage)&orderNumber=\(orderNumber)&orderStatus=\(orderStatus)"
            
-            print(url)
+           // print(url)
           
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForResource = 10800 // seconds
@@ -2897,15 +2899,15 @@ class WebServiceClass: NSObject {
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                            
                                 NSNotificationCenter.defaultCenter().postNotificationName("myOrders", object: nil, userInfo: JSON as! [NSObject : AnyObject] )
                           
@@ -2943,7 +2945,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -2959,7 +2961,7 @@ class WebServiceClass: NSObject {
             
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)OrderSearch?userId=\(userId!)&currentPage=\(currentPage)&orderNumber=\(orderNumber)&orderStatus=\(orderStatus)"
-            print(url)
+            //print(url)
             var alamoFireManager : Alamofire.Manager!
             let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
             configuration.timeoutIntervalForResource = 10800 // seconds
@@ -2969,15 +2971,15 @@ class WebServiceClass: NSObject {
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                            //print(JSON)
                             // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)
                             NSNotificationCenter.defaultCenter().postNotificationName("myOrdersOpen", object: nil, userInfo: JSON as! [NSObject : AnyObject] )
@@ -3016,7 +3018,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -3029,24 +3031,24 @@ class WebServiceClass: NSObject {
                 }
                 
             }
-            print(headers)
+            //print(headers)
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)orderview?userId=\(userId!)&orderId=\(orderId)&orderCofirm=\(orderCofirm)"
-            print(url)
+            //print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     
                     
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)
                             NSNotificationCenter.defaultCenter().postNotificationName("OrderDet", object: nil, userInfo: JSON as! [NSObject:AnyObject])
@@ -3085,7 +3087,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -3101,19 +3103,19 @@ class WebServiceClass: NSObject {
             
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)returnorder?UserId=\(UserId!)&OrderId=\(OrderId)&OrderCofirm=\(OrderCofirm)"
-            print(url)
+            //print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                            //print(JSON)
                             // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)
                         NSNotificationCenter.defaultCenter().postNotificationName("viewReturn", object: nil, userInfo: JSON as! [NSObject : AnyObject] )
@@ -3152,7 +3154,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -3168,14 +3170,14 @@ class WebServiceClass: NSObject {
             
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)orderview?userId=\(UserId!)&orderNumber=\(orderNumber)&itemId=\(itemId)&SellerNumber=\(SellerNumber)&freeItemIndicator=\(freeItemIndicator)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     
                     
                     if(response.response?.statusCode == 200){
@@ -3230,7 +3232,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -3246,20 +3248,20 @@ class WebServiceClass: NSObject {
             
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)orderview?email=\(UserId!)&invoiceNumber=\(invoiceNumber)&SellerNumber=\(SellerNumber)&index=\(index)"
-            print(url)
+           // print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
                             LoadingOverlay.shared.hideOverlayView()
-                            print(JSON)
+                            //print(JSON)
                             if(JSON as! Bool == true){
                                 let alertView:UIAlertView = UIAlertView()
                                 alertView.title = ""
@@ -3307,7 +3309,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -3323,19 +3325,19 @@ class WebServiceClass: NSObject {
             
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)returns?invoice=\(invoice)&orderId=\(orderId)&sku=\(sku)"
-            print(url)
+          //  print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                            //print(JSON)
                             
                             // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)
@@ -3376,7 +3378,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -3392,19 +3394,19 @@ class WebServiceClass: NSObject {
             
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)returnorder"
-            print(url)
+           // print(url)
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
-                            print(JSON)
+                           // print(JSON)
                             
                             // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)
@@ -3444,7 +3446,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     authorization1 = authorization
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -3472,22 +3474,22 @@ class WebServiceClass: NSObject {
             // let jsonData = try! NSJSONSerialization.dataWithJSONObject(orderDict, options: NSJSONWritingOptions.PrettyPrinted)
           //  print(jsonData)
             request.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(orderDict, options:[])
-            print(request.HTTPBody)
+           // print(request.HTTPBody)
             Alamofire.request(request)
             
            // print(parameters)
            // Alamofire.request(.POST,  url!, parameters: parameters as [String:AnyObject], encoding:.JSON, headers: headers)
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response
+//                    print(response.data)     // server data
+//                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value
                         {
                              LoadingOverlay.shared.hideOverlayView()
-                            print(JSON)
+                            //print(JSON)
                            /// if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                                 
                                 
@@ -3527,7 +3529,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     authorization1 = authorization
-                    print(authorization)
+                   // print(authorization)
                     
                     headers = [
                         
@@ -3541,7 +3543,7 @@ class WebServiceClass: NSObject {
                 
             }
             
-            print(headers)
+           // print(headers)
          //   var urlstr : NSURL!
            // let encp = encryptMsg.stringByAddingPercentEncodingWithAllowedCharacters( NSCharacterSet.URLUserAllowedCharacterSet())
             let urlstr =   NSURL(string:"\(baseUrl)PaymentReceived?msg=\(encryptMsg)&tpsl_mrct_cd=\(trnxID)")
@@ -3549,19 +3551,19 @@ class WebServiceClass: NSObject {
 //                NSCharacterSet.URLHostAllowedCharacterSet()),
 //                urlstr = NSURL(string: encodedString)
 //            {
-            print(urlstr)
+          //  print(urlstr)
                 Alamofire.request(.GET,  urlstr!, headers: headers)
                     .validate(contentType: ["application/json"])
                     .responseJSON { response in
-                        print(response.request)  // original URL request
-                        print(response.response?.statusCode) // URL response)
-                        print(response.data)     // server data
-                        print(response.result)
+//                        print(response.request)  // original URL request
+//                        print(response.response?.statusCode) // URL response)
+//                        print(response.data)     // server data
+//                        print(response.result)
                         if(response.result .isSuccess)
                         {
                             if let JSON = response.result.value
                             {
-                                print(JSON)
+                                //print(JSON)
                                 LoadingOverlay.shared.hideOverlayView()
                                 //orderSuccess
                                 if(JSON.isKindOfClass(NSDictionary)){
@@ -3610,7 +3612,7 @@ class WebServiceClass: NSObject {
                 
                 if let blog = NSKeyedUnarchiver.unarchiveObjectWithData(data)
                 {
-                    print(blog)
+                   // print(blog)
                     let authorization = authorizationWithLogin
                     //                print(authorization)
                     //                print(blog.valueForKey("token")! as! String)
@@ -3633,19 +3635,19 @@ class WebServiceClass: NSObject {
                         "lastName": lastName
                     ]
                     
-                    print(parameters)
+                   // print(parameters)
                     
                     let url = "\(baseUrl)Profile"
                     Alamofire.request(.PUT,  url, parameters: parameters as! [String: AnyObject], encoding:.JSON, headers: headers)
                         .validate(contentType: ["application/json"])
                         
                         .responseJSON { response in
-                            print(response.request)  // original URL request
-                            print(response.response) // URL response
-                            print(response.data)
+//                            print(response.request)  // original URL request
+//                            print(response.response) // URL response
+//                            print(response.data)
                             var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                            print("Body: \(strData!)")// server data
-                            print(response.result)
+//                            print("Body: \(strData!)")// server data
+//                            print(response.result)
                             
                             
                             if (response.result .isSuccess)
@@ -3711,7 +3713,7 @@ class WebServiceClass: NSObject {
                 {
                     let authorization = authorizationWithLogin
                     
-                    print(authorization)
+                    //print(authorization)
                     
                     headers = [
                         
@@ -3724,11 +3726,11 @@ class WebServiceClass: NSObject {
                 }
                 
             }
-            print(headers)
+           // print(headers)
             //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
             let url = "\(baseUrl)returnorder?orderId=\(oredrID)&bnkRefundTokenID=\(token)"
             //let url = "\(baseUrl)orderview?userId=\(userId!)&orderId=\(orderId)&orderCofirm=\(orderCofirm)"
-            print(url)
+           // print(url)
             let parameters: [String : AnyObject] = [
                 
                 
@@ -3747,14 +3749,14 @@ class WebServiceClass: NSObject {
 //                
                 
             ]
-            print(parameters)
+          //  print(parameters)
             Alamofire.request(.POST,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response?.statusCode) // URL response)
-                    print(response.data)     // server data
-                    print(response.result)
+//                    print(response.request)  // original URL request
+//                    print(response.response?.statusCode) // URL response)
+//                    print(response.data)     // server data
+//                    print(response.result)
                     
                     
                     if(response.result .isSuccess)
@@ -3771,7 +3773,7 @@ class WebServiceClass: NSObject {
                             {
                               NSNotificationCenter.defaultCenter().postNotificationName("ConfirmationFailed", object: nil, userInfo: nil )
                             }
-                            print(JSON)
+                            //print(JSON)
                             
                             // if(self.delegates! as! UIViewController == UIApplication.topViewController()!){
                             //self.delegates?.getOthersreviewDetailsSuccess!(JSON as! NSDictionary)

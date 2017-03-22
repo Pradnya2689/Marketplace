@@ -64,7 +64,7 @@ class OrderReturnViewController: UIViewController {
     }
     func internetReachable(notification:NSNotification){
        noInternetClk()
-        print("in category via reachable")
+        //print("in category via reachable")
     }
     @IBAction func noInternetClk(){
         let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -93,20 +93,20 @@ class OrderReturnViewController: UIViewController {
          NSNotificationCenter.defaultCenter().removeObserver(self, name: "reachable", object: nil)
     }
     func getOrderList(notification: NSNotification)  {
-        print(notification)
+       // print(notification)
         LoadingOverlay.shared.hideOverlayView()
         let dict : AnyObject = notification.userInfo!
         LoadingOverlay.shared.hideOverlayView()
         orderDetailDictn = notification.userInfo!
         paymentTypeLb.text = orderDetailDictn["paymentTerms"] as? String
         let arry = orderDetailDictn["lines"] as! NSMutableArray
-        print("custnumber \(customerLineNumber)")
+        //print("custnumber \(customerLineNumber)")
        
        // let arry = linesArray.mutableCopy() as! NSMutableArray
       //  linesArray.removeAllObjects()
         for i in 0..<arry.count {
             let productDet = arry.objectAtIndex(i) as? NSDictionary
-             print(productDet!["ingramPartNumber"] as! String)
+            // print(productDet!["ingramPartNumber"] as! String)
             if(customerLineNumber == productDet!["ingramPartNumber"] as! String){
                 linesArray.addObject(productDet!)
             }
@@ -116,8 +116,8 @@ class OrderReturnViewController: UIViewController {
        // linesArray.removeAllObjects()
         //arry.filteredArrayUsingPredicate(emailTest)
       //  linesArray = arry.mutableCopy() as! NSMutableArray
-        print("product cnt \(linesArray.count)")
-        print(linesArray)
+//        print("product cnt \(linesArray.count)")
+//        print(linesArray)
         orderReturnTable.reloadData()
         
     }
@@ -174,11 +174,11 @@ extension OrderReturnViewController: UITableViewDelegate,UITableViewDataSource{
                 cell.returnImgView.image = image
                 let url =  productDet["imageURL"] as! String
                 let imgURL: NSURL = NSURL(string: url)!
-                print("img url **** \(imgURL.absoluteString)")
+                //print("img url **** \(imgURL.absoluteString)")
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                   // print("IN cache")
                     cell.returnImgView!.image = image
                     
                 }
@@ -188,12 +188,12 @@ extension OrderReturnViewController: UITableViewDelegate,UITableViewDataSource{
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                               // print(imgURL.absoluteString)
                                 cell.returnImgView!.image = image
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                             }

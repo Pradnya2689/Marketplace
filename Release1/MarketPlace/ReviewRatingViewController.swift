@@ -43,7 +43,7 @@ class ReviewRatingViewController: UIViewController,webServiceDelegate {
          self.tabBarController?.tabBar.hidden = true
         self.title = "All Reviews"
 
-        print(ratingArray.count)
+       // print(ratingArray.count)
 
        
         
@@ -78,9 +78,9 @@ class ReviewRatingViewController: UIViewController,webServiceDelegate {
     func getOtherReview(notification: NSNotification)  {
         LoadingOverlay.shared.hideOverlayView()
         self.reviewTable.hidden = false
-         print(notification)
+        // print(notification)
         let dict : AnyObject = notification.userInfo!
-        print(dict["ratingCount"])
+       // print(dict["ratingCount"])
         let ratingCountDict = dict["ratingCount"] as? NSArray
         for forecast in ratingCountDict!
         {
@@ -182,7 +182,7 @@ class ReviewRatingViewController: UIViewController,webServiceDelegate {
                 loadmorebtn.hidden = true
         }
             
-            print("reach end")
+           // print("reach end")
         //}
     }
       func scrollViewDidEndDecelerating(scrollView: UIScrollView)
@@ -230,20 +230,20 @@ extension ReviewRatingViewController: UITableViewDataSource, UITableViewDelegate
         let deFormatter = NSDateFormatter()
         var string = review["createdOn"] as! String
         if let reverseIndex = string.characters.reverse().indexOf(".") {
-            print(string[string.startIndex ..< reverseIndex.base.advancedBy(-1)])
+           // print(string[string.startIndex ..< reverseIndex.base.advancedBy(-1)])
             string = string[string.startIndex ..< reverseIndex.base.advancedBy(-1)]
         }
         
         deFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         
         let startTime = deFormatter.dateFromString(string)
-        print(startTime!) // 2015-06-25 23:10:00 +0000
+       // print(startTime!) // 2015-06-25 23:10:00 +0000
         
         
         let formatter = NSDateFormatter()
         formatter.dateFormat = "dd MMM yyyy"
         let timeString = formatter.stringFromDate(startTime!)
-        print(timeString)
+       // print(timeString)
         cell.review1DateLbl.text = timeString
         cell.selectionStyle = .None
         

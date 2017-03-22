@@ -39,7 +39,7 @@ class FinalCategoryViewController: UITableViewController {
         for item in FinalcatOject!
         {
             let subcattest1  = item  as! category3List
-            print(subcattest1.category3Name)
+            //print(subcattest1.category3Name)
             self.FinalCatMarr.addObject(subcattest1)
             
         }
@@ -61,11 +61,11 @@ class FinalCategoryViewController: UITableViewController {
             }
             
         }
-        print(self.newArray, terminator: "")
-        
-         print(self.categoryArr, terminator: "")
-         print(self.subcategoryArr, terminator: "")
-         print(self.level3Arr, terminator: "")
+//        print(self.newArray, terminator: "")
+//        
+//         print(self.categoryArr, terminator: "")
+//         print(self.subcategoryArr, terminator: "")
+//         print(self.level3Arr, terminator: "")
         
         self.tableView .reloadData()
 
@@ -124,7 +124,7 @@ class FinalCategoryViewController: UITableViewController {
 
 
         let extarctValue :category3List  = self.FinalCatMarr[indexPath.row] as! category3List
-        print(extarctValue.category3Name)
+        //print(extarctValue.category3Name)
         var stringvalue1: String = extarctValue.category3Name!
 
          cell.textLabel?.font = UIFont(name: "MyriadPro-Regular", size: 20)
@@ -160,9 +160,9 @@ class FinalCategoryViewController: UITableViewController {
         glblArr.addObject(catDic)
         
         
-        print(glblArr, terminator: "")
-        
-        print(valueToPass)
+//        print(glblArr, terminator: "")
+//        
+//        print(valueToPass)
         performSegueWithIdentifier("SearchResult", sender: self)
         
 

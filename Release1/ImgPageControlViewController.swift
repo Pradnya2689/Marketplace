@@ -35,7 +35,7 @@ class ImgPageControlViewController: UIViewController,UIScrollViewDelegate {
         
         
         didSet {
-            print(SliderImageView)
+            //print(SliderImageView)
             if let imageView = SliderImageView {
                 SliderImageView?.contentMode = .ScaleAspectFit
                 // contentImageView!.translatesAutoresizingMaskIntoConstraints = true
@@ -47,11 +47,11 @@ class ImgPageControlViewController: UIViewController,UIScrollViewDelegate {
                 imageView.image = image
                 let url =  imageName
                 let imgURL: NSURL = NSURL(string: url)!
-                print(imgURL.absoluteString)
+               // print(imgURL.absoluteString)
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                   // print("IN cache")
                     imageView.image = image
                     imageView.contentMode = .ScaleAspectFit
                 }
@@ -61,15 +61,15 @@ class ImgPageControlViewController: UIViewController,UIScrollViewDelegate {
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             
                             
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                                //print(imgURL.absoluteString)
                                 imageView.image = image
                                 imageView.contentMode = .ScaleAspectFit
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
@@ -131,7 +131,7 @@ class ImgPageControlViewController: UIViewController,UIScrollViewDelegate {
         
         var otherVc = ImageSliderViewController()
         imageSlideArray = otherVc.slideImgArray
-        print(imageSlideArray)
+       // print(imageSlideArray)
     }
     
 

@@ -44,9 +44,9 @@ class ImageSliderViewController: UIViewController, UIScrollViewDelegate,UIGestur
 //        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
 //        swipeRight.delegate = self
 //        self.ImageScrollView.addGestureRecognizer(swipeRight)
-        print(slideImgArray.count)
-        print(imagesliderView.frame.height-50)
-        print(imagesliderView.frame.height)
+//        print(slideImgArray.count)
+//        print(imagesliderView.frame.height-50)
+//        print(imagesliderView.frame.height)
         self.pageController = UIPageViewController()
         self.createPageViewController()
         
@@ -79,7 +79,7 @@ class ImageSliderViewController: UIViewController, UIScrollViewDelegate,UIGestur
             pageController.bounds = CGRectMake(0, 250, 0, 0)
             }else{
             
-            print(imagesliderView.frame.height)
+           // print(imagesliderView.frame.height)
             let pageController = UIPageControl.appearance()
             pageController.translatesAutoresizingMaskIntoConstraints = true
             pageController.pageIndicatorTintColor = UIColor.lightGrayColor()
@@ -292,11 +292,11 @@ extension ImageSliderViewController: UICollectionViewDelegate, UICollectionViewD
         var cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageSlider", forIndexPath: indexPath) as! SliderImgCollectionViewCell
         let url =  slideImgArray.objectAtIndex(indexPath.row)
         let imgURL: NSURL = NSURL(string: url as! String)!
-        print(imgURL.absoluteString)
+        //print(imgURL.absoluteString)
         
         if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
         {
-            print("IN cache")
+            //print("IN cache")
            /// cell.SliderCellImage.image = image
             
         }
@@ -306,15 +306,15 @@ extension ImageSliderViewController: UICollectionViewDelegate, UICollectionViewD
                 .responseImage { response in
                     debugPrint(response)
                     
-                    print(response.request)
-                    print(response.response)
+//                    print(response.request)
+//                    print(response.response)
                     debugPrint(response.result)
                     
                     
                     
                     
                     if let image = response.result.value {
-                        print(imgURL.absoluteString)
+                        //print(imgURL.absoluteString)
                         //cell.SliderCellImage.image = image
                         photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                     }

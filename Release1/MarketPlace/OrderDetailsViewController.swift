@@ -115,7 +115,7 @@
                         
                         func internetReachable(notification:NSNotification){
                             noInternetClk()
-                            print("in order det via reachable")
+                            //print("in order det via reachable")
                         }
                         @IBAction func noInternetClk(){
                             let appdelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -143,7 +143,7 @@
                             self.addRatingView.hidden = true
                         }
                         func cancelOrderList(notification: NSNotification)  {
-                            print(notification)
+                           // print(notification)
                             orderDetailDictn = NSMutableDictionary()
                             linesArray = NSMutableArray()
                             var window :UIWindow = UIApplication.sharedApplication().keyWindow!
@@ -245,7 +245,7 @@
 //                            orderTable.reloadData()
 //                        }
   func getOrderList(notification: NSNotification)  {
-                            print(notification)
+                            //print(notification)
                             LoadingOverlay.shared.hideOverlayView()
                             orderDetailDictn = notification.userInfo!
                             orderDetailNewDict.removeAllObjects()
@@ -258,14 +258,14 @@
                                 orderNumberLbl.text = "Order #\(orderDetailDictn["orderNumber"] as! String)"
                                 var string = orderDetailDictn["orderDate"] as! String
                                 if let reverseIndex = string.characters.reverse().indexOf(".") {
-                                    print(string[string.startIndex ..< reverseIndex.base.advancedBy(-1)])
+                                   // print(string[string.startIndex ..< reverseIndex.base.advancedBy(-1)])
                                     string = string[string.startIndex ..< reverseIndex.base.advancedBy(-1)]
                                 }
                                 let deFormatter = NSDateFormatter()
                                 deFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
                                 
                                 let startTime = deFormatter.dateFromString(string)
-                                print(startTime!) // 2015-06-25 23:10:00 +0000
+                               // print(startTime!) // 2015-06-25 23:10:00 +0000
                                 
                                 
                                 let formatter = NSDateFormatter()
@@ -408,7 +408,7 @@
                                 
                             }
                             orderDetailNewDict = prodDict.mutableCopy() as! NSMutableDictionary
-                            print(orderDetailNewDict)
+                           // print(orderDetailNewDict)
                             
                             orderTable.reloadData()
                             //print(dict["orders"])
@@ -443,7 +443,7 @@
                                 if(orderDetailNewDict.count > 0){
                                     let productDet = linesArray.objectAtIndex(section-1) as? NSDictionary
                                     var lineNo = productDet!["customerLineNumber"] as! String
-                                    print(lineNo)
+                                   // print(lineNo)
                                     let arr = orderDetailNewDict.valueForKey(lineNo) as! NSArray
                                     
                                     return arr.count
@@ -568,11 +568,11 @@
                                     cell.prodImgView.image = image
                                     let url =  currentData["imageURL"] as! String
                                     let imgURL: NSURL = NSURL(string: url)!
-                                    print("img url **** \(imgURL.absoluteString)")
+                                   // print("img url **** \(imgURL.absoluteString)")
                                     
                                     if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                                     {
-                                        print("IN cache")
+                                       // print("IN cache")
                                         cell.prodImgView!.image = image
                                         
                                     }
@@ -582,12 +582,12 @@
                                             .responseImage { response in
                                                 debugPrint(response)
                                                 
-                                                print(response.request)
-                                                print(response.response)
+//                                                print(response.request)
+//                                                print(response.response)
                                                 debugPrint(response.result)
                                                 
                                                 if let image = response.result.value {
-                                                    print(imgURL.absoluteString)
+                                                    //print(imgURL.absoluteString)
                                                     cell.prodImgView!.image = image
                                                     photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
                                                 }
@@ -713,7 +713,7 @@
                             let btn = sender
                             btn.titleLabel?.font =  UIFont(name: "MyriadPro-Regular", size: 17)
                             let productDet = linesArray.objectAtIndex(btn.tag) as? NSDictionary
-                            print("btn \(btn.titleLabel?.text)")
+                           // print("btn \(btn.titleLabel?.text)")
                           //  btn.titleLabel?.font = UIFont(name: "MyriadPro-Regular", size: 20.0)
                             if(btn.titleLabel?.text == "Rate"){
                                 givRatingView.rating = 0.0
@@ -737,7 +737,7 @@
                                 
                                 
                                 mpnNo = productDet!["mpn"] as! String
-                                print(mpnNo)
+                               // print(mpnNo)
                                 decrLbl.layer.masksToBounds = true
                                 addRatingView.hidden = false
                                 innerView.translatesAutoresizingMaskIntoConstraints = true
@@ -760,7 +760,7 @@
                                     if let customer = self.orderDetailDictn["customer"] as? NSDictionary{
                                         seller = customer["id"] as! String
                                     }
-                                    print("free be ******* \(productDet!["freeItemIndicator"] as! String)")
+                                    //print("free be ******* \(productDet!["freeItemIndicator"] as! String)")
                                     btn.setTitle("Cancelled", forState: UIControlState.Normal)
                                     //let wsm : WebServiceClass = WebServiceClass.sharedInstance
                                    // wsm.cancelOrderDEtails(self.orderNumber, itemId: productDet!["customerLineNumber"] as! String, SellerNumber: seller, index: 0,freeItemIndicator: "")
@@ -777,7 +777,7 @@
                                             {
                                                 let authorization = authorizationWithLogin
                                                 
-                                                print(authorization)
+                                               // print(authorization)
                                                 
                                                 headers = [
                                                     
@@ -793,14 +793,14 @@
                                         
                                         //http://immarketapi-stg2.azurewebsites.net/api/OrderSearch?userId=164&orderStatus=&orderNumber=&currentPage=1
                                         let url = "\(baseUrl)orderview?userId=\(UserId!)&orderNumber=\(self.orderNumber)&itemId=\(productDet!["customerLineNumber"] as! String)&SellerNumber=\(seller)&freeItemIndicator="
-                                        print(url)
+                                       // print(url)
                                         Alamofire.request(.GET,  url, headers: headers)
                                             .validate(contentType: ["application/json"])
                                             .responseJSON { response in
-                                                print(response.request)  // original URL request
-                                                print(response.response?.statusCode) // URL response)
-                                                print(response.data)     // server data
-                                                print(response.result)
+//                                                print(response.request)  // original URL request
+//                                                print(response.response?.statusCode) // URL response)
+//                                                print(response.data)     // server data
+//                                                print(response.result)
                                                 
                                                 
                                                 if(response.response?.statusCode == 200){

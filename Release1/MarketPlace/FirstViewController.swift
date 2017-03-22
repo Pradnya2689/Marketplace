@@ -241,7 +241,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         super.viewDidLoad()
         state = ""
         
-        print(Location)
+       // print(Location)
        
          dataLayer.push(["event": "openScreen", "screenName": "SplashScreenTagios"])
         //  self.title="IMOL"
@@ -266,11 +266,11 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isAppAlreadyLaunchedOnce"){
-            print("App already launched : \(isAppAlreadyLaunchedOnce)")
+           // print("App already launched : \(isAppAlreadyLaunchedOnce)")
             return true
         }else{
             defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnce")
-            print("App launched first time")
+           // print("App launched first time")
             return false
         }
     }
@@ -278,11 +278,11 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         let defaults = NSUserDefaults.standardUserDefaults()
         
         if let isAppAlreadyLaunchedOnce = defaults.stringForKey("isAppAlreadyLaunchedOnceagain"){
-            print("App already launched : \(isAppAlreadyLaunchedOnce)")
+            //print("App already launched : \(isAppAlreadyLaunchedOnce)")
             return true
         }else{
             defaults.setBool(true, forKey: "isAppAlreadyLaunchedOnceagain")
-            print("App launched first time")
+           // print("App launched first time")
             return false
         }
     }
@@ -310,7 +310,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         self.locationManager.delegate = nil;
 
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
-        print("locations = \(locValue.latitude) \(locValue.longitude)")
+       // print("locations = \(locValue.latitude) \(locValue.longitude)")
 
             let geoCoder = CLGeocoder()
             let location = CLLocation(latitude: locValue.latitude, longitude: locValue.longitude)
@@ -325,12 +325,12 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
                 placeMark = placeArray?[0]
                 
                 // Address dictionary
-                print(placeMark.addressDictionary)
+               // print(placeMark.addressDictionary)
                 
                 if let country = placeMark.addressDictionary?["State"] as? NSString
                 {
                    self.state = country
-                    print(country)
+                    //print(country)
                    // Location
                     
                     self.compareTwoStates()
@@ -374,7 +374,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
                 if(st.caseInsensitiveCompare(self.state! as String) == NSComparisonResult.OrderedSame)
                 {
                     Globalstate = st as! NSString
-                    print(Globalstate)
+                   // print(Globalstate)
                     NSUserDefaults.standardUserDefaults().removeObjectForKey("Location")
                     
                     Location = [Globalstate as String]
@@ -443,9 +443,9 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         
         
         let dict1 : AnyObject = dict as! [NSObject : AnyObject]
-        print(dict1)
+        //print(dict1)
         var stateDict = dict1 as! NSDictionary
-        print(stateDict)
+       // print(stateDict)
         arrayState.removeAllObjects()
         let countryArr = dict["state"] as! NSArray
         for country  in countryArr
@@ -467,7 +467,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
             //}
            
         } else {
-            print("Location services are not enabled")
+           // print("Location services are not enabled")
             var window :UIWindow = UIApplication.sharedApplication().keyWindow!
             LoadingOverlay.shared.showOverlay(window)
             let SearchAddressControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("SearchAddress") as? SearchAddressController
@@ -491,7 +491,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         
         let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(1.5 * Double(NSEC_PER_SEC)))
         dispatch_after(delayTime, dispatch_get_main_queue()) {
-            print("Bye. Lovvy")
+           // print("Bye. Lovvy")
             alertController.dismissViewControllerAnimated(true, completion: nil)
         }
     }
@@ -505,7 +505,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
 //        Location += ["13"]
         
          self.fadeOut()
-        print(Location)
+       // print(Location)
 
         
     }
@@ -578,8 +578,8 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
         let ycord = ((scrHeight-140)/2)
         self.logoImgView.translatesAutoresizingMaskIntoConstraints = true
         logoImgView.frame = CGRectMake(xcord, view.bounds.height, 246 ,140)
-        print(scrWidth)
-        print(scrHeight)
+//        print(scrWidth)
+//        print(scrHeight)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -701,7 +701,7 @@ class FirstViewController: UIViewController,CLLocationManagerDelegate  {
                         Toast.sharedInstance.intervalToast("You are viewing prices for \(Globalstate)", interval:3, position: "bottom") {
                             
                             //do something here after running your function
-                            print("Tada!!!!")
+                           // print("Tada!!!!")
                         }
                     }
 

@@ -20,7 +20,7 @@ class SearchAddressController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
        // print(citiesToPass)
-        print(countryToPass)
+        //print(countryToPass)
         
         var window :UIWindow = UIApplication.sharedApplication().keyWindow!
         LoadingOverlay.shared.showOverlay(window)
@@ -37,7 +37,7 @@ class SearchAddressController: UIViewController,UITableViewDelegate,UITableViewD
             self.tableArr.removeAllObjects()
         for address in citiesToPass
         {
-        print(address["cityName"])
+      //  print(address["cityName"])
             if let add = address["cityName"]
             {
            self.tableArr.addObject(add!)
@@ -53,7 +53,7 @@ class SearchAddressController: UIViewController,UITableViewDelegate,UITableViewD
             self.tableArr.removeAllObjects()
             for address in countryToPass
             {
-                print(address["stateName"])
+                //print(address["stateName"])
                 if let add = address["stateName"]
                 {
                     self.tableArr.addObject(add!)
@@ -64,8 +64,8 @@ class SearchAddressController: UIViewController,UITableViewDelegate,UITableViewD
         
         }
         filterArray = self.tableArr.mutableCopy() as! NSMutableArray
-        print(self.tableArr)
-        
+        //print(self.tableArr)
+       
 //        var bottomoffset: CGPoint = CGPointMake(0, 6000)
 //        //if bottomoffset.y > 0 {
 //            self.adressTable.contentOffset = bottomoffset;
@@ -132,7 +132,7 @@ class SearchAddressController: UIViewController,UITableViewDelegate,UITableViewD
             var descriptor: NSSortDescriptor = NSSortDescriptor(key:"stateName", ascending: true)
             var sortedResults: NSArray = countryToPass.sortedArrayUsingDescriptors([descriptor])
             sortedResults.filteredArrayUsingPredicate(searchpredicate1)
-            print(sortedResults)
+           // print(sortedResults)
        //NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ contains %@", @"stateName", searchText];
          //NSArray *predict = [mainArrayAll filteredArrayUsingPredicate:predicate];
             

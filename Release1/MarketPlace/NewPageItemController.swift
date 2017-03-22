@@ -29,7 +29,7 @@ class NewPageItemController: UIViewController {
                 imageView.image = image
                 let url =  imageName
                 let imgURL: NSURL = NSURL(string: url)!
-                print(imgURL.absoluteString)
+               // print(imgURL.absoluteString)
                 if(imageName == ""){
                     let image : UIImage = UIImage(named:"placeholder")!
                     imageView.image = image
@@ -37,7 +37,7 @@ class NewPageItemController: UIViewController {
                 
                 if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
                 {
-                    print("IN cache")
+                   // print("IN cache")
                     imageView.image = image
                     imageView.contentMode = .ScaleAspectFit
                 }
@@ -47,15 +47,15 @@ class NewPageItemController: UIViewController {
                         .responseImage { response in
                             debugPrint(response)
                             
-                            print(response.request)
-                            print(response.response)
+//                            print(response.request)
+//                            print(response.response)
                             debugPrint(response.result)
                             
                             
                             
                             
                             if let image = response.result.value {
-                                print(imgURL.absoluteString)
+                               // print(imgURL.absoluteString)
                                 imageView.image = image
                                 imageView.contentMode = .ScaleAspectFit
                                 photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
@@ -86,7 +86,7 @@ class NewPageItemController: UIViewController {
        // contentImageView!.image = UIImage(named: imageName)
     }
     override func viewDidAppear(animated: Bool) {
-        print("img name  \(imageName)")
+       // print("img name  \(imageName)")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

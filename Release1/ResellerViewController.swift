@@ -120,7 +120,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
 //                print(response.response) // URL response
 //                print(response.data)
                 var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                print("Body: \(strData)")// server data
+                //print("Body: \(strData)")// server data
                 //print(response.result)   // result of response serialization
                 self.productSellerArray.removeAllObjects()
                 self.availableQntArray = NSMutableArray()
@@ -263,7 +263,7 @@ class ResellerViewController: UITableViewController,resellerDelegate,webServiceD
 //                    print(response.response) // URL response
 //                    print(response.data)
                     var strData = NSString(data: response.data!, encoding: NSUTF8StringEncoding)
-                    print("Body: \(strData)")// server data
+                   // print("Body: \(strData)")// server data
                    // print(response.result)   // result of response serialization
                     self.productSellerArray.removeAllObjects()
                     if let JSON : NSArray = response.result.value as! NSArray {
