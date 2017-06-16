@@ -49,6 +49,38 @@
             endingLineNumber = "2665"
             landmarkName = "getOthersreviewDetails(_:PageIndex:onSearchPage:onProductPage:onReviewPage:onAdminPage:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.getOthersreviewDetails (Swift.String, PageIndex : Swift.String, onSearchPage : Swift.Bool, onProductPage : Swift.Bool, onReviewPage : Swift.Bool, onAdminPage : Swift.Bool) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.853603"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2665"
+                  endingLineNumber = "2665"
+                  offsetFromSymbolStart = "3514">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.(getOthersreviewDetails (Swift.String, PageIndex : Swift.String, onSearchPage : Swift.Bool, onProductPage : Swift.Bool, onReviewPage : Swift.Bool, onAdminPage : Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.853702"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2666"
+                  endingLineNumber = "2666"
+                  offsetFromSymbolStart = "149">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,6 +113,38 @@
             endingLineNumber = "2271"
             landmarkName = "callSetDefaultApi(_:addressID:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.callSetDefaultApi (Swift.String, addressID : Swift.String) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.854311"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2271"
+                  endingLineNumber = "2271"
+                  offsetFromSymbolStart = "1944">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.callSetDefaultApi (Swift.String, addressID : Swift.String) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.854431"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2271"
+                  endingLineNumber = "2271"
+                  offsetFromSymbolStart = "2066">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -97,6 +161,38 @@
             endingLineNumber = "2270"
             landmarkName = "callSetDefaultApi(_:addressID:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.callSetDefaultApi (Swift.String, addressID : Swift.String) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.855291"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2271"
+                  endingLineNumber = "2271"
+                  offsetFromSymbolStart = "1944">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.callSetDefaultApi (Swift.String, addressID : Swift.String) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.855384"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "2271"
+                  endingLineNumber = "2271"
+                  offsetFromSymbolStart = "2066">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,6 +225,38 @@
             endingLineNumber = "3109"
             landmarkName = "viewReturnOrderDEtails(_:OrderCofirm:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.viewReturnOrderDEtails (Swift.String, OrderCofirm : Swift.Bool) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.856645"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3109"
+                  endingLineNumber = "3109"
+                  offsetFromSymbolStart = "3595">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.(viewReturnOrderDEtails (Swift.String, OrderCofirm : Swift.Bool) -&gt; ()).(closure #1)"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.856742"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3114"
+                  endingLineNumber = "3114"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,6 +273,38 @@
             endingLineNumber = "3176"
             landmarkName = "cancelOrderDEtails(_:itemId:SellerNumber:index:freeItemIndicator:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.cancelOrderDEtails (Swift.String, itemId : Swift.String, SellerNumber : Swift.String, index : Swift.Int, freeItemIndicator : Swift.String) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.857516"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3176"
+                  endingLineNumber = "3176"
+                  offsetFromSymbolStart = "4087">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.(cancelOrderDEtails (Swift.String, itemId : Swift.String, SellerNumber : Swift.String, index : Swift.Int, freeItemIndicator : Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.85761"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3183"
+                  endingLineNumber = "3183"
+                  offsetFromSymbolStart = "138">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -289,6 +449,38 @@
             endingLineNumber = "3482"
             landmarkName = "submitOrderReturn(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.submitOrderReturn (__ObjC.NSMutableDictionary) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.861604"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3482"
+                  endingLineNumber = "3482"
+                  offsetFromSymbolStart = "4353">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.(submitOrderReturn (__ObjC.NSMutableDictionary) -&gt; ()).(closure #1)"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.861689"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "3487"
+                  endingLineNumber = "3487"
+                  offsetFromSymbolStart = "141">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -441,8 +633,8 @@
                   symbolName = "MarketPlace.OrderDetailsViewController.tableView (__ObjC.UITableView, cellForRowAtIndexPath : __ObjC.NSIndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "MarketPlace"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/OrderDetailsViewController.swift"
-                  timestampString = "506586355.066408"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/OrderDetailsViewController.swift"
+                  timestampString = "519310173.864702"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "492"
@@ -456,8 +648,8 @@
                   symbolName = "MarketPlace.OrderDetailsViewController.tableView (__ObjC.UITableView, cellForRowAtIndexPath : __ObjC.NSIndexPath) -&gt; __ObjC.UITableViewCell"
                   moduleName = "MarketPlace"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/OrderDetailsViewController.swift"
-                  timestampString = "506586355.066499"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/OrderDetailsViewController.swift"
+                  timestampString = "519310173.864785"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "492"
@@ -497,68 +689,6 @@
             endingLineNumber = "128"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.SearchAddressController.valueToPass.getter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/SearchAddressController.swift"
-                  timestampString = "506586355.067611"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "80">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.SearchAddressController.valueToPass.setter : Swift.ImplicitlyUnwrappedOptional&lt;Swift.String&gt;"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/SearchAddressController.swift"
-                  timestampString = "506586355.0677"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "172">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.SearchAddressController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; MarketPlace.SearchAddressController"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/SearchAddressController.swift"
-                  timestampString = "506586355.067772"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "337">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.SearchAddressController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MarketPlace.SearchAddressController&gt;"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/SearchAddressController.swift"
-                  timestampString = "506586355.067845"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "243">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -575,38 +705,6 @@
             endingLineNumber = "893"
             landmarkName = "SetDefaultAdressClicked(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/EditAddressViewController.swift"
-                  timestampString = "506586355.068903"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "894"
-                  endingLineNumber = "894"
-                  offsetFromSymbolStart = "1382">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/EditAddressViewController.swift"
-                  timestampString = "506586355.068989"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "894"
-                  endingLineNumber = "894"
-                  offsetFromSymbolStart = "4318">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -623,6 +721,38 @@
             endingLineNumber = "900"
             landmarkName = "SetDefaultAdressClicked(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/EditAddressViewController.swift"
+                  timestampString = "519310173.866366"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "900"
+                  endingLineNumber = "900"
+                  offsetFromSymbolStart = "505">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/EditAddressViewController.swift"
+                  timestampString = "519310173.866447"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "900"
+                  endingLineNumber = "900"
+                  offsetFromSymbolStart = "2807">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -639,6 +769,38 @@
             endingLineNumber = "916"
             landmarkName = "SetDefaultAdressClicked(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/EditAddressViewController.swift"
+                  timestampString = "519310173.867114"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "916"
+                  endingLineNumber = "916"
+                  offsetFromSymbolStart = "1335">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/EditAddressViewController.swift"
+                  timestampString = "519310173.867215"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "916"
+                  endingLineNumber = "916"
+                  offsetFromSymbolStart = "1457">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -655,38 +817,6 @@
             endingLineNumber = "903"
             landmarkName = "SetDefaultAdressClicked(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/EditAddressViewController.swift"
-                  timestampString = "506586355.070618"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "905"
-                  endingLineNumber = "905"
-                  offsetFromSymbolStart = "2300">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.EditAddressViewController.SetDefaultAdressClicked (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/EditAddressViewController.swift"
-                  timestampString = "506586355.07071"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "905"
-                  endingLineNumber = "905"
-                  offsetFromSymbolStart = "2573">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -749,8 +879,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3015"
             endingLineNumber = "3015"
-            landmarkName = "seleactQuantity(_:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -765,8 +895,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3014"
             endingLineNumber = "3014"
-            landmarkName = "seleactQuantity(_:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -861,7 +991,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "478"
             endingLineNumber = "478"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "proceedPaymentBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -877,70 +1007,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "439"
             endingLineNumber = "439"
-            landmarkName = "CheckoutViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CheckoutViewController.placeOrderView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CheckoutViewController.swift"
-                  timestampString = "506586355.106047"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "439"
-                  endingLineNumber = "439"
-                  offsetFromSymbolStart = "27">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CheckoutViewController.placeOrderView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CheckoutViewController.swift"
-                  timestampString = "506586355.106165"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "439"
-                  endingLineNumber = "439"
-                  offsetFromSymbolStart = "42">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CheckoutViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; MarketPlace.CheckoutViewController"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CheckoutViewController.swift"
-                  timestampString = "506586355.106292"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "439"
-                  endingLineNumber = "439"
-                  offsetFromSymbolStart = "2778">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CheckoutViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MarketPlace.CheckoutViewController&gt;"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CheckoutViewController.swift"
-                  timestampString = "506586355.106372"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "439"
-                  endingLineNumber = "439"
-                  offsetFromSymbolStart = "2674">
-               </Location>
-            </Locations>
+            landmarkName = "proceedPaymentBtn(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -971,8 +1039,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3092"
             endingLineNumber = "3092"
-            landmarkName = "textField(_:shouldChangeCharactersInRange:replacementString:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -987,8 +1055,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3058"
             endingLineNumber = "3058"
-            landmarkName = "pickerView(_:numberOfRowsInComponent:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1115,7 +1183,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3191"
             endingLineNumber = "3191"
-            landmarkName = "addTocartClk()"
+            landmarkName = "pickerView(_:titleForRow:forComponent:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1131,8 +1199,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3031"
             endingLineNumber = "3031"
-            landmarkName = "seleactQuantity(_:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1179,8 +1247,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3047"
             endingLineNumber = "3047"
-            landmarkName = "alertView(_:clickedButtonAtIndex:)"
-            landmarkType = "5">
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1238,11 +1306,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "890"
-            endingLineNumber = "890"
+            startingLineNumber = "860"
+            endingLineNumber = "860"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1254,11 +1322,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "747"
-            endingLineNumber = "747"
+            startingLineNumber = "717"
+            endingLineNumber = "717"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1373,6 +1441,38 @@
             endingLineNumber = "1714"
             landmarkName = "callCityApiTogetState(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.callCityApiTogetState (Swift.String) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.879841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1714"
+                  endingLineNumber = "1714"
+                  offsetFromSymbolStart = "2527">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.WebServiceClass.(callCityApiTogetState (Swift.String) -&gt; ()).(closure #1)"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.879929"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1719"
+                  endingLineNumber = "1719"
+                  offsetFromSymbolStart = "144">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1478,11 +1578,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "975"
-            endingLineNumber = "975"
+            startingLineNumber = "945"
+            endingLineNumber = "945"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1499,7 +1599,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "501"
             endingLineNumber = "501"
-            landmarkName = "backclk()"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1533,38 +1633,6 @@
             endingLineNumber = "3417"
             landmarkName = "createreturnProductRequestOrderDEtails()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.WebServiceClass.createreturnProductRequestOrderDEtails () -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/WebServiceClass.swift"
-                  timestampString = "506586355.123642"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3419"
-                  endingLineNumber = "3419"
-                  offsetFromSymbolStart = "3648">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.WebServiceClass.(createreturnProductRequestOrderDEtails () -&gt; ()).(closure #1)"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/WebServiceClass.swift"
-                  timestampString = "506586355.123743"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3419"
-                  endingLineNumber = "3419"
-                  offsetFromSymbolStart = "1695">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1579,7 +1647,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "371"
             endingLineNumber = "371"
-            landmarkName = "cancelClicked()"
+            landmarkName = "promoCodeBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1590,11 +1658,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "633"
-            endingLineNumber = "633"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1606,11 +1674,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "635"
-            endingLineNumber = "635"
+            startingLineNumber = "605"
+            endingLineNumber = "605"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1622,11 +1690,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "638"
-            endingLineNumber = "638"
+            startingLineNumber = "608"
+            endingLineNumber = "608"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1659,7 +1727,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3247"
             endingLineNumber = "3247"
-            landmarkName = "buyNowClk()"
+            landmarkName = "SellerBtnClick(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1670,12 +1738,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/LandingViewController.swift"
-            timestampString = "504193099.550038"
+            timestampString = "519308713.131192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "486"
-            endingLineNumber = "486"
-            landmarkName = "requestFailDelegate()"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
+            landmarkName = "badgecountResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1686,12 +1754,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/LandingViewController.swift"
-            timestampString = "504193099.550038"
+            timestampString = "519308713.131192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "476"
-            endingLineNumber = "476"
-            landmarkName = "stateChangeResponse(_:)"
+            startingLineNumber = "478"
+            endingLineNumber = "478"
+            landmarkName = "badgecountResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1718,11 +1786,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "684"
-            endingLineNumber = "684"
+            startingLineNumber = "654"
+            endingLineNumber = "654"
             landmarkName = "CollectionViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1734,45 +1802,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1445"
-            endingLineNumber = "1445"
-            landmarkName = "viewWillAppear(_:)"
+            startingLineNumber = "1393"
+            endingLineNumber = "1393"
+            landmarkName = "scrollViewDidEndDecelerating(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CollectionViewController.viewWillAppear (Swift.Bool) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CollectionViewController.swift"
-                  timestampString = "506586355.128987"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1460"
-                  endingLineNumber = "1460"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CollectionViewController.viewWillAppear (Swift.Bool) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CollectionViewController.swift"
-                  timestampString = "506586355.129075"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1460"
-                  endingLineNumber = "1460"
-                  offsetFromSymbolStart = "500">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1916,11 +1952,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1001"
-            endingLineNumber = "1001"
+            startingLineNumber = "971"
+            endingLineNumber = "971"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1953,40 +1989,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "588"
             endingLineNumber = "588"
-            landmarkName = "callFunction(_:)"
+            landmarkName = "selectedAdressDict(_:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CheckoutViewController.callFunction (Swift.AnyObject) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CheckoutViewController.swift"
-                  timestampString = "506586355.133929"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "589"
-                  endingLineNumber = "589"
-                  offsetFromSymbolStart = "67">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CheckoutViewController.callFunction (Swift.AnyObject) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CheckoutViewController.swift"
-                  timestampString = "506586355.134013"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "589"
-                  endingLineNumber = "589"
-                  offsetFromSymbolStart = "315">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2140,91 +2144,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1178"
-            endingLineNumber = "1178"
-            landmarkName = "returnDataToPrev(_:priceArray:techSpecAray:categoryArray:fileteApplied:reviewArray:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1063"
-            endingLineNumber = "1063"
-            landmarkName = "callGetProductAPI(_:isCalled:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1171"
-            endingLineNumber = "1171"
-            landmarkName = "returnDataToPrev(_:priceArray:techSpecAray:categoryArray:fileteApplied:reviewArray:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "685"
-            endingLineNumber = "685"
-            landmarkName = "CollectionViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1174"
-            endingLineNumber = "1174"
-            landmarkName = "returnDataToPrev(_:priceArray:techSpecAray:categoryArray:fileteApplied:reviewArray:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1129"
-            endingLineNumber = "1129"
+            startingLineNumber = "1132"
+            endingLineNumber = "1132"
             landmarkName = "listbuttonAction()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2236,11 +2160,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1288"
-            endingLineNumber = "1288"
+            startingLineNumber = "1033"
+            endingLineNumber = "1033"
+            landmarkName = "callGetProductAPI(_:isCalled:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1125"
+            endingLineNumber = "1125"
+            landmarkName = "listbuttonAction()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "655"
+            endingLineNumber = "655"
+            landmarkName = "CollectionViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1128"
+            endingLineNumber = "1128"
+            landmarkName = "listbuttonAction()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1099"
+            endingLineNumber = "1099"
+            landmarkName = "listbuttonAction()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1236"
+            endingLineNumber = "1236"
             landmarkName = "returnDataToPrev(_:priceArray:techSpecAray:categoryArray:fileteApplied:reviewArray:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2347,11 +2351,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "743"
-            endingLineNumber = "743"
+            startingLineNumber = "713"
+            endingLineNumber = "713"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2363,7 +2367,71 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
+            landmarkName = "CollectionViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "712"
+            endingLineNumber = "712"
+            landmarkName = "callGetProductAPI(_:isCalled:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1112"
+            endingLineNumber = "1112"
+            landmarkName = "listbuttonAction()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "689"
+            endingLineNumber = "689"
+            landmarkName = "callGetProductAPI(_:isCalled:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "690"
@@ -2379,11 +2447,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "742"
-            endingLineNumber = "742"
+            startingLineNumber = "691"
+            endingLineNumber = "691"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2395,107 +2463,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1153"
-            endingLineNumber = "1153"
-            landmarkName = "listbuttonAction()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "719"
-            endingLineNumber = "719"
-            landmarkName = "callGetProductAPI(_:isCalled:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CollectionViewController.callGetProductAPI (__ObjC.NSURL, isCalled : __ObjC.NSString) -&gt; ()"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CollectionViewController.swift"
-                  timestampString = "506586355.142397"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "719"
-                  endingLineNumber = "719"
-                  offsetFromSymbolStart = "4515">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.CollectionViewController.(callGetProductAPI (__ObjC.NSURL, isCalled : __ObjC.NSString) -&gt; ()).(closure #1)"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/CollectionViewController.swift"
-                  timestampString = "506586355.142505"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "721"
-                  endingLineNumber = "721"
-                  offsetFromSymbolStart = "181">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "720"
-            endingLineNumber = "720"
-            landmarkName = "callGetProductAPI(_:isCalled:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "721"
-            endingLineNumber = "721"
-            landmarkName = "callGetProductAPI(_:isCalled:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "722"
-            endingLineNumber = "722"
+            startingLineNumber = "692"
+            endingLineNumber = "692"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2523,11 +2495,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2589"
-            endingLineNumber = "2589"
+            startingLineNumber = "2538"
+            endingLineNumber = "2538"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2539,13 +2511,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2431"
-            endingLineNumber = "2431"
-            landmarkName = "CollectionViewController"
-            landmarkType = "3">
+            startingLineNumber = "2380"
+            endingLineNumber = "2380"
+            landmarkName = "loadmoredata(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2555,11 +2527,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "715"
-            endingLineNumber = "715"
+            startingLineNumber = "685"
+            endingLineNumber = "685"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2571,28 +2543,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2178"
-            endingLineNumber = "2178"
-            landmarkName = "CollectionViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2180"
-            endingLineNumber = "2180"
-            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:atIndexPath:)"
+            startingLineNumber = "2127"
+            endingLineNumber = "2127"
+            landmarkName = "collectionView(_:layout:referenceSizeForHeaderInSection:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2603,12 +2559,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2204"
-            endingLineNumber = "2204"
-            landmarkName = "collectionView(_:viewForSupplementaryElementOfKind:atIndexPath:)"
+            startingLineNumber = "2129"
+            endingLineNumber = "2129"
+            landmarkName = "collectionView(_:layout:referenceSizeForHeaderInSection:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2619,11 +2575,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "807"
-            endingLineNumber = "807"
+            startingLineNumber = "2153"
+            endingLineNumber = "2153"
+            landmarkName = "collectionView(_:willDisplayCell:forItemAtIndexPath:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/CollectionViewController.swift"
+            timestampString = "519311964.193761"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "777"
+            endingLineNumber = "777"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2635,11 +2607,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "839"
-            endingLineNumber = "839"
+            startingLineNumber = "809"
+            endingLineNumber = "809"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2651,11 +2623,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506513725.768759"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "856"
-            endingLineNumber = "856"
+            startingLineNumber = "826"
+            endingLineNumber = "826"
             landmarkName = "callGetProductAPI(_:isCalled:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2667,12 +2639,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520459.296452"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "2467"
-            endingLineNumber = "2467"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            startingLineNumber = "2416"
+            endingLineNumber = "2416"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2688,7 +2660,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2333"
             endingLineNumber = "2333"
-            landmarkName = "getOtherReview(_:)"
+            landmarkName = "notifyActionBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2832,8 +2804,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "299"
             endingLineNumber = "299"
-            landmarkName = "AccountViewController"
-            landmarkType = "3">
+            landmarkName = "StateApiResponsee(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2896,7 +2868,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2320"
             endingLineNumber = "2320"
-            landmarkName = "getOtherReview(_:)"
+            landmarkName = "notifyActionBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2912,8 +2884,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "486"
             endingLineNumber = "486"
-            landmarkName = "basketdetailSucce(_:)"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.SecondViewController.tableView (__ObjC.UITableView, cellForRowAtIndexPath : __ObjC.NSIndexPath) -&gt; __ObjC.UITableViewCell"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/SecondViewController.swift"
+                  timestampString = "519310173.905069"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "486"
+                  endingLineNumber = "486"
+                  offsetFromSymbolStart = "14934">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.SecondViewController.(tableView (__ObjC.UITableView, cellForRowAtIndexPath : __ObjC.NSIndexPath) -&gt; __ObjC.UITableViewCell).(closure #1)"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/SecondViewController.swift"
+                  timestampString = "519310173.905144"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "486"
+                  endingLineNumber = "486"
+                  offsetFromSymbolStart = "1903">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -2928,8 +2932,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "303"
             endingLineNumber = "303"
-            landmarkName = "registerNotification()"
-            landmarkType = "5">
+            landmarkName = "SecondViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3003,11 +3007,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/LandingViewController.swift"
-            timestampString = "504182958.54306"
+            timestampString = "519308713.131192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
             landmarkName = "badgecount()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3024,7 +3028,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "423"
             endingLineNumber = "423"
-            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
+            landmarkName = "tableView(_:heightForFooterInSection:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3179,12 +3183,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/LandingViewController.swift"
-            timestampString = "504193099.550038"
+            timestampString = "519308713.131192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "466"
-            endingLineNumber = "466"
-            landmarkName = "gestureRecognizer(_:shouldReceiveTouch:)"
+            startingLineNumber = "468"
+            endingLineNumber = "468"
+            landmarkName = "badgecountResponse(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3226,13 +3230,13 @@
                   symbolName = "MarketPlace.WebServiceClass.createreturnProductRequestOrderDEtails () -&gt; ()"
                   moduleName = "MarketPlace"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/WebServiceClass.swift"
-                  timestampString = "506586355.163831"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.911655"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3372"
-                  endingLineNumber = "3372"
-                  offsetFromSymbolStart = "1517">
+                  startingLineNumber = "3374"
+                  endingLineNumber = "3374"
+                  offsetFromSymbolStart = "1192">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -3241,13 +3245,13 @@
                   symbolName = "MarketPlace.WebServiceClass.createreturnProductRequestOrderDEtails () -&gt; ()"
                   moduleName = "MarketPlace"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/WebServiceClass.swift"
-                  timestampString = "506586355.163918"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.911749"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "3372"
-                  endingLineNumber = "3372"
-                  offsetFromSymbolStart = "1639">
+                  startingLineNumber = "3374"
+                  endingLineNumber = "3374"
+                  offsetFromSymbolStart = "1498">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3274,13 +3278,13 @@
                   symbolName = "MarketPlace.WebServiceClass.DeleteBasketDetails (Swift.String, lineItemId : Swift.String, BasketId : Swift.String, quantity : Swift.String, userId : Swift.Int, sitecode : Swift.String, placedPrice : Swift.String) -&gt; ()"
                   moduleName = "MarketPlace"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/WebServiceClass.swift"
-                  timestampString = "506586355.164473"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.912376"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1062"
                   endingLineNumber = "1062"
-                  offsetFromSymbolStart = "4094">
+                  offsetFromSymbolStart = "3903">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -3289,13 +3293,13 @@
                   symbolName = "MarketPlace.WebServiceClass.(DeleteBasketDetails (Swift.String, lineItemId : Swift.String, BasketId : Swift.String, quantity : Swift.String, userId : Swift.Int, sitecode : Swift.String, placedPrice : Swift.String) -&gt; ()).(closure #1)"
                   moduleName = "MarketPlace"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/MarketPlace/WebServiceClass.swift"
-                  timestampString = "506586355.164565"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/WebServiceClass.swift"
+                  timestampString = "519310173.912465"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1064"
-                  endingLineNumber = "1064"
-                  offsetFromSymbolStart = "149">
+                  startingLineNumber = "1068"
+                  endingLineNumber = "1068"
+                  offsetFromSymbolStart = "141">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -3360,7 +3364,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3472"
             endingLineNumber = "3472"
-            landmarkName = "addTocartSuccess(_:)"
+            landmarkName = "addToLocalcart(_:quantity:productId:vendorPartNumber:extendedPrice:vendorCode:description:imageURLMedium:sellerName:sellerNumber:limitedStock:maximumQuantity:availabilty:skuNumber:prodDic:basketId:lineItemId:cartprice:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3376,8 +3380,70 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "482"
             endingLineNumber = "482"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
+            landmarkName = "CheckoutViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.proceedPayBtnOutlet.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.914182"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.proceedPayBtnOutlet.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.914259"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; MarketPlace.CheckoutViewController"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.914333"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "2710">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MarketPlace.CheckoutViewController&gt;"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.914399"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "2606">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3392,8 +3458,70 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "483"
             endingLineNumber = "483"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
+            landmarkName = "CheckoutViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.proceedPayBtnOutlet.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.91536"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.proceedPayBtnOutlet.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIButton&gt;"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.915462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "42">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.init (nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;__ObjC.NSBundle&gt;) -&gt; MarketPlace.CheckoutViewController"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.915536"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "2710">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;MarketPlace.CheckoutViewController&gt;"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.915604"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "483"
+                  endingLineNumber = "483"
+                  offsetFromSymbolStart = "2606">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3456,7 +3584,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1138"
             endingLineNumber = "1138"
-            landmarkName = "similarproductitem()"
+            landmarkName = "keyboardDidShow(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3472,7 +3600,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "594"
             endingLineNumber = "594"
-            landmarkName = "orderBtn(_:)"
+            landmarkName = "selectedAdressDict(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3504,8 +3632,40 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "662"
             endingLineNumber = "662"
-            landmarkName = "placeOrderSuccess(_:)"
+            landmarkName = "orderBtn(_:)"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.orderBtn (Swift.AnyObject) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.918462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "664"
+                  endingLineNumber = "664"
+                  offsetFromSymbolStart = "874">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MarketPlace.CheckoutViewController.orderBtn (Swift.AnyObject) -&gt; ()"
+                  moduleName = "MarketPlace"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pradnya/Documents/newMarketPlace_15:06:2017/MarketPlace_new_13:06:2017/Release1/MarketPlace/CheckoutViewController.swift"
+                  timestampString = "519310173.918541"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "664"
+                  endingLineNumber = "664"
+                  offsetFromSymbolStart = "10961">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3536,7 +3696,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "506"
             endingLineNumber = "506"
-            landmarkName = "orderSuccess(_:)"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3650,38 +3810,6 @@
             endingLineNumber = "561"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.ViewController.(viewDidLoad () -&gt; ()).(closure #2)"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/scrolltableView/scrolltableView/ViewController.swift"
-                  timestampString = "506586355.175414"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "561"
-                  endingLineNumber = "561"
-                  offsetFromSymbolStart = "32486">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.ViewController.(viewDidLoad () -&gt; ()).(closure #2)"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/scrolltableView/scrolltableView/ViewController.swift"
-                  timestampString = "506586355.175514"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "561"
-                  endingLineNumber = "561"
-                  offsetFromSymbolStart = "33202">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3696,7 +3824,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3330"
             endingLineNumber = "3330"
-            landmarkName = "addToLocalcart(_:quantity:productId:vendorPartNumber:extendedPrice:vendorCode:description:imageURLMedium:sellerName:sellerNumber:limitedStock:maximumQuantity:availabilty:skuNumber:prodDic:basketId:lineItemId:cartprice:)"
+            landmarkName = "addTocartClk()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3712,7 +3840,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3167"
             endingLineNumber = "3167"
-            landmarkName = "addTocartClk()"
+            landmarkName = "alertView(_:clickedButtonAtIndex:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3728,7 +3856,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3396"
             endingLineNumber = "3396"
-            landmarkName = "addToLocalcart(_:quantity:productId:vendorPartNumber:extendedPrice:vendorCode:description:imageURLMedium:sellerName:sellerNumber:limitedStock:maximumQuantity:availabilty:skuNumber:prodDic:basketId:lineItemId:cartprice:)"
+            landmarkName = "buyNowClk()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3744,7 +3872,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "3397"
             endingLineNumber = "3397"
-            landmarkName = "addToLocalcart(_:quantity:productId:vendorPartNumber:extendedPrice:vendorCode:description:imageURLMedium:sellerName:sellerNumber:limitedStock:maximumQuantity:availabilty:skuNumber:prodDic:basketId:lineItemId:cartprice:)"
+            landmarkName = "buyNowClk()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3762,38 +3890,6 @@
             endingLineNumber = "1470"
             landmarkName = "noInternetClk()"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.ViewController.(noInternetClk () -&gt; ()).(closure #2)"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/scrolltableView/scrolltableView/ViewController.swift"
-                  timestampString = "506586355.178709"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1470"
-                  endingLineNumber = "1470"
-                  offsetFromSymbolStart = "208">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MarketPlace.ViewController.(noInternetClk () -&gt; ()).(closure #2).(closure #1)"
-                  moduleName = "MarketPlace"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/pradnya/Documents/MarketPlaceNew/Archive/scrolltableView/scrolltableView/ViewController.swift"
-                  timestampString = "506586355.178811"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1470"
-                  endingLineNumber = "1470"
-                  offsetFromSymbolStart = "24">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -3824,7 +3920,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "2309"
             endingLineNumber = "2309"
-            landmarkName = "getOtherReview(_:)"
+            landmarkName = "notifyActionBtn(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -3995,12 +4091,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/LandingViewController.swift"
-            timestampString = "505916492.01377"
+            timestampString = "519308713.131192"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "712"
-            endingLineNumber = "712"
-            landmarkName = "CallApI()"
+            startingLineNumber = "714"
+            endingLineNumber = "714"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -4059,11 +4155,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MarketPlace/CollectionViewController.swift"
-            timestampString = "506520444.057218"
+            timestampString = "519311964.193761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1275"
-            endingLineNumber = "1275"
+            startingLineNumber = "1223"
+            endingLineNumber = "1223"
             landmarkName = "returnDataToPrev(_:priceArray:techSpecAray:categoryArray:fileteApplied:reviewArray:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4082,6 +4178,22 @@
             endingLineNumber = "97"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MarketPlace/LandingViewController.swift"
+            timestampString = "519310942.693913"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1650"
+            endingLineNumber = "1650"
+            landmarkName = "collectionView(_:cellForItemAtIndexPath:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

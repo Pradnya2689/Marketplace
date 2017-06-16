@@ -582,8 +582,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
                 var window :UIWindow = UIApplication.sharedApplication().keyWindow!
                 LoadingOverlay.shared.showOverlay(window)
                 self.newArrivalproduct()
-//                print(self.CollectionData.description)
-               //self.collectionViewProd.reloadData()
+
                 
             }
         
@@ -596,36 +595,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
           
         }
         
-        //print(url, terminator: "")
         
-//        if (self.comingfrom == "ViewAll")
-//        {
-////            var gridlistBtn : UIBarButtonItem = UIBarButtonItem(title: "grid", style: UIBarButtonItemStyle.Plain, target: self, action: "GridBtnClicked")
-////            
-////            let button = UIButton()
-////            button.frame = CGRectMake(0, 0, 51, 31) //won't work if you don't set frame
-////            button.setImage(UIImage(named: "gridImg"), forState: .Normal)
-////            button.addTarget(self, action: Selector("GridBtnClicked"), forControlEvents: .TouchUpInside)
-////            
-////            let barButton = UIBarButtonItem()
-////            barButton.customView = button
-////            self.navigationItem.rightBarButtonItem = barButton
-//           // gridlistBtn.setBackgroundImage(, forState: UIControlState.Normal, barMetrics: nil)
-//            
-//            if let ttle = keyWords
-//            {
-//                self.title = ttle
-//            }
-//            
-//           // self.navigationItem.rightBarButtonItem = gridlistBtn
-////            self.collectionViewProd.contentInset = UIEdgeInsetsZero
-////            self.collectionViewProd.scrollIndicatorInsets = UIEdgeInsetsZero;
-//
-//
-//         self.collectionView?.reloadData()
-//        }
-//        else
-//        {
             self.CollectionData.removeAllObjects()
            
             callApi = "view"
@@ -1129,25 +1099,14 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         
       // if(self.view.subviews.contains(self.productListTable)){
       if(!self.productListTable.hidden){
-        
-        //self.collectionViewProd.hidden = false
-            showList = false
+           showList = false
             if let headerviewimage = headerView
             {
            headerView.listBtn.setImage(UIImage.init(named: "listImg"), forState: .Normal)
             }
        // self.headerView.hidden = false
         self.productListTable.hidden = true
-            //self.productListTable.removeFromSuperview()
-            //self.hideView.removeFromSuperview()
-         // self.collectionViewProd.hidden = false
-         //self.collectionViewProd.contentInset = UIEdgeInsets(top: 100, left: 0, bottom: 0, right: 0)
-            self.collectionViewProd.setContentOffset(self.productListTable.contentOffset, animated: false)
-        
-        //self.collectionViewProd.setContentOffset(CGPointMake(0, 1000), animated: false)
-//            var item = self.collectionView(self.collectionView!, numberOfItemsInSection: 0) - 1
-//            var lastItemIndex = NSIndexPath(forItem: item, inSection: 0)
-//            self.collectionView?.scrollToItemAtIndexPath(lastItemIndex, atScrollPosition: UICollectionViewScrollPosition.Top, animated: false)
+           self.collectionViewProd.setContentOffset(self.productListTable.contentOffset, animated: false)
         }
       else{
             showList = true
@@ -1158,12 +1117,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
        // self.collectionViewProd.hidden = true
            // headerView.listBtn.setTitle("Grid", forState: .Normal)
              self.headerView.hidden = false
-           //self.collectionViewProd.hidden = true
-//            self.hideView = UIView(frame: CGRectMake(0, 48, screenWidth, screenHeight-50))
-//            self.hideView.backgroundColor = UIColor.whiteColor()
-//            self.collectionViewProd.addSubview(self.hideView)
-            //self.collectionViewProd = nil
-      //  self.productListTable.setContentOffset(self.collectionViewProd.contentOffset, animated: false)
+        
         self.collectionViewProd.setContentOffset(CGPointZero, animated: false)
            //self.productListTable.contentInset = UIEdgeInsets(top: 50, left: 0, bottom: 0, right: 0)
             self.productListTable.delegate = self
@@ -1180,14 +1134,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             self.productListTable.frame = CGRectMake(0, 50, screenSize.width, screenSize.height-100)
             }
         self.productListTable.hidden = false
-           // self.view.addSubview(self.productListTable)
-//            self.CollectionData.removeAllObjects()
-//            self.collectionViewProd.reloadData()
-//            if CollectionData.count == 0
-//            {
-//            }
-//            else
-//            {
+        
             self.productListTable.reloadData()
            // }
             
@@ -1218,6 +1165,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
         lastAppliedFilter = fileteApplied
         appliedfilter = fileteApplied as String
         currentPage = 1
+        self.activity.stopAnimating()
         self.CollectionData.removeAllObjects()
         self.collectionView?.reloadData()
         
@@ -1322,10 +1270,10 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
 
 
         //print(url!)
-         self.activity.stopAnimating()
+        
         currentPage = 1
         callApi = "filter"
-        
+         self.activity.stopAnimating()
         callGetProductAPI(url!,isCalled: callApi)
         
         
@@ -1622,6 +1570,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             URLString = "\(baseUrl)product?searchCriteria=\(escapepercent)"
             callApi = "view"
             currentPage = 1
+        activity.stopAnimating()
             dataLayer.push(["event": "openScreen", "screenName": "searchProdScreeniOS"])
             callGetProductAPI(url!,isCalled: callApi)
             NSNotificationCenter.defaultCenter().removeObserver(self, name: "refresh", object: nil)
@@ -2322,16 +2271,18 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
             activity.tag = 42
            // print(footerView.center)
             activity.center = CGPointMake(footerView.center.x,30)
-            
-            
+            if (currentPage == 1)
+            {
+             footerView.addSubview(activity)
+            }
             if(totalCount <= pagesize){
-                activity.stopAnimating()
+                 activity.stopAnimating()
             }else{
                 activity.startAnimating()
             }
             
             if(CollectionData.count <= 0){
-                activity.stopAnimating()
+                 activity.stopAnimating()
             }
             if(currentPage >= totalPages){
                 activity.stopAnimating()
@@ -2340,7 +2291,7 @@ class CollectionViewController: UICollectionViewController,UICollectionViewDeleg
 //                
 //                activity.stopAnimating()
 //            }
-            footerView.addSubview(activity)
+           
             footerView.backgroundColor = UIColor.whiteColor();
             return footerView
             

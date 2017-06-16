@@ -382,6 +382,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                                          name: "basketDetailsLandingPage",
                                                          object: nil)
         //NSNotificationCenter.defaultCenter().postNotificationName("basketDetails", object: nil, userInfo: nil )
+        myTimer =  NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(LandingViewController.animateBanner), userInfo: nil, repeats: true)
+        
         
     }
     func badgecount()
@@ -635,7 +637,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
        self.tabBarController?.tabBar.hidden = false
         self.title = ""
         //myTimer.invalidate()
-        myTimer = nil
+        //myTimer = nil
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "reachable", object: nil)
        // wsm.delegates=nil
         
@@ -1024,8 +1026,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
             searchBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 20, 0, 20)
         }
         
-        myTimer =  NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: #selector(LandingViewController.animateBanner), userInfo: nil, repeats: true)
-        
+       
        // NSNotificationCenter.defaultCenter().postNotificationName("basketDetails", object: nil, userInfo: nil )
     }
     
@@ -1377,6 +1378,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
     func fetchRecentlyViewedData()
     {
         recentlyViewedArray = []
+        recencetlyDataArray.removeAllObjects()
         let appDelegate =
             UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -1474,7 +1476,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
            // cell.categoryLabl.text = self.recentlyViewedArray[indexPath.row].valueForKey("desc")! as? String
            // print("val \(self.recentlyViewedArray[indexPath.row].valueForKey("desc"))")
             //cell.sku = self.recentlyViewedArray[indexPath.row].valueForKey("sku")! as! String
-            self.recencetlyDataArray.removeAllObjects()
+            //self.recencetlyDataArray.removeAllObjects()
             if (self.recencetlyDataArray.count > indexPath.row)
             {
                 //print("data is available")
@@ -1528,70 +1530,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     cell.newProdImgView.hidden = true
                     
                 }
-                //               let pna =  prod.pnaSuccess!
-                //                if  ( pna == "true")
-                //                {
-                //                    let grossPrice  =  "\(prod.grossPrice!)"
-                //
-                //                    if (grossPrice == "null")
-                //                    {
-                //                       // cell.actualPriceLbl.text = ""
-                //                      //  cell.DiscountLbl.hidden = true
-                //                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-                //                         cell.DescriptionLbl.hidden = true
-                //                    }
-                //                    else
-                //                    {
-                //                        //discount offers label
-                //                      var  ntprice = prod.netPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-                //                      var  grprice = prod.grossPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-                //                        var  nprice1:Float? = Float(ntprice)
-                //                        var  gprice1:Float? = Float(grprice)
-                //                        let discountper1 :Float? = 100 - ((nprice1!/gprice1!)*100)
-                //
-                //
-                ////                        cell.DescriptionLbl.hidden = false
-                ////                        cell.DescriptionLbl.text = String(format:"%@%% Off  ",String(Int(discountper1!)))
-                //                        //end
-                //
-                //                        let grossPrice1  =  "₹ \(prod.grossPrice!)"
-                //                        let netPrice2  =  "₹ \(prod.netPrice!)"
-                //                        let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-                //
-                //                        let string_to_color = "\(netPrice2)"
-                //                        let string2 = "\(grossPrice1)"
-                //
-                //                        let range = (labelstring as NSString).rangeOfString(string_to_color)
-                //                        let range2 = (labelstring as NSString).rangeOfString(string2)
-                //
-                //
-                //
-                //                        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-                //
-                //                        attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-                //                        attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-                //                        attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-                //                        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-                //
-                //                        cell.priceLabel.attributedText = attributedText
-                //
-                //                    }
-                //
-                //
-                //
-                //                }
-                //                else
-                //                {
-                //                    if(prod.netPrice! == "Price Not Available"){
-                //                        cell.priceLabel.text = "\(prod.netPrice!)"
-                //                    }else{
-                //                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-                //                    }
-                //                   // cell.actualPriceLbl.text = ""
-                //                    //cell.priceLabel.text = "₹ \(prod.netPrice!)"
-                //                }
-                
-                let url =  prod.imageURLHigh
+                               let url =  prod.imageURLHigh
                 let imgURL: NSURL = NSURL(string: url!)!
                 //print(imgURL.absoluteString)
                 
@@ -1607,9 +1546,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                         .responseImage { response in
                             debugPrint(response)
                             
-//                            print(response.request)
-//                            print(response.response)
-                            debugPrint(response.result)
+                          debugPrint(response.result)
                             
                             
                             
@@ -1644,11 +1581,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 Alamofire.request(.GET, url,headers: headers).validate(contentType: ["application/json"])
                     
                     .responseJSON { response in
-                        //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-//                        print(response.request)  // original URL request
-//                        print(response.response) // URL response
-//                        print(response.data)     // server data
-//                        print(response.result)
+                       
                         if let JSON = response.result.value {
                             
                             let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
@@ -1707,68 +1640,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                     }else{
                                         cell.newProdImgView.hidden = true
                                     }
-                                    // cell.priceLabel.text = String("₹ \(prod.netPrice!)")
-                                    //                                let pna =  prod.pnaSuccess!
-                                    //                                if  ( pna == "true")
-                                    //                                {
-                                    //                                    let grossPrice  =  "\(prod.grossPrice!)"
-                                    //
-                                    //                                    if (grossPrice == "null")
-                                    //                                    {
-                                    //
-                                    //                                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-                                    //                                         cell.DescriptionLbl.hidden = true
-                                    //
-                                    //                                    }
-                                    //                                    else
-                                    //                                    {
-                                    //
-                                    //                                        var  ntprice = prod.netPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-                                    //                                        var  grprice = prod.grossPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-                                    //                                        //discount offers label
-                                    //                                        var  nprice1:Float? = Float(ntprice)
-                                    //                                        var  gprice1:Float? = Float(grprice)
-                                    //                                        let discountper1 :Float? = 100 - ((nprice1!/gprice1!)*100)
-                                    //
-                                    //
-                                    //
-                                    //
-                                    //
-                                    //                                       let grossPrice1  =  "₹ \(prod.grossPrice!)"
-                                    //                                        let netPrice2  =  "₹ \(prod.netPrice!)"
-                                    //                                        let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-                                    //
-                                    //                                        let string_to_color = "\(netPrice2)"
-                                    //                                        let string2 = "\(grossPrice1)"
-                                    //
-                                    //                                        let range = (labelstring as NSString).rangeOfString(string_to_color)
-                                    //                                        let range2 = (labelstring as NSString).rangeOfString(string2)
-                                    //
-                                    //
-                                    //
-                                    //                                        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-                                    //
-                                    //                                        attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-                                    //                                        attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-                                    //                                        attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-                                    //                                        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-                                    //
-                                    //                                        cell.priceLabel.attributedText = attributedText
-                                    //                                        
-                                    //                                    }
-                                    //                                    
-                                    //                                    
-                                    //                                    
-                                    //                                }
-                                    //                                else
-                                    //                                {
-                                    //                                    if(prod.netPrice! == "Price Not Available"){
-                                    //                                        cell.priceLabel.text = "\(prod.netPrice!)"
-                                    //                                    }else{
-                                    //                                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-                                    //                                    }
-                                    //                                    //cell.priceLabel.text = "₹ \(prod.netPrice!)"
-                                    //                                }
+                                    
                                     let url =  prod.imageURLHigh
                                     let imgURL: NSURL = NSURL(string: url!)!
                                     //print(imgURL.absoluteString)
@@ -1812,158 +1684,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 }
                 }
             }
-            //let grossPrice  =  "\(prod.grossPrice!)"
-          //  if  ( pna == "true")
-           // {
-//                let grossPrice  =  self.recentlyViewedArray[indexPath.row].valueForKey("grossPrice")! as! String
-//                let netPrice = self.recentlyViewedArray[indexPath.row].valueForKey("netPrice")! as! String
-//            print("gross price \(grossPrice)")
-//                if (grossPrice == "null" || grossPrice.characters.count == 0)
-//                {
-//                    
-//                    if(netPrice == "Price Not Available")
-//                    {
-//                        cell.priceLabel.text = "\(netPrice)"
-//                    }
-//                    else
-//                    {
-//                        if(netPrice == ""){
-//                            cell.priceLabel.text = "\(netPrice)"
-//                        }else{
-//                            cell.priceLabel.text = "₹ \(netPrice)"
-//                        }
-//                        
-//                    }
-//                      cell.DescriptionLbl.hidden = true
-//                }
-//                else
-//                {
-//                    print(netPrice)
-//                    print(grossPrice)
-//                    var   ntprice  : String = netPrice.stringByReplacingOccurrencesOfString("₹ ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-//                    
-//                    var   grprice  : String = grossPrice.stringByReplacingOccurrencesOfString("₹ ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-//
-//                    ntprice = ntprice.stringByReplacingOccurrencesOfString(",", withString: "")
-//                    grprice = grprice.stringByReplacingOccurrencesOfString(",", withString: "")
-//                    //discount offers label
-//                    var  nprice:Float? = Float(ntprice)
-//                    var  gprice:Float? = Float(grprice)
-////                    if (nprice! .isZero) {
-////                         cell.DescriptionLbl.hidden = true
-////                    }
-////                    else {
-//                    let discountper :Float? = 100 - ((nprice!/gprice!)*100)
-//                    if(Int(discountper!) == 0)
-//                    {
-//                        cell.DescriptionLbl.hidden = true
-//                        cell.DescriptionLbl.text = String(format:"%@%% Off  ",String(Int(discountper!)))
-//                    }
-//                    else{
-//                        cell.DescriptionLbl.hidden = false
-//                        cell.DescriptionLbl.text = String(format:"%@%% Off  ",String(Int(discountper!)))
-//                    }
-                   // }
-                    
-//                    cell.DescriptionLbl.hidden = false
-//                    cell.DescriptionLbl.text = String(format:"%@%% Off  ",String(Int(discountper!)))
-                    //end
-
-            
-            
-                    
-//                    let labelstring : NSString = "\(netPrice)  \(grossPrice)"
-//                    
-//                    let string_to_color = "\(netPrice)"
-//                    let string2 = "\(grossPrice)"
-//                    
-//                    let range = (labelstring as NSString).rangeOfString(string_to_color)
-//                    let range2 = (labelstring as NSString).rangeOfString(string2)
-//                    
-//                    
-//                    
-//                    let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-//                    
-//                    attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-//                    attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-//                    attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-//                    attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-//                    
-//                    cell.priceLabel.attributedText = attributedText
-            
-               // }
-        /*   var shwprc = self.recentlyViewedArray[indexPath.row].valueForKey("showPerc")! as! Bool
-            if(shwprc){
-                cell.DescriptionLbl.hidden = false
-                cell.DescriptionLbl.text = String(format:"%@",self.recentlyViewedArray[indexPath.row].valueForKey("percentage")! as! String)
-                
-                let grossPrice1  =  "\(self.recentlyViewedArray[indexPath.row].valueForKey("grossPrice")! as! String)"
-                let netPrice2  =  "\(self.recentlyViewedArray[indexPath.row].valueForKey("netPrice")! as! String)"
-                let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-                
-                let string_to_color = "\(netPrice2)"
-                let string2 = "\(grossPrice1)"
-                
-                let range = (labelstring as NSString).rangeOfString(string_to_color)
-                let range2 = (labelstring as NSString).rangeOfString(string2)
-                
-                
-                
-                let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-                
-                attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-                attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-                attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-                attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-                
-                cell.priceLabel.attributedText = attributedText
-            }else{
-                cell.DescriptionLbl.hidden = true
-                // cell.DescriptionLbl.text = String(format:"%@Off  ",prod.percentage!)
-                
-                if let netPrice2  =  self.recentlyViewedArray[indexPath.row].valueForKey("netPrice")! as? String{
-                    cell.priceLabel.text = "\(netPrice2)"
-                }else{
-                    cell.priceLabel.text = "Price Not Available"
-                }
-            }
-            
-            
-            
-//  let grossPrice  =  self.recentlyViewedArray[indexPath.row].valueForKey("grossPrice")! as! String
-            
-            let url =  self.recentlyViewedArray[indexPath.row].valueForKey("imageURLHigh")! as! String
-            let imgURL: NSURL = NSURL(string: url)!
-            print("$$$$$$$$$$$ \(imgURL.absoluteString)")
-            
-            if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)
-            {
-                print("IN cache")
-                cell.prodImg.image = image
-                
-            }
-            else
-            {
-                Alamofire.request(.GET, imgURL)
-                    .responseImage { response in
-                        debugPrint(response)
-                        
-                        print(response.request)
-                        print(response.response)
-                        debugPrint(response.result)
-                            if let image = response.result.value {
-                            print(imgURL.absoluteString)
-                            cell.prodImg.image = image
-                            photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
-                        }
-                        else
-                        {
-                            let image : UIImage = UIImage(named:"placeholder")!
-                            cell.prodImg.image = image
-                           // photoCache.addImage(image, withIdentifier: imgURL.absoluteString)
-                        }
-                }
-            }*/
+           
             
             return cell
         }
@@ -2032,68 +1753,6 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     cell.newProdImgView.hidden = true
                     
                 }
-//               let pna =  prod.pnaSuccess!
-//                if  ( pna == "true")
-//                {
-//                    let grossPrice  =  "\(prod.grossPrice!)"
-//                    
-//                    if (grossPrice == "null")
-//                    {
-//                       // cell.actualPriceLbl.text = ""
-//                      //  cell.DiscountLbl.hidden = true
-//                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                         cell.DescriptionLbl.hidden = true
-//                    }
-//                    else
-//                    {
-//                        //discount offers label
-//                      var  ntprice = prod.netPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                      var  grprice = prod.grossPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                        var  nprice1:Float? = Float(ntprice)
-//                        var  gprice1:Float? = Float(grprice)
-//                        let discountper1 :Float? = 100 - ((nprice1!/gprice1!)*100)
-//                        
-//                        
-////                        cell.DescriptionLbl.hidden = false
-////                        cell.DescriptionLbl.text = String(format:"%@%% Off  ",String(Int(discountper1!)))
-//                        //end
-//                        
-//                        let grossPrice1  =  "₹ \(prod.grossPrice!)"
-//                        let netPrice2  =  "₹ \(prod.netPrice!)"
-//                        let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-//                        
-//                        let string_to_color = "\(netPrice2)"
-//                        let string2 = "\(grossPrice1)"
-//                        
-//                        let range = (labelstring as NSString).rangeOfString(string_to_color)
-//                        let range2 = (labelstring as NSString).rangeOfString(string2)
-//                        
-//                        
-//                        
-//                        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-//                        
-//                        attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-//                        attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-//                        attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-//                        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-//                        
-//                        cell.priceLabel.attributedText = attributedText
-//                        
-//                    }
-//                    
-//                    
-//                    
-//                }
-//                else
-//                {
-//                    if(prod.netPrice! == "Price Not Available"){
-//                        cell.priceLabel.text = "\(prod.netPrice!)"
-//                    }else{
-//                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                    }
-//                   // cell.actualPriceLbl.text = ""
-//                    //cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                }
                 
                 let url =  prod.imageURLHigh
                 let imgURL: NSURL = NSURL(string: url!)!
@@ -2148,11 +1807,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
                     
                     .responseJSON { response in
-                        //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-//                        print(response.request)  // original URL request
-//                        print(response.response) // URL response
-//                        print(response.data)     // server data
-//                        print(response.result)
+                        
                         if let JSON = response.result.value {
                             
                             let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
@@ -2160,8 +1815,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                             if customer.count != 0{
                            if let prod = customer[0] as? ProductDetails{
                                 self.newArrivalDataArray .addObject(prod)
-                                //print(prod.description)
-                            // print(prod.netPriceDisplayString!)
+                            
                                 cell.categoryLabl.text = prod.description
                                 cell.sku = prod.sku
                             
@@ -2211,68 +1865,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                             }else{
                                 cell.newProdImgView.hidden = true
                             }
-                               // cell.priceLabel.text = String("₹ \(prod.netPrice!)")
-//                                let pna =  prod.pnaSuccess!
-//                                if  ( pna == "true")
-//                                {
-//                                    let grossPrice  =  "\(prod.grossPrice!)"
-//                                    
-//                                    if (grossPrice == "null")
-//                                    {
-//                                       
-//                                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                                         cell.DescriptionLbl.hidden = true
-//                                        
-//                                    }
-//                                    else
-//                                    {
-//                                        
-//                                        var  ntprice = prod.netPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                                        var  grprice = prod.grossPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                                        //discount offers label
-//                                        var  nprice1:Float? = Float(ntprice)
-//                                        var  gprice1:Float? = Float(grprice)
-//                                        let discountper1 :Float? = 100 - ((nprice1!/gprice1!)*100)
-//                                        
-//                                        
-//
-//
-//                                        
-//                                       let grossPrice1  =  "₹ \(prod.grossPrice!)"
-//                                        let netPrice2  =  "₹ \(prod.netPrice!)"
-//                                        let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-//                                        
-//                                        let string_to_color = "\(netPrice2)"
-//                                        let string2 = "\(grossPrice1)"
-//                                        
-//                                        let range = (labelstring as NSString).rangeOfString(string_to_color)
-//                                        let range2 = (labelstring as NSString).rangeOfString(string2)
-//                                        
-//                                        
-//                                        
-//                                        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-//                                        
-//                                        attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-//                                        attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-//                                        attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-//                                        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-//                                        
-//                                        cell.priceLabel.attributedText = attributedText
-//                                        
-//                                    }
-//                                    
-//                                    
-//                                    
-//                                }
-//                                else
-//                                {
-//                                    if(prod.netPrice! == "Price Not Available"){
-//                                        cell.priceLabel.text = "\(prod.netPrice!)"
-//                                    }else{
-//                                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                                    }
-//                                    //cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                                }
+
                                 let url =  prod.imageURLHigh
                                 let imgURL: NSURL = NSURL(string: url!)!
                                // print(imgURL.absoluteString)
@@ -2385,15 +1978,8 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 let prod = self.featuredDataArray.objectAtIndex(indexPath.row) as! ProductDetails
                 cell.categoryLabl.text = prod.description
                 cell.sku = prod.sku
-//                 print("net price:",prod.netPrice)
-//                print("net price:",prod.grossPrice)
-                
-//                let showPercentage = self.featuredDataArray[indexPath.row].valueForKey("showPerc")!
-//                print(showPercentage)
                 let showPercentage = self.featuredDataArray.objectAtIndex(indexPath.row) as! ProductDetails
-               // cell.categoryLabl.text = prod.description
-               // print(showPercentage.showPerc)
-                if(prod.showPerc!){
+                 if(prod.showPerc!){
                     cell.DescriptionLbl.hidden = false
                     cell.DescriptionLbl.text = String(format:"%@Off  ",prod.percentage!)
                     
@@ -2433,68 +2019,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     }
                 }
 
-//                for showpercent in self.featuredDataArray
-//                {
-//
-//                print(showpercent.valueForKey("showPerc"))
-//                }
-                
-                //cell.priceLabel.text = String("₹ \(prod.netPrice!)")
-//                let pna =  prod.pnaSuccess!
-//                if  ( pna == "true")
-//                {
-//                    let grossPrice  =  "\(prod.grossPrice!)"
-//                    
-//                    if (grossPrice == "null")
-//                    {
-//                
-//                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                        cell.DescriptionLbl.hidden = true
-//                    }
-//                    else
-//                    {
-//                        var  ntprice = prod.netPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                        var  grprice = prod.grossPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                        var  nprice1:Float? = Float(ntprice)
-//                        var  gprice1:Float? = Float(grprice)
-////                        let discountper1 :Float? = 100 - ((nprice1!/gprice1!)*100)
-//                       
-//                        
-////                        cell.DescriptionLbl.hidden = false
-////                        cell.DescriptionLbl.text = String(format:"%@%% Off  ",String(Int(discountper1!)))
-//                        
-//                        let grossPrice1  =  "₹ \(prod.grossPrice!)"
-//                        let netPrice2  =  "₹ \(prod.netPrice!)"
-//                        let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-//                        
-//                        let string_to_color = "\(netPrice2)"
-//                        let string2 = "\(grossPrice1)"
-//                        
-//                        let range = (labelstring as NSString).rangeOfString(string_to_color)
-//                        let range2 = (labelstring as NSString).rangeOfString(string2)
-//                        
-//                        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-//                        
-//                        attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-//                        attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-//                        attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-//                        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-//                        
-//                        cell.priceLabel.attributedText = attributedText
-//                        
-//                    }
-//                    
-//                }
-//                else
-//                {
-//                    if(prod.netPrice! == "Price Not Available"){
-//                        cell.priceLabel.text = "\(prod.netPrice!)"
-//                    }else{
-//                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                    }
-//                    //cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                    cell.DescriptionLbl.hidden = true
-//                }
+
                 let url =  prod.imageURLHigh
                 let imgURL: NSURL = NSURL(string: url!)!
                // print("img url **** \(imgURL.absoluteString)")
@@ -2538,14 +2063,7 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                     "Accept": "application/json"
                 ]
               
-                
-//                var data : String = ""
-//                for str in self.featuredArray
-//                {
-//                    data += "\(str);"
-//                }
-//                print(data)
-                let data = self.featuredArray.objectAtIndex(indexPath.row).stringByTrimmingCharactersInSet(
+               let data = self.featuredArray.objectAtIndex(indexPath.row).stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceAndNewlineCharacterSet())
                 
                 let url = NSURL(string:"\(baseUrl)product?txtSearch=\(data)")
@@ -2553,32 +2071,17 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                 
                 Alamofire.request(.GET, url!,headers: headers).validate(contentType: ["application/json"])
                     .responseJSON { response in
-                        //.responseObject { (response: Response<ProductDetails, NSError>) in      //responseJSON { response in
-//                        print(response.request)  // original URL request
-//                        print(response.response) // URL response
-//                        print(response.data)     // server data
-//                        print(response.result)
+      
                         if let JSON = response.result.value {
                             //print(JSON)
                             let customer : Array<ProductDetails> = Mapper<ProductDetails>().mapArray(JSON)!
                             let customer1 : Array<LstProducts> = Mapper<LstProducts>().mapArray(JSON)!
-//                            print(customer)
-//                             print(customer1)
-                          /*  if customer1.count != 0
-                            {
-                                if let prod1 = customer1[0] as? LstProducts
-                                {
-                                        self.featuredArrayViewAll .addObject(prod1)
-                                }
-                            }*/
-                             if customer.count != 0
+                          if customer.count != 0
                              {
                             if let prod = customer[0] as? ProductDetails{
                                 
                                 self.featuredDataArray .addObject(prod)
                                
-//                                print(prod.description)
-//                                print(prod.showPerc!)
                                 cell.categoryLabl.text = prod.description
                                 cell.sku = prod.sku
                                 if(prod.showPerc!){
@@ -2622,60 +2125,6 @@ class LandingViewController: UIViewController,vendorLogocellDelegate,webServiceD
                                     }
                                 }
 
-                               // cell.priceLabel.text = String("₹ \(prod.netPrice!)")
-//                                let pna =  prod.pnaSuccess!
-//                                if  ( pna == "true")
-//                                {
-//                                    let grossPrice  =  "\(prod.grossPrice!)"
-//                                    
-//                                    if (grossPrice == "null")
-//                                    {
-//                                       
-//                                        cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                                        cell.DescriptionLbl.hidden = true
-//                                    }
-//                                    else
-//                                    {
-//                                        let  ntprice = prod.netPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                                        let  grprice = prod.grossPrice!.stringByReplacingOccurrencesOfString(",", withString: "")
-//                                        let  nprice1:Float? = Float(ntprice)
-//                                        let  gprice1:Float? = Float(grprice)
-//                                        let discountper1 :Float? = 100 - ((nprice1!/gprice1!)*100)
-//                                        
-//                                        
-//                                        
-//                                        
-////                                        let grossPrice1  =  "₹ \(prod.grossPrice!)"
-////                                        let netPrice2  =  "₹ \(prod.netPrice!)"
-////                                        let labelstring : NSString = "\(netPrice2)  \(grossPrice1)"
-////                                        
-////                                        let string_to_color = "\(netPrice2)"
-////                                        let string2 = "\(grossPrice1)"
-////                                        
-////                                        let range = (labelstring as NSString).rangeOfString(string_to_color)
-////                                        let range2 = (labelstring as NSString).rangeOfString(string2)
-////                                        
-////                                        
-////                                        
-////                                        let attributedText: NSMutableAttributedString = NSMutableAttributedString(string: labelstring as String)
-////                                        
-////                                        attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
-////                                        attributedText.addAttributes([NSFontAttributeName:UIFont(name: "MyriadPro-Regular", size: 11)!], range: range2)
-////                                        attributedText.addAttribute(NSStrikethroughStyleAttributeName, value: 1.5, range: range2)
-////                                        attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor (red: 102/255.0, green: 102/255.0, blue: 102/255.0, alpha: 1.0) , range: range2)
-////                                        
-////                                        cell.priceLabel.attributedText = attributedText
-//                                        
-//                                    }
-//                                    }
-//                                else
-//                                {
-//                                    if(prod.netPrice! == "Price Not Available"){
-//                                        cell.priceLabel.text = "\(prod.netPrice!)"
-//                                    }else{
-//                                    cell.priceLabel.text = "₹ \(prod.netPrice!)"
-//                                    }
-//                                }
                                 let url =  prod.imageURLHigh
                                 let imgURL: NSURL = NSURL(string: url!)!
                                // print("########\(imgURL.absoluteString)")

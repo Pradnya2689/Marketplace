@@ -41,8 +41,14 @@ class FreebieViewController: UIViewController {
             let cell = tableView.dequeueReusableCellWithIdentifier("freebrcel", forIndexPath: indexPath) as! FreeBeCell
             cell.selectionStyle = .None
             cell.prodNamelbl.text = self.lstBasketArray.valueForKey("description").objectAtIndex(indexPath.row) as? String
-            
-            cell.prodPriceLbl.text = "₹ \(self.lstBasketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as! String)"
+        
+        if let prc = self.lstBasketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as? String{
+            cell.prodPriceLbl.text = "₹ \(prc)"
+            //cell.placedPrice = prc
+        }else{
+            cell.prodPriceLbl.text = ""
+        }
+            //cell.prodPriceLbl.text = "₹ \(self.lstBasketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as! String)"
             
             cell.qntBtn.layer.borderWidth = 1
             // self.QtyBtn.layer.borderColor = UIColor.blueColor().CGColor

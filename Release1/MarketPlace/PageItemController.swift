@@ -34,8 +34,11 @@ class PageItemController: UIViewController {
                 if let url =  imageName as? String{
 //                   if canOpenURL(url)
 //                   {
-                    
-                        if let imgURL = NSURL(string: url)! as? NSURL {
+                    var urlStr : NSString = url.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!
+
+
+                    print("url *** \(url)")
+                        if let imgURL = NSURL(string: urlStr as String)! as? NSURL {
                            // print(imgURL.absoluteString)
                             
                             if let image = photoCache.imageWithIdentifier(imgURL.absoluteString)

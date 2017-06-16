@@ -204,11 +204,11 @@ class ConfirmPasswordViewController: UIViewController,webServiceDelegate,UITextF
          LoadingOverlay.shared.hideOverlayView()
         self.title = " ";
         
-        let LoginViewControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("LoginView") as? LoginView
-        LoginViewControllerObj?.isCalledFrm = "other"
-        let NavigationController = UINavigationController(rootViewController: LoginViewControllerObj!)
+        let loginViewControllerObj = self.storyboard?.instantiateViewControllerWithIdentifier("LoginView") as? LoginView
+        //LoginViewControllerObj?.isCalledFrm = "other"
+        //let NavigationController = UINavigationController(rootViewController: LoginViewControllerObj!)
         //self.presentViewController(NavigationController, animated: true, completion: {(Bool) in
-            self.navigationController?.popViewControllerAnimated(false)
+            self.navigationController?.popToRootViewControllerAnimated(true)
        // })
    
     }
