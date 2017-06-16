@@ -324,7 +324,11 @@ class ProductSpecificationViewController: UIViewController {
             for (index, element) in dict!.enumerate() {
                 if (indexPath.row == index)
                 {
-                    cell.lbl.text = element.value as! String
+                    let summary = element.value as! String
+                    let strValue = summary.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: nil)
+                    print(strValue)
+                    //cell.lbl.text = element.value as! String
+                    cell.lbl.text = strValue
                     cell.valuelbl.text = element.key as! String
                     print(element.value as! String)
                     print(element.key as! String)

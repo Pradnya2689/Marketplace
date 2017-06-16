@@ -36,6 +36,10 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
      var netAmount:String!
    @IBOutlet var freeBeVc:UIView!
    @IBOutlet var freeBeTable:UITableView!
+    
+    
+    var alertText : UITextField!
+    
     @IBAction func addChangeButton(sender: AnyObject) {
         
         
@@ -87,15 +91,25 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
         
     }
     
+    
+//    func textFieldDidBeginEditing(textField: UITextField) {
+//        <#code#>
+//    }
+    
+    
+    
+    
     @IBAction func promoCodeBtn(sender: AnyObject) {
        self.lstBasketArray.removeAllObjects()
         var textfld:String!
         var alert = UIAlertController(title: "Apply Promo Code", message: "Enter Promo Code", preferredStyle: UIAlertControllerStyle.Alert)
         
+        
+        
         alert.addTextFieldWithConfigurationHandler{
             
             (textField) -> Void in
-            
+           // self.alertText = alert.textFields![0]
             //textfld = textField.text
             alert.textFields![0].autocapitalizationType = UITextAutocapitalizationType.AllCharacters
         }
@@ -109,7 +123,10 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
         alert.addAction(UIAlertAction(title: "Apply", style: .Default, handler: {
             (action) -> Void in
             let code = alert.textFields![0].text
-            self.promoCodeStr = code
+          //  self.alertText = alert.textFields![0]
+            let encodedCode = code?.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())
+            print(encodedCode)
+            self.promoCodeStr = encodedCode
             //print(code)
 //            if(self.promoCodeStr?.characters.count == 0){
 //                alert.view.tintColor = UIColor.redColor()
@@ -157,11 +174,11 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
 //                
 //                }
                 
-                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(code!)&NetAmount=\(self.netAmount)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=&SellerNumber=\(self.sellerNo)&Quantity=0&Sku=")
+                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(encodedCode!)&NetAmount=\(self.netAmount)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=&SellerNumber=\(self.sellerNo)&Quantity=0&Sku=")
                 
                 
                             let parameters = [
-                            "promoCode": code!,
+                            "promoCode": encodedCode!,
                             "NetAmount": trimmedProductprice,
                             "AddressId": self.addressId,
 //                            "runSalesOrderforBuyNow":"y",
@@ -277,10 +294,10 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 
             else{
                  LoadingOverlay.shared.hideOverlayView()
-                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(code!)&NetAmount=\(self.netAmount!)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=\(self.runsOrder)&SellerNumber=\(self.sellerNo)&Quantity=\(self.quantity!)&Sku=\(self.skuNo)")
+                url = NSURL(string: "\(baseUrl)ordercreate?promoCode=\(encodedCode!)&NetAmount=\(self.netAmount!)&AddressId=\(self.addressId)&runSalesOrderforBuyNow=\(self.runsOrder)&SellerNumber=\(self.sellerNo)&Quantity=\(self.quantity!)&Sku=\(self.skuNo)")
                 
                             let parameters = [
-                            "promoCode": code!,
+                            "promoCode": encodedCode!,
                             "NetAmount": trimmedProductprice,
                             "AddressId": self.addressId,
                             "runSalesOrderforBuyNow":"y",
@@ -701,7 +718,7 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
         }
         else{
             LoadingOverlay.shared.hideOverlayView()
-            let merchantID  = orderResp["merchantIdentifier"]! as! String
+            let merchantID  = orderResp["merchantIdentifier"] as? String
             let transactionReference = orderResp["transactionReference"]! as! String
              let transactionIdentifier = orderResp["transactionIdentifier"]! as! String
             let consumerEmailID = orderResp["consumerEmailID"]! as! String
@@ -950,6 +967,8 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                // var attrString =  NSAttributedString(string: "CASH ON DELIVERY", attributes: NSUnderlineStyle);
                // var attrString =  NSMutableAttributedString(string: "CASH ON DELIVERY");
                // attrString.AddAttribute(UIStringAttributeKey.StrikethroughStyle, NSNumber.FromInt32((int)NSUnderlineStyle.Single), NSRange(0, attrString.Length));
+                //cell.userInteractionEnabled = false
+                //cell.contentView.backgroundColor = UIColor(red: 204.0/255.0, green: 204.0/255.0, blue: 204.0/255.0, alpha: 0.5)
                 cell.codLable.text = "Available on orders between ₹\(codResp["codMinLimit"]!) and ₹ \(codResp["codMaxLimit"]!)"
                 //cell.paymentTBLabel.attributedText = attrString
                   var labelstring : NSString = "CASH ON DELIVERY"
@@ -967,6 +986,8 @@ class CheckoutViewController: UIViewController,webServiceDelegate, UITextFieldDe
                 var range = (labelstring as NSString).rangeOfString(labelText[1])
                 attributedText.addAttributes([NSFontAttributeName: UIFont(name: "MyriadPro-Regular", size: 14)!], range: range)
                 attributedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blackColor() , range: range)
+                //cell.userInteractionEnabled = true
+                
                 cell.paymentTBLabel.attributedText = attributedText
                 
             }
@@ -1058,6 +1079,27 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         if(indexPath.section == 1){
+            
+            if(isCOD == "0"){
+                
+                let alertView:UIAlertView = UIAlertView()
+                alertView.title = ""
+                alertView.message = "Cash On Delivery is not Available for this Product"
+                alertView.delegate = nil
+                alertView.addButtonWithTitle("OK")
+                alertView.show()
+                
+                for index in 0..<2
+                {
+                    if index != indexPath.section{
+                        let rowIndex = NSIndexPath.init(forRow: 0, inSection: index)
+                        let currentcell = tableView.cellForRowAtIndexPath(rowIndex) as! PaymentTableViewCell
+                        currentcell.layer.borderWidth = 2.0
+                        currentcell.layer.borderColor = UIColor.clearColor().CGColor }
+                }
+                
+            }else{
+            
         let indxPath = tableView.indexPathForSelectedRow
         let currentcell = tableView.cellForRowAtIndexPath(indxPath!) as! PaymentTableViewCell
         currentcell.layer.borderWidth = 2.0
@@ -1070,6 +1112,7 @@ extension CheckoutViewController: UITableViewDelegate, UITableViewDataSource{
             currentcell.layer.borderWidth = 2.0
                 currentcell.layer.borderColor = UIColor.clearColor().CGColor }
         }
+            }
    
         }else{
             let indxPath = tableView.indexPathForSelectedRow

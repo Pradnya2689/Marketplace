@@ -37,6 +37,13 @@ class FilterViewController: UIViewController {
     var techCatArray : NSMutableArray! = NSMutableArray()
     var selReviewArray : NSMutableArray! = NSMutableArray()
     var reviewArray : NSArray! = NSArray()
+//    
+//    var tempBrandArray:NSMutableArray!=NSMutableArray()
+//    var tempPriceArray:NSMutableArray!=NSMutableArray()
+//    var tempTechArray:NSMutableArray!=NSMutableArray()
+//    var tempBrandArray:NSMutableArray!=NSMutableArray()
+//    var tempBrandArray:NSMutableArray!=NSMutableArray()
+    
     @IBOutlet var clearBtn:UIButton!
     @IBOutlet var applyBtn:UIButton!
     @IBOutlet weak var applyResetView: UIView!
@@ -170,7 +177,8 @@ class FilterViewController: UIViewController {
             return brandArray.count
         }
        else if(optionSel == "Price"){
-            return priceRangeArray.count
+            print(priceRangeArray)
+            return (priceRangeArray.count)
         }
 
        else if(optionSel == "Category"){
@@ -746,9 +754,11 @@ class FilterViewController: UIViewController {
                 cell.valueLbl.text = vendor.name
                 cell.uniqueId = vendor.name
                 cell.pId = vendor.pid
-                 cell.chkBbtn.hidden = false
+                // cell.chkBbtn.hidden = false
+                print("price val \(vendor.name)")
                 if let price = vendor.name
                 {
+                    cell.chkBbtn.hidden = false
                 if selectedPriceArray.containsObject(vendor.pid!)
                 {
                     cell.chkBbtn.setImage(UIImage(named: "checkboxenable.png"), forState: .Normal)
@@ -761,7 +771,8 @@ class FilterViewController: UIViewController {
                 }
                 else
                 {
-                    cell.chkBbtn.setImage(UIImage(named: "checkboxDisable.png"), forState: .Normal)
+                    cell.chkBbtn.hidden = true
+                    //cell.chkBbtn.setImage(UIImage(named: "checkboxDisable.png"), forState: .Normal)
                 }
 
             }

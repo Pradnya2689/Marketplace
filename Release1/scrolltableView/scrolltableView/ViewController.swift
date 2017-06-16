@@ -543,13 +543,27 @@ class ViewController: UIViewController,UIPickerViewDataSource, UIPickerViewDeleg
                                 self.imageurl = imageurl as! NSString
                                 
                             }
+                            print("index ************ \(index)")
                             if let productHeader : String = forecast["mpn"] as? String where index == 1
                             {
+                                
                                 self.vendorPartNumber = productHeader
                                 let wsm : WebServiceClass = WebServiceClass.sharedInstance
                                 wsm.delegates=self
                                 wsm.getOthersreviewDetails(self.vendorPartNumber as String, PageIndex: "0", onSearchPage: false, onProductPage: true, onReviewPage: false, onAdminPage: false)
                                 
+                            }else{
+                                if(index == 1){
+                                    self.userratingview.rating = 0.0
+                                    // reviewView.hidden = true
+                                    self.allReviewBtn.hidden = true
+                                    self.NoReviewsLbl.hidden = false
+                                }else{
+                                    self.userratingview.rating = 0.0
+                                    // reviewView.hidden = true
+                                    self.allReviewBtn.hidden = true
+                                    self.NoReviewsLbl.hidden = false
+                                }
                             }
                             
                             if let sellerName : String = forecast["sellerName"] as? String where index == 1
@@ -2356,7 +2370,8 @@ func doneClicked(sender: AnyObject) {
          let ratingReviewDict = dict["ratingReview"] as! NSArray
       //  print(ratingReviewDict.count)
         if(ratingCountDict.count > 0){
-          NoReviewsLbl.hidden = true
+            allReviewBtn.hidden = false
+            NoReviewsLbl.hidden = true
         for forecast in ratingCountDict
         {
             if(ratingReviewDict.count > 1){
@@ -3777,7 +3792,7 @@ func doneClicked(sender: AnyObject) {
             pageItemController.view.translatesAutoresizingMaskIntoConstraints = true
             pageItemController.view.frame=CGRectMake(0, 0, boundss.width, self.bannerView.frame.size.height)
             pageItemController.contentImageView!.translatesAutoresizingMaskIntoConstraints = true
-            pageItemController.contentImageView!.frame=CGRectMake(0, 0, boundss.width, pageItemController.view.frame.size.height)
+            pageItemController.contentImageView!.frame=CGRectMake(0, 0, boundss.width, pageItemController.view.frame.size.height-10)
             pageItemController.itemIndex = itemIndex
             if(contentImages.count > 0){
                 pageItemController.imageName = contentImages[itemIndex] as! String

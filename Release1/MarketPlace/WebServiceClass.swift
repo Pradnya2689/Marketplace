@@ -2510,7 +2510,7 @@ class WebServiceClass: NSObject {
             }
            // print(headers)
             // var url : NSURL!
-            let url = "\(baseUrl)PaymentReceived"
+            let url = "\(baseUrl)PaymentReceived/Post"
            // print(url)
             
             var cod:Bool!=false
@@ -2663,10 +2663,10 @@ class WebServiceClass: NSObject {
             Alamofire.request(.GET,  url, headers: headers)
                 .validate(contentType: ["application/json"])
                 .responseJSON { response in
-//                    print(response.request)  // original URL request
-//                    print(response.response?.statusCode) // URL response
-//                    print(response.data)     // server data
-//                    print(response.result)
+                    print(response.request)  // original URL request
+                    print(response.response?.statusCode) // URL response
+                    print(response.data)     // server data
+                    print(response.result)
                     if(response.result .isSuccess)
                     {
                         if let JSON = response.result.value

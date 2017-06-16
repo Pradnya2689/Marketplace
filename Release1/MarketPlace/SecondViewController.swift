@@ -414,8 +414,18 @@ class SecondViewController: UIViewController,webServiceDelegate,mycartDelegate {
             cell.prodTitleLabel.text = self.basketArray.valueForKey("description").objectAtIndex(indexPath.row) as? String
 //            print(self.basketArray)
 //            print(self.basketArray.valueForKey("placedPrice").objectAtIndex(indexPath.row) as! String)
-            cell.prodPriceLabel.text = "₹ \(self.basketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as! String)"
-            cell.placedPrice = self.basketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as! String
+            
+            
+            if let prc = self.basketArray.valueForKey("placedPriceDisplayString").objectAtIndex(indexPath.row) as? String{
+                cell.prodPriceLabel.text = "₹ \(prc)"
+                cell.placedPrice = prc
+            }else{
+                if let prc = self.basketArray.valueForKey("placedPrice").objectAtIndex(indexPath.row) as? String{
+                    cell.prodPriceLabel.text = "₹ \(prc)"
+                    cell.placedPrice = prc
+                }
+            }
+            
             cell.quantityBtn.setTitle("Qty : \(self.basketArray.valueForKey("quantity").objectAtIndex(indexPath.row) as! Int)", forState: UIControlState.Normal)
             cell.quantity = self.basketArray.valueForKey("quantity").objectAtIndex(indexPath.row) as! Int
             cell.lineItemId = self.basketArray.valueForKey("lineItemId").objectAtIndex(indexPath.row) as! Int
